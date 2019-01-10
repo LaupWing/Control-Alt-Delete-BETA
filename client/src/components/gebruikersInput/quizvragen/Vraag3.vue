@@ -21,9 +21,12 @@
             </div>
             <div class="gras"></div>
             <div class="agent">
-                <transition name="agentAnim"> 
+                <transition name="bounce"> 
                     <img v-if="agent1" src="../../../assets/VragenScenes/vraag3/politie-agent1.png" alt="">
-                    <img class="agent2" v-else src="../../../assets/VragenScenes/vraag3/politie-agent2.png" alt="">
+                </transition>
+                <transition name="bounce">
+                    <img class="agent2" v-if="agent2" src="../../../assets/VragenScenes/vraag3/politie-agent2.png" alt="">
+
                 </transition>
             </div>
             <div class="grond"></div>            
@@ -167,7 +170,7 @@ export default {
     width: 150px;
     bottom: 15vh;
     left: 45vw;
-    animation: scaleTransition 2s forwards;
+    /* animation: scaleTransition 2s forwards; */
     transform-origin: bottom;
 }
 .agent .agent2{
@@ -195,14 +198,44 @@ button{
 }
 
 .agentAnim-enter-active{
-    animation: scaleTransition 2s;
+    animation-name: scaleTransition;
+    animation-duration: 2s;
+    animation-delay: 2s;
 }
 
 .agentAnim-leave-active{
     animation: scaleTransition 2s reverse;
 }
 
+.bounce-enter-active {
+  animation: bounce-in .5s;
+}
+.bounce-leave-active {
+  animation: bounce-out .5s;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
+@keyframes bounce-out {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
 
 @keyframes heightTransition {
     from{height: 0;}
