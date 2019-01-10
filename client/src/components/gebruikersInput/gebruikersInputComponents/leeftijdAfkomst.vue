@@ -31,6 +31,7 @@
             <input @click="clickSlider" @change="sliderAge" class="slider" type="range" min="12" max="80" v-model="leeftijd">
             </div>
         </div>
+		<!-- Dit kan meer modulair gemaakt worden -->
         <button 
             @click="nextInput" 
             :class="['next', ((afkomst == '') && (leeftijd == 1)) ? 'disabled' : '']"
