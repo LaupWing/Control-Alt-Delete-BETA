@@ -1,35 +1,42 @@
 <template>
   <div id="app">
-    <!-- <img alt="Vue logo" src="./assets/politie-logo.png"> -->
-    <PostComponent v-if="dataBase"/>
-    <StartScherm class="offsetTop" v-if="!startDone" v-on:startQuiz="startQuiz" v-on:showDatabase="showDatabase"/>
-	 <user-input v-if="input"/>
+    <transition 
+        name="router-anim"
+    >
+        <router-view 
+            class="view" 
+            v-on:userInput='userInput'
+            v-bind:userInfo='userInfo'
+        >
+        </router-view>
+     </transition>
   </div>
 </template>
 
 <script>
-import PostComponent from './components/PostComponent.vue'
-import StartScherm from './components/startScherm/Startscherm.vue'
-import UserInput from './components/gebruikersInput/Input.vue'
 
 export default {
   name: 'app',
   data(){
 	  return{
-		  startDone : false,
-      input: false,
-      dataBase: false
+        input: false,
+        dataBase: false,
+        userInfo:{
+                geslacht:'',
+                woonplaats: '',
+                avatarPath: '',
+                leeftijd:'',
+                afkomst:'',
+                veiligheidsGevoel: '',
+            }
 	  }
   },
   components: {
-    PostComponent,
-	 StartScherm,
-	 UserInput
   },
   methods:{
 	  startQuiz(){
 		  setTimeout(()=>{
-			  this.startDone = true
+			  this.startQuiz = true
 			  document.querySelector("body").style.background = '#023274'
 			  this.input = true
 		  },2000)
@@ -40,19 +47,32 @@ export default {
 			  document.querySelector("body").style.background = '#023274'
 			  this.dataBase = true
 		  },2000)
+    },
+    userInput(property, info){
+        this.userInfo[property] = info
     }
-  }
+  },
 }
 </script>
 
 <style>
+/* Global elements styling 
+################################*/
 body{
-  /* background: linear-gradient(to bottom, #90dffe 0%, #38a3d1 100%); */
-  background: #38a3d1;
-  overflow: hidden;
-  height: 100vh;
-  margin: 0;
-  transition: 2s;
+    overflow: hidden;
+    height: 100vh;
+    margin: 0;
+    background: url('./assets/logoCAD.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.view{
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    color: white;
+    position: fixed;
 }
 #app {
   font-family: 'Roboto Condensed', sans-serif;
@@ -60,72 +80,47 @@ body{
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  /* margin-top: 60px; */
 }
-.offsetTop{
-	margin-top: 30px;
+
+
+.content-20vh{
+    height: 20vh;
 }
-.flexCenter{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
+.content-30vh{
+    height: 30vh;
+}
+.content-40vh{
+    height: 40vh;
+}
+.content-50vh{
+    height: 40vh;
 }
 h1{
-  margin: 0;
+    margin: 10px;
+    font-size: 40px;
 }
 h2{
-	margin: 0;
-	color:#bf975a
+    margin: 0;
+}
+
+
+.content{
+    height: 50vh;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
 }
 p{
-  margin: 0;
+    margin: 10px;
 }
 li{
 	list-style: none;
 }
-button{
-  background: rgba(0, 0, 0, .3);
-  border: none;
-  padding: 15px 20px;
-  color: #bf975a;
-  font-size: 20px;
-  cursor: pointer;
-  border-radius: 20px;
-  transition: .25s;
-  outline: none;
-}
-button:hover{
-  background: #023274;
-}
-.button2:hover{
-    background: #bf975a;
-    color: #023274;
-}
-.clicked{
-	background: #bf975a;
-   color: #023274;
-}
-.disabled{
-	cursor: default;
-	background: rgba(0, 0, 0, .3);
-	opacity: .5;
-}
-button.disabled:hover{
-	cursor: default;
-	background: rgba(0, 0, 0, .3);
-	opacity: .5;
-	color: #bf975a;
-}
-
-/* Styling States */
-.invisible{
-  opacity: 0;
-}
 
 
 
-/* Globale input styling */
+/* Globale input styling 
+################################*/
 label{
 	color: #bf975a;
 	font-size: 25px;
@@ -139,7 +134,73 @@ select{
 svg > path{
   transition: .25s;
 }
-/* Scrollbar */
+
+
+
+/* Position styling classes 
+################################*/
+.flexCenter{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.offsetTop{
+	margin-top: 30px;
+}
+
+
+
+/* Styling States 
+################################*/
+.invisible{
+  opacity: 0;
+}
+
+
+
+/* Default button styling de rest staan in de buttons component
+################################*/
+button{
+    background: transparent;
+    border: white solid 2px;
+    outline: none;
+    color: white;
+    padding: 10px 20px;
+    width: 100px;
+    font-weight: 600;
+    transition: .25s;
+}
+button:hover{
+    background: white;
+    color: black;
+}
+.buttons{
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px;
+    max-width: 400px;
+}
+
+
+
+
+/* Page components global elements 
+################################*/
+.tekst{
+  
+}
+.wrapper{
+
+}
+
+
+
+/* Scrollbar 
+################################*/
+
 /* width */
 ::-webkit-scrollbar {
   width: 5px;
@@ -160,27 +221,30 @@ svg > path{
   background: #555; 
 }
 
-/* Globale keyframes */
+/* Globale keyframes 
+################################*/
 
-.slidingOutBottom{
-  animation: slideOutBottom 2s forwards !important;
-}
-.slidingOutTop{
-  animation: slideOutTop 2s forwards !important;
-}
 
 @keyframes slideIn {
   from {transform: translate(0, 100vh);}
   to {transform: translate(0, 0)}
 }
 
+/* Default keyframe for tekst div */
 @keyframes slideInTekst{
   from {transform: translate(0, -50px);}
   to {transform: translate(0, 0)}
 }
 
-@keyframes slideOutBottom{
-  100% {bottom: -10vh}
+/* Dissapear elements through the bottom */
+
+
+/* Dissapear elements through the top */
+.router-anim-leave-active{
+    animation: slideOutTop 2s forwards;
+}
+.router-anim-enter-active{
+    animation: slideOutBottom 2s forwards;
 }
 
 @keyframes slideOutTop{
@@ -188,28 +252,14 @@ svg > path{
   to {transform: translate(0, -100vh)}
 }
 
-@keyframes carRide {
-  from {transform: translate(0, 0);}
-  to {transform: translate(200vw, 0);}
+@keyframes slideOutBottom{
+  from {transform: translate(0, 100vh);}
+  to {transform: translate(0, 0)}
 }
 
-.fadeAway{
-    animation: fadingAway 1s forwards;
-}
-@keyframes fadingAway{
-  from {transform: translate(0, 0);}
-  to {transform: translate(300px, 0); opacity: 0;}
-}
-
-.fadeIn{
-    animation: fadingIn 1s forwards;
-}
-@keyframes fadingIn{
-  0% {transform: translate(-300px, 0); opacity: 0}
-  25% {opacity: 0}
-  50% {opacity: 1}
-  75% {opacity: 1}
-  100% {transform: translate(0, 0); opacity: 1;}
+@keyframes opacityAnim{
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
 </style>
