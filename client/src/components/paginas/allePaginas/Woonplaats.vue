@@ -29,12 +29,13 @@ export default {
     },
     data(){
         return{
-            eenheid: ''
+            eenheid: '',
         }
     },
     methods:{
         eenheidValue(value){
             this.eenheid = value
+            this.$emit('userInput', 'Eenheid', this.eenheid)
             setTimeout( () => this.$router.push({ path: '/politiegeweldvraag'}), 5000);
         }
     },

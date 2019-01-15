@@ -46,6 +46,7 @@ export default {
     methods:{
         handleClick(){
             this.antwoord = event.target.textContent
+            setTimeout( () => this.$router.push({ path: '/soortgeweld'}), 5000);
         }
     }
 }

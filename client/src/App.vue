@@ -6,6 +6,8 @@
         <router-view 
             class="view"
             v-bind:dataset='dataset'
+            v-bind:userInfo='userInfo'
+            v-on:userInput='userInput'          
         >
         </router-view>
      </transition>
@@ -18,7 +20,33 @@ export default {
   name: 'app',
   data(){
 	  return{
+        userInfo:{},
         dataset:[
+            {
+                eenheid: 'Noord-Holland',
+                jaar2017:[
+                    {
+                        soort: 'pepperspray',
+                        aantal: 70
+                    },
+                    {
+                        soort: 'lange stok',
+                        aantal: 15
+                    },
+                    {
+                        soort: 'korte stok',
+                        aantal: 17
+                    },
+                    {
+                        soort: 'elektrische wapenstok',
+                        aantal: 0
+                    },
+                    {
+                        soort: 'inzet hond',
+                        aantal: 14
+                    },
+                ]
+            },
             {
                 eenheid: 'Noord-Nederland',
                 jaar2017:[
@@ -220,20 +248,15 @@ export default {
                 ]
             },
         ],
-        userInfo:{
-                geslacht:'',
-                woonplaats: '',
-                avatarPath: '',
-                leeftijd:'',
-                afkomst:'',
-                veiligheidsGevoel: '',
-            }
 	  }
   },
   components: {
   },
   methods:{
-
+      userInput(prop, value){
+          this.userInfo[prop] = value
+          console.log(this.userInfo)
+      }
   },
 }
 </script>

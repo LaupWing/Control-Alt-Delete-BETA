@@ -27,14 +27,16 @@
 <script>
 export default {
     name:'SoortGeweld',
-    props:['dataset'],
+    props:['dataset', 'userInfo'],
     data(){
         return{
             alleEenheden:[],
             array:[],
+            eigenResults:[],
             results:[],
             soortGeweld:'',
             eenheidVergelijking: '',
+            jouwEenheid: this.userInfo.Eenheid
         }
     },
     methods:{
@@ -44,40 +46,37 @@ export default {
        handleChange(x){
            if(x==='geweld'){
                this.soortGeweld = event.target.value
-               console.log(this.soortGeweld)
            }else{
                this.eenheidVergelijking = event.target.value
-               this.filterValue()
+               this.setResult()
            }
        },
-       filterValue(){
+       setResult(){
+           this.results = []
            this.dataset.forEach(i => {
-            //    console.log(i)
-               if(i.eenheid === this.eenheidVergelijking){
-                   this.results = []
-                   i.jaar2017.forEach((x)=>{if(x.soort === this.soortGeweld){this.results.push(x)}})
-                   console.log(this.results)
+               if(i.eenheid === this.eenheidVergelijking || i.eenheid === this.jouwEenheid){
+                   i.jaar2017.forEach((x)=>{
+                       if(x.soort === this.soortGeweld){
+                           if(i.eenheid === this.eenheidVergelijking){
+                               x['Eenheid'] = this.eenheidVergelijking
+                           }else{
+                               x['Eenheid'] = this.jouwEenheid
+                           }
+                           this.results.push(x)
+                           }                    
+                       })
                }
            });
-       },
-       splitPorperties(){
-           
        }
     },
     created(){
         this.dataset.forEach((i)=>{           
             this.alleEenheden.push(i.eenheid)
         })
-        console.log(this.zeventien)
 
         setTimeout(()=>{
             this.soortGeweld = this.$el.querySelector('.soort-geweld').value
-            console.log(this.soortGeweld)
-            // this.zeventien.map((i)=>{
-            //     if(i.eenheid===this.$el.querySelector('.eenheid').value){
-            //         return this.array = i
-            //     }
-            //  })
+            this.eenheidVergelijking = this.$el.querySelector('.eenheid').value
         },10)
     }
 }
