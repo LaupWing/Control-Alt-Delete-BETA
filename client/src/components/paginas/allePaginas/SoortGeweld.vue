@@ -22,6 +22,11 @@
             </option>
         </select>
     </div>
+    <svg>
+        <g>
+            <rect></rect>
+        </g>
+    </svg>
 </div>
 </template>
 <script>
@@ -31,12 +36,12 @@ export default {
     data(){
         return{
             alleEenheden:[],
-            array:[],
             eigenResults:[],
             results:[],
             soortGeweld:'',
             eenheidVergelijking: '',
-            jouwEenheid: this.userInfo.Eenheid
+            jouwEenheid: this.userInfo.Eenheid,
+            alleCijfers:[]
         }
     },
     methods:{
@@ -67,16 +72,33 @@ export default {
                        })
                }
            });
+       },
+       pushingAllData(){
+           this.dataset.forEach(i=>{
+               i.jaar2017.forEach(i=>{
+                   console.log(this.soortGeweld)
+                   if(i.soort === this.soortGeweld){
+                       console.log('hi')
+                       this.alleCijfers.push(i.aantal)
+                   }
+               })
+           })
+           console.log(this.alleCijfers)
        }
+    },
+    computed:{
+        // dataMax() {
+        //     return Math.max(...this.chartData);
+        // },
     },
     created(){
         this.dataset.forEach((i)=>{           
             this.alleEenheden.push(i.eenheid)
         })
-
         setTimeout(()=>{
             this.soortGeweld = this.$el.querySelector('.soort-geweld').value
             this.eenheidVergelijking = this.$el.querySelector('.eenheid').value
+            this.pushingAllData()
         },10)
     }
 }
@@ -88,6 +110,15 @@ export default {
     flex-direction: column;
     align-items: center;
 }
-
+svg{
+    background: orange;
+    height: 45vh;
+    width: 90vw;
+}
+rect{
+    width: 50px;
+    height: 10px;
+    fill: red;
+}
 </style>
 
