@@ -4,9 +4,8 @@
         name="router-anim"
     >
         <router-view 
-            class="view" 
-            v-on:userInput='userInput'
-            v-bind:userInfo='userInfo'
+            class="view"
+            v-bind:zeventien='zeventien'
         >
         </router-view>
      </transition>
@@ -19,8 +18,72 @@ export default {
   name: 'app',
   data(){
 	  return{
-        input: false,
-        dataBase: false,
+        zeventien:[
+            {
+                eenheid: 'Noord-Nederland',
+                pepperspray:'81',
+                langStok: '1',
+                korteStok: '11',
+                elektrischeWapenstok: '0',
+                hond: '14'
+            },
+            {
+                eenheid: 'Midden-Nederland',
+                pepperspray:'66',
+                langStok: '23',
+                korteStok: '10',
+                elektrischeWapenstok: '1',
+                hond: '16'
+            },
+            {
+                eenheid: 'Oost-Nederland',
+                pepperspray:'53',
+                langStok: '3',
+                korteStok: '12',
+                elektrischeWapenstok: '0',
+                hond: '17'
+            },
+            {
+                eenheid: 'Den-Haag',
+                pepperspray:'141',
+                langStok: '12',
+                korteStok: '24',
+                elektrischeWapenstok: '0',
+                hond:'27'
+            },
+            {
+                eenheid: 'Rotterdam',
+                pepperspray:'173',
+                langStok: '44',
+                korteStok: '10',
+                elektrischeWapenstok: '19',
+                hond: '50'
+            },
+            {
+                eenheid: 'Zeeland-West-Brabant',
+                pepperspray:'80',
+                langStok: '22',
+                korteStok: '13',
+                elektrischeWapenstok: '0',
+                hond: '16'
+            },
+            {
+                eenheid: 'Oost-Brabant',
+                pepperspray:'44',
+                langStok: '7',
+                korteStok: '8',
+                elektrischeWapenstok: '0',
+                hond: '10'
+            },
+            {
+                eenheid: 'Limburg',
+                pepperspray:'63',
+                langStok: '3',
+                korteStok: '12',
+                elektrischeWapenstok: '0',
+                hond: '9'
+            },
+        ],
         userInfo:{
                 geslacht:'',
                 woonplaats: '',
@@ -34,23 +97,7 @@ export default {
   components: {
   },
   methods:{
-	  startQuiz(){
-		  setTimeout(()=>{
-			  this.startQuiz = true
-			  document.querySelector("body").style.background = '#023274'
-			  this.input = true
-		  },2000)
-    },
-    showDatabase(){
-      setTimeout(()=>{
-			  this.startDone = true
-			  document.querySelector("body").style.background = '#023274'
-			  this.dataBase = true
-		  },2000)
-    },
-    userInput(property, info){
-        this.userInfo[property] = info
-    }
+
   },
 }
 </script>
@@ -83,6 +130,9 @@ body{
 }
 
 
+.content-15vh{
+    height: 15vh;
+}
 .content-20vh{
     height: 20vh;
 }
@@ -126,10 +176,10 @@ label{
 	font-size: 25px;
 }
 select{
-	padding: 10px;
-	width: 200px;
-	border-radius: 10px;
+	padding: 5px;
+	width: 250px;
 	outline: none;
+    text-align: center;
 }
 svg > path{
   transition: .25s;
@@ -170,6 +220,7 @@ button{
     width: 100px;
     font-weight: 600;
     transition: .25s;
+    cursor: pointer;
 }
 button:hover{
     background: white;
@@ -187,15 +238,31 @@ button:hover{
 
 
 
-/* Page components global elements 
+/* Pages styling
 ################################*/
-.tekst{
-  
+.results-container{
+    margin-top: 50px;
 }
-.wrapper{
-
+.results{
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
 }
-
+.results-ja > p, .results-nee > p {
+    margin: 10px;
+}
+.result-anim-enter-active{
+    animation: slideInResult 4s forwards;
+}
+@keyframes slideInResult {
+    from{transform: translate(0,50px);opacity: 0;}
+    to{transform: translate(0,0);opacity: 1;}
+}
+.percentage-ja,.percentage-nee{
+    font-family: 'Special Elite', cursive;
+    font-size: 36px;
+    color: red;
+}
 
 
 /* Scrollbar 

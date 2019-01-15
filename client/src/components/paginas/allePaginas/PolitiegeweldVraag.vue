@@ -8,21 +8,21 @@
         name="result-anim"
     >
         <div v-if="antwoord !== ''" class="results-container flexCenter">
-            <p>Andere mensen hebben dit om deze vragen beantwoord</p>
+            <p>Andere mensen hebben dit op deze vraag beantwoord</p>
             <div class="results">
                 <div class="results-ja flexCenter">
-                    <p class="percentage">
-                        55%
+                    <p class="percentage-ja">
+                        1%
                     </p>
                     <p>
                         Ja
                     </p>
                 </div>
                 <div class="results-nee flexCenter">
-                    <p class="percentage">
-                        45%
+                    <p class="percentage-nee">
+                        1%
                     </p>
-                    <p>
+                    <p @click="test">
                         Nee
                     </p>
                 </div>
@@ -40,34 +40,33 @@ export default {
     },
     data(){
         return{
-            antwoord: ''
+            antwoord: '',
         }
     },
     methods:{
         handleClick(){
-            this.antwoord = event.target.textContent
-        }
+            this.antwoord = event.target.textContent;
+            setTimeout( () => this.$router.push({ path: '/meerofminder'}), 5000);
+            setTimeout(()=>{this.animateValue('.percentage-ja', 1, 25, 2000);},2000)
+            setTimeout(()=>{this.animateValue('.percentage-nee', 1, 75, 2000);},2000)
+        },
+        animateValue(el, start, end, duration) {
+            var range = end - start;
+            var current = start;
+            var increment = end > start? 1 : -1;
+            var stepTime = Math.abs(Math.floor(duration / range));
+            var obj = this.$el.querySelector(el);
+            var timer = setInterval(()=> {
+                current += increment;
+                obj.innerHTML = current+'%';
+                if (current == end) {
+                    clearInterval(timer);
+                }
+             }, stepTime);
+        },
     }
 }
 </script>
 <style scoped>
-.results-container{
-    margin-top: 50px;
-}
-.results{
-    display: flex;
-    width: 80%;
-    justify-content: space-around;
-}
-.results-ja > p, .results-nee > p {
-    margin: 20px;
-}
-.result-anim-enter-active{
-    animation: slideInResult 4s forwards;
-}
-@keyframes slideInResult {
-    from{transform: translate(0,50px);opacity: 0;}
-    to{transform: translate(0,0);opacity: 1;}
-}
 </style>
 
