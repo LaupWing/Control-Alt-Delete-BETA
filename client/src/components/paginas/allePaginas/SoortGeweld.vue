@@ -64,13 +64,15 @@ export default {
                        if(x.soort === this.soortGeweld){
                            if(i.eenheid === this.eenheidVergelijking){
                                x['Eenheid'] = this.eenheidVergelijking
+                               this.results.push(x)
                            }else{
                                x['Eenheid'] = this.jouwEenheid
+                               this.eigenResults.push(x)
                            }
-                           this.results.push(x)
                            }                    
                        })
                }
+               console.log(this.results, this.eigenResults)
            });
        },
        pushingAllData(){
@@ -78,18 +80,16 @@ export default {
                i.jaar2017.forEach(i=>{
                    console.log(this.soortGeweld)
                    if(i.soort === this.soortGeweld){
-                       console.log('hi')
                        this.alleCijfers.push(i.aantal)
                    }
                })
            })
-           console.log(this.alleCijfers)
        }
     },
     computed:{
-        // dataMax() {
-        //     return Math.max(...this.chartData);
-        // },
+        dataMax() {
+            return Math.max(...this.alleCijfers);
+        },
     },
     created(){
         this.dataset.forEach((i)=>{           
