@@ -22,9 +22,9 @@
             </option>
         </select>
     </div>
-    <svg>
+    <svg @click="test">
         <g>
-            <rect></rect>
+            <rect height='121.38728323699422'></rect>
         </g>
     </svg>
 </div>
@@ -41,7 +41,7 @@ export default {
             soortGeweld:'',
             eenheidVergelijking: '',
             jouwEenheid: this.userInfo.Eenheid,
-            alleCijfers:[]
+            alleCijfers:[],
         }
     },
     methods:{
@@ -58,32 +58,43 @@ export default {
        },
        setResult(){
            this.results = []
+           this.eigenResults = []
            this.dataset.forEach(i => {
                if(i.eenheid === this.eenheidVergelijking || i.eenheid === this.jouwEenheid){
                    i.jaar2017.forEach((x)=>{
                        if(x.soort === this.soortGeweld){
                            if(i.eenheid === this.eenheidVergelijking){
                                x['Eenheid'] = this.eenheidVergelijking
-                               this.results.push(x)
+                               this.results.push(x.aantal)
+                                // this.results = x.aantal
                            }else{
                                x['Eenheid'] = this.jouwEenheid
-                               this.eigenResults.push(x)
+                               this.eigenResults.push(x.aantal)
                            }
                            }                    
                        })
                }
-               console.log(this.results, this.eigenResults)
            });
        },
        pushingAllData(){
            this.dataset.forEach(i=>{
                i.jaar2017.forEach(i=>{
-                   console.log(this.soortGeweld)
                    if(i.soort === this.soortGeweld){
                        this.alleCijfers.push(i.aantal)
                    }
                })
            })
+       },
+       barHeight(){
+           return this.$el.querySelector('svg').clientHeight / this.dataMax * this.results;
+       },
+       test(){
+        //    console.log(this.eigenResults, this.results)
+        //    console.log(this.$el.querySelector('svg').clientHeight)
+            // console.log(this.dataMax)
+            // console.log(this.results)
+            // console.log(this.$el.querySelector('svg').clientHeight)
+            console.log(this.barHeight())
        }
     },
     computed:{
@@ -98,6 +109,7 @@ export default {
         setTimeout(()=>{
             this.soortGeweld = this.$el.querySelector('.soort-geweld').value
             this.eenheidVergelijking = this.$el.querySelector('.eenheid').value
+            this.setResult()
             this.pushingAllData()
         },10)
     }
@@ -112,8 +124,8 @@ export default {
 }
 svg{
     background: orange;
-    height: 45vh;
     width: 90vw;
+    height: 45vh;
 }
 rect{
     width: 50px;
