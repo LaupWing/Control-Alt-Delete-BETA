@@ -7,10 +7,10 @@
     <div class="content-15vh spaceAround">
         <select class="soort-geweld" @change="handleChange('geweld')">
             <option value="pepperspray">Gebruik van pepperspray</option>
-            <option value="langeStok">Gebruik van lange stok</option>
-            <option value="korteStok">Gebruik van korte stok</option>
-            <option value="elektrischeWapenstok">Gebruik van elektrische wapenstok</option>
-            <option value="hond">Inzet van hond</option>
+            <option value="lange stok">Gebruik van lange stok</option>
+            <option value="korte stok">Gebruik van korte stok</option>
+            <option value="elektrische wapenstok">Gebruik van elektrische wapenstok</option>
+            <option value="inzet hond">Inzet van hond</option>
         </select>
         <select @change="handleChange" class="eenheid">
             <option 
@@ -27,7 +27,7 @@
 <script>
 export default {
     name:'SoortGeweld',
-    props:['zeventien'],
+    props:['dataset'],
     data(){
         return{
             alleEenheden:[],
@@ -44,30 +44,31 @@ export default {
        handleChange(x){
            if(x==='geweld'){
                this.soortGeweld = event.target.value
+               console.log(this.soortGeweld)
            }else{
                this.eenheidVergelijking = event.target.value
                this.filterValue()
            }
        },
        filterValue(){
-           this.zeventien.forEach(i => {
+           this.dataset.forEach(i => {
+            //    console.log(i)
                if(i.eenheid === this.eenheidVergelijking){
-                   this.array.push(i)
-                   this.splitPorperties()
+                   this.results = []
+                   i.jaar2017.forEach((x)=>{if(x.soort === this.soortGeweld){this.results.push(x)}})
+                   console.log(this.results)
                }
            });
        },
        splitPorperties(){
-           for(var i in this.array){
-               console.log(i)
-           }
+           
        }
     },
     created(){
-        this.zeventien.forEach((i)=>{           
+        this.dataset.forEach((i)=>{           
             this.alleEenheden.push(i.eenheid)
         })
-        // console.log(this.zeventien)
+        console.log(this.zeventien)
 
         setTimeout(()=>{
             this.soortGeweld = this.$el.querySelector('.soort-geweld').value

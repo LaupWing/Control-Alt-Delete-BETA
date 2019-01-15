@@ -5,7 +5,7 @@
     >
         <router-view 
             class="view"
-            v-bind:zeventien='zeventien'
+            v-bind:dataset='dataset'
         >
         </router-view>
      </transition>
@@ -18,70 +18,206 @@ export default {
   name: 'app',
   data(){
 	  return{
-        zeventien:[
+        dataset:[
             {
                 eenheid: 'Noord-Nederland',
-                pepperspray:'81',
-                langStok: '1',
-                korteStok: '11',
-                elektrischeWapenstok: '0',
-                hond: '14'
+                jaar2017:[
+                    {
+                        soort: 'pepperspray',
+                        aantal: 81
+                    },
+                    {
+                        soort: 'lange stok',
+                        aantal: 1
+                    },
+                    {
+                        soort: 'korte stok',
+                        aantal: 11
+                    },
+                    {
+                        soort: 'elektrische wapenstok',
+                        aantal: 0
+                    },
+                    {
+                        soort: 'inzet hond',
+                        aantal: 14
+                    },
+                ]
             },
             {
                 eenheid: 'Midden-Nederland',
-                pepperspray:'66',
-                langStok: '23',
-                korteStok: '10',
-                elektrischeWapenstok: '1',
-                hond: '16'
+                jaar2017:[
+                    {
+                        soort: 'pepperspray',
+                        aantal: 66
+                    },
+                    {
+                        soort: 'lange stok',
+                        aantal: 23
+                    },
+                    {
+                        soort: 'korte stok',
+                        aantal: 10
+                    },
+                    {
+                        soort: 'elektrische wapenstok',
+                        aantal: 1
+                    },
+                    {
+                        soort: 'inzet hond',
+                        aantal: 16
+                    },
+                ]
             },
             {
                 eenheid: 'Oost-Nederland',
-                pepperspray:'53',
-                langStok: '3',
-                korteStok: '12',
-                elektrischeWapenstok: '0',
-                hond: '17'
+                jaar2017:[
+                    {
+                        soort: 'pepperspray',
+                        aantal: 53
+                    },
+                    {
+                        soort: 'lange stok',
+                        aantal: 3
+                    },
+                    {
+                        soort: 'korte stok',
+                        aantal: 12
+                    },
+                    {
+                        soort: 'elektrische wapenstok',
+                        aantal: 0
+                    },
+                    {
+                        soort: 'inzet hond',
+                        aantal: 17
+                    },
+                ]
             },
             {
                 eenheid: 'Den-Haag',
-                pepperspray:'141',
-                langStok: '12',
-                korteStok: '24',
-                elektrischeWapenstok: '0',
-                hond:'27'
+                jaar2017:[
+                    {
+                        soort: 'pepperspray',
+                        aantal: 141
+                    },
+                    {
+                        soort: 'lange stok',
+                        aantal: 12
+                    },
+                    {
+                        soort: 'korte stok',
+                        aantal: 24
+                    },
+                    {
+                        soort: 'elektrische wapenstok',
+                        aantal: 0
+                    },
+                    {
+                        soort: 'inzet hond',
+                        aantal: 27
+                    },
+                ]
             },
             {
                 eenheid: 'Rotterdam',
-                pepperspray:'173',
-                langStok: '44',
-                korteStok: '10',
-                elektrischeWapenstok: '19',
-                hond: '50'
+                jaar2017:[
+                    {
+                        soort: 'pepperspray',
+                        aantal: 173
+                    },
+                    {
+                        soort: 'lange stok',
+                        aantal: 44
+                    },
+                    {
+                        soort: 'korte stok',
+                        aantal: 10
+                    },
+                    {
+                        soort: 'elektrische wapenstok',
+                        aantal: 19
+                    },
+                    {
+                        soort: 'inzet hond',
+                        aantal: 50
+                    },
+                ]
             },
             {
                 eenheid: 'Zeeland-West-Brabant',
-                pepperspray:'80',
-                langStok: '22',
-                korteStok: '13',
-                elektrischeWapenstok: '0',
-                hond: '16'
+                jaar2017:[
+                    {
+                        soort: 'pepperspray',
+                        aantal: 80
+                    },
+                    {
+                        soort: 'lange stok',
+                        aantal: 22
+                    },
+                    {
+                        soort: 'korte stok',
+                        aantal: 13
+                    },
+                    {
+                        soort: 'elektrische wapenstok',
+                        aantal: 0
+                    },
+                    {
+                        soort: 'inzet hond',
+                        aantal: 16
+                    },
+                ]
             },
             {
                 eenheid: 'Oost-Brabant',
-                pepperspray:'44',
-                langStok: '7',
-                korteStok: '8',
-                elektrischeWapenstok: '0',
-                hond: '10'
+                jaar2017:[
+                    {
+                        soort: 'pepperspray',
+                        aantal: 44
+                    },
+                    {
+                        soort: 'lange stok',
+                        aantal: 7
+                    },
+                    {
+                        soort: 'korte stok',
+                        aantal: 8
+                    },
+                    {
+                        soort: 'elektrische wapenstok',
+                        aantal: 0
+                    },
+                    {
+                        soort: 'inzet hond',
+                        aantal: 10
+                    },
+                ]
             },
             {
                 eenheid: 'Limburg',
-                pepperspray:'63',
-                langStok: '3',
-                korteStok: '12',
-                elektrischeWapenstok: '0',
-                hond: '9'
+                jaar2017:[
+                    {
+                        soort: 'pepperspray',
+                        aantal: 63
+                    },
+                    {
+                        soort: 'lange stok',
+                        aantal: 3
+                    },
+                    {
+                        soort: 'korte stok',
+                        aantal: 12
+                    },
+                    {
+                        soort: 'elektrische wapenstok',
+                        aantal: 0
+                    },
+                    {
+                        soort: 'inzet hond',
+                        aantal: 9
+                    },
+                ]
             },
         ],
         userInfo:{
