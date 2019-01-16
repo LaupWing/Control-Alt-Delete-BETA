@@ -45,7 +45,29 @@ export default {
                         soort: 'inzet hond',
                         aantal: 14
                     },
-                ]
+                ],
+                // jaar2017:[
+                //     {
+                //         soort: 'pepperspray',
+                //         aantal: 70
+                //     },
+                //     {
+                //         soort: 'lange stok',
+                //         aantal: 15
+                //     },
+                //     {
+                //         soort: 'korte stok',
+                //         aantal: 17
+                //     },
+                //     {
+                //         soort: 'elektrische wapenstok',
+                //         aantal: 0
+                //     },
+                //     {
+                //         soort: 'inzet hond',
+                //         aantal: 14
+                //     },
+                // ],
             },
             {
                 eenheid: 'Noord-Nederland',
@@ -266,6 +288,7 @@ export default {
 ################################*/
 body{
     overflow: hidden;
+    background: black;
     height: 100vh;
     margin: 0;
     background: url('./assets/logoCAD.png');

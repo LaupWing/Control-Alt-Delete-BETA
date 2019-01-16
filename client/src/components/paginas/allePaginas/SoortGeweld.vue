@@ -24,7 +24,7 @@
     </div>
     <svg @click="test">
         <g>
-            <rect height='121.38728323699422'></rect>
+            <rect :height='height'></rect>
         </g>
     </svg>
 </div>
@@ -42,6 +42,7 @@ export default {
             eenheidVergelijking: '',
             jouwEenheid: this.userInfo.Eenheid,
             alleCijfers:[],
+            height: ''
         }
     },
     methods:{
@@ -85,17 +86,20 @@ export default {
                })
            })
        },
-       barHeight(){
-           return this.$el.querySelector('svg').clientHeight / this.dataMax * this.results;
-       },
        test(){
-        //    console.log(this.eigenResults, this.results)
+           
+           console.log(d3.select('svg'), 'test')
+           //    console.log(this.eigenResults, this.results)
         //    console.log(this.$el.querySelector('svg').clientHeight)
             // console.log(this.dataMax)
             // console.log(this.results)
             // console.log(this.$el.querySelector('svg').clientHeight)
             console.log(this.barHeight())
-       }
+       },
+        barHeight(){
+            return this.$el.querySelector('svg').clientHeight / this.dataMax * this.results;
+            this.height = this.$el.querySelector('svg').clientHeight / this.dataMax * this.results;
+        },
     },
     computed:{
         dataMax() {
@@ -111,6 +115,7 @@ export default {
             this.eenheidVergelijking = this.$el.querySelector('.eenheid').value
             this.setResult()
             this.pushingAllData()
+            this.barHeight()
         },10)
     }
 }
