@@ -119,8 +119,10 @@ export default {
         },
     },
     created(){
-        this.dataset.forEach((i)=>{           
-            this.alleEenheden.push(i.eenheid)
+        this.dataset.forEach((i)=>{
+            if(i.eenheid !== this.jouwEenheid){
+                this.alleEenheden.push(i.eenheid)
+            }           
         })
         setTimeout(()=>{
             this.soortGeweld = this.$el.querySelector('.soort-geweld').value
