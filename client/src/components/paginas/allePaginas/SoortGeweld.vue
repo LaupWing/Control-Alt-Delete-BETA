@@ -23,9 +23,9 @@
         </select>
     </div>
     <svg @click="test2">
-        <g>
+        <!-- <g>
             <rect  :y="y" :height="height"></rect>
-        </g>
+        </g> -->
     </svg>
 </div>
 </template>
