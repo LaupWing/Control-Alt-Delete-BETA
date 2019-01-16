@@ -19,6 +19,8 @@ export default {
     name: 'Nederland',
     methods:{
         handleClick(value){
+            event.target.classList.add('gekozen')
+            console.log(event.target)
             this.$emit('woonplaats', value)
         }
     }
@@ -30,8 +32,13 @@ export default {
         fill:#fff;  
         stroke:#000;
         stroke-miterlimit:10;
+        transition: fill 2s;
     }
     .cls-1{
         fill-rule:evenodd;
+        transition: fill 2s;
+    }
+    .gekozen{
+        fill: red;
     }
 </style>

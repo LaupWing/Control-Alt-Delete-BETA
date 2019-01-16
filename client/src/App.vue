@@ -347,6 +347,7 @@ h2{
 }
 p{
     margin: 10px;
+    width: 90%;
 }
 li{
 	list-style: none;
@@ -471,7 +472,7 @@ input[type="range"] {
     -webkit-appearance: none;
     position: relative;
     overflow: hidden;
-    height: 40px;
+    height: 30px;
     width: 80%;
     cursor: pointer;
     border-radius: 0; /* iOS */
@@ -486,8 +487,8 @@ input[type="range"] {
  */
 ::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 40px; /* 1 */
-    height: 40px;
+    width: 30px; /* 1 */
+    height: 30px;
     background: #fff;
     box-shadow: -100vw 0 0 100vw red;
     border: 2px solid #999; 

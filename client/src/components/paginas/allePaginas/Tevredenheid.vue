@@ -7,8 +7,10 @@
                 <p>Hoeveel procent ben jij tevreden van het optreden van de politie bij jou in de buurt</p>
             </div>
             <div>
-                <input class="slider" type="range">
+                <p class="percentage-1">{{tevredenheid}}</p>
+                <input class="slider" type="range" min='0' max='100' v-model="tevredenheid">
             </div>
+            <button>Volgende</button>
         </div>
     </div>    
 </template>
@@ -20,7 +22,7 @@ export default {
     },
     data(){
         return{
-
+            tevredenheid: 1
         }
     },
     methods:{
