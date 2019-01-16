@@ -311,12 +311,15 @@ body{
   color: #2c3e50;
 }
 
-
+/* Verschillende viewheights voor de content */
 .content-15vh{
     height: 15vh;
 }
 .content-20vh{
     height: 20vh;
+}
+.content-25vh{
+    height: 25vh;
 }
 .content-30vh{
     height: 30vh;
@@ -325,7 +328,7 @@ body{
     height: 40vh;
 }
 .content-50vh{
-    height: 40vh;
+    height: 50vh;
 }
 h1{
     margin: 10px;
@@ -374,6 +377,18 @@ svg > path{
 .flexCenter{
 	display: flex;
 	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.flexAround{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: column;
+}
+.flexBetween{
+	display: flex;
+	justify-content: space-between;
 	align-items: center;
 	flex-direction: column;
 }
@@ -447,6 +462,41 @@ button:hover{
     color: red;
 }
 
+
+
+/* Range Slider 
+################################*/
+.slider {
+  -webkit-appearance: none;
+  width: 80%;
+  height: 15px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
 
 /* Scrollbar 
 ################################*/

@@ -22,11 +22,19 @@
             </option>
         </select>
     </div>
-    <svg @click="test2">
-        <!-- <g>
-            <rect  :y="y" :height="height"></rect>
-        </g> -->
-    </svg>
+    <div class="content-20vh flexCenter">
+        <p>Jouw eenheid: {{jouwEenheid}} {{eigenResults[0]}} in 2017</p>
+        <p>Vergelijking: {{eenheidVergelijking}} {{results[0]}} in 2017</p>
+    </div>
+    <!-- <svg @click="test2">
+        <text>2016</text>
+        <g class="g1">
+            <rect class="placeholder1"></rect>
+        </g>
+        <g class="g2">
+            <rect class="placeholder2"></rect>
+        </g>
+    </svg> -->
 </div>
 </template>
 <script>
@@ -40,7 +48,8 @@ export default {
             results:[],
             soortGeweld:'',
             eenheidVergelijking: '',
-            jouwEenheid: this.userInfo.Eenheid,
+            // jouwEenheid: this.userInfo.Eenheid,
+            jouwEenheid: 'Noord-Holland',
             alleCijfers:[],
             height: 0,
             y: '',
@@ -55,6 +64,7 @@ export default {
        handleChange(x){
            if(x==='geweld'){
                this.soortGeweld = event.target.value
+               this.setResult()
            }else{
                this.eenheidVergelijking = event.target.value
                this.setResult()
@@ -74,10 +84,12 @@ export default {
                                x['Eenheid'] = this.eenheidVergelijking
                                this.json1.push({jaar: 2017, aantal: x.aantal})
                                this.results.push(x.aantal)
+                               console.log(this.results)
                            }else{
                                x['Eenheid'] = this.jouwEenheid
                                this.json2.push({jaar: 2017, aantal: x.aantal})
                                this.eigenResults.push(x.aantal)
+                               console.log(this.results)
                            }
                            }                    
                        })
@@ -92,6 +104,9 @@ export default {
                    }
                })
            })
+       },
+       makeChart(){
+           d3.select('svg')
        },
        test(){
            return 10
@@ -109,7 +124,7 @@ export default {
             console.log(this.json1, this.json2)
        },
         barHeight(x){    
-            return this.$el.querySelector('svg').clientHeight / this.dataMax * x;
+            // return this.$el.querySelector('svg').clientHeight / this.dataMax * x;
             // return 300 / this.dataMax * x;
         },
     },
@@ -129,8 +144,8 @@ export default {
             this.eenheidVergelijking = this.$el.querySelector('.eenheid').value
             this.setResult()
             this.pushingAllData()
-            this.height = this.barHeight(this.results[0])
-            this.y = this.$el.querySelector('svg').clientHeight -this.height
+            // this.height = this.barHeight(this.results[0])
+            // this.y = this.$el.querySelector('svg').clientHeight -this.height
         },10)
     }
 }
@@ -150,6 +165,10 @@ svg{
 rect{
     width: 50px;
     fill: red;
+}
+.placeholder1{
+    fill: red;
+    height: 120px;
 }
 </style>
 
