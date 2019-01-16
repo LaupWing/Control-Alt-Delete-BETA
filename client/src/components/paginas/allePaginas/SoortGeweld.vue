@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div class="content-15vh flexCenter">
+    <div class="content-20vh flexCenter">
         <h2>Soort politie geweld</h2>
         <p>Kies een andere politie geweld en vergelijk met een andere eenheid</p>
     </div>
@@ -22,9 +22,14 @@
             </option>
         </select>
     </div>
-    <div class="content-20vh flexCenter">
+    <!-- <div class="content-20vh flexCenter">
         <p>Jouw eenheid: {{jouwEenheid}} {{eigenResults[0]}} in 2017</p>
         <p>Vergelijking: {{eenheidVergelijking}} {{results[0]}} in 2017</p>
+    </div> -->
+    <div class="dataVis" @click="test2">
+        <svg class="jaar2015"></svg>
+        <svg class="jaar2016"></svg>
+        <svg class="jaar2017"></svg>
     </div>
     <!-- <svg @click="test2">
         <text>2016</text>
@@ -121,7 +126,8 @@ export default {
        test2(){
         //    console.log(this.barHeight(this.results[0]))
         //    console.log(this.height)
-            console.log(this.json1, this.json2)
+        console.log(this.alleCijfers)
+            // console.log(this.json1, this.json2)
        },
         barHeight(x){    
             // return this.$el.querySelector('svg').clientHeight / this.dataMax * x;
@@ -157,10 +163,18 @@ export default {
     flex-direction: column;
     align-items: center;
 }
+.dataVis{
+    height: 40vh;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+}
 svg{
     background: orange;
-    width: 90vw;
-    height: 45vh;
+    width: 32%;
+    height: 100%;
 }
 rect{
     width: 50px;

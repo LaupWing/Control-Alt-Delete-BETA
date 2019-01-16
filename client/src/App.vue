@@ -466,37 +466,86 @@ button:hover{
 
 /* Range Slider 
 ################################*/
-.slider {
-  -webkit-appearance: none;
-  width: 80%;
-  height: 15px;
-  background: #d3d3d3;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
+input[type="range"] { 
+    margin: auto;
+    -webkit-appearance: none;
+    position: relative;
+    overflow: hidden;
+    height: 40px;
+    width: 80%;
+    cursor: pointer;
+    border-radius: 0; /* iOS */
 }
 
-.slider:hover {
-  opacity: 1;
+::-webkit-slider-runnable-track {
+    background: #ddd;
 }
 
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  background: #4CAF50;
-  cursor: pointer;
+/*
+ * 1. Set to 0 width and remove border for a slider without a thumb
+ */
+::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 40px; /* 1 */
+    height: 40px;
+    background: #fff;
+    box-shadow: -100vw 0 0 100vw red;
+    border: 2px solid #999; 
+    /* border-radius: 50%; */
 }
 
-.slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
-  background: #4CAF50;
-  cursor: pointer;
+::-moz-range-track {
+    height: 40px;
+    background: red;
 }
+
+::-moz-range-thumb {
+    background: #fff;
+    height: 40px;
+    width: 20px;
+    border: 3px solid #999;
+    border-radius: 0 !important;
+    box-shadow: -100vw 0 0 100vw red;
+    box-sizing: border-box;
+}
+
+::-ms-fill-lower { 
+    background: red;
+}
+
+::-ms-thumb { 
+    background: #fff;
+    border: 2px solid #999;
+    height: 40px;
+    width: 20px;
+    box-sizing: border-box;
+}
+
+::-ms-ticks-after { 
+    display: none; 
+}
+
+::-ms-ticks-before { 
+    display: none; 
+}
+
+::-ms-track { 
+    background: #ddd;
+    color: transparent;
+    height: 40px;
+    border: none;
+}
+
+::-ms-tooltip { 
+    display: none;
+}
+
+
+
+
+
+
+
 
 /* Scrollbar 
 ################################*/
