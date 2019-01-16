@@ -414,6 +414,7 @@ button:hover{
     justify-content: space-around;
     align-items: center;
     margin: 10px;
+    margin: auto; 
     max-width: 400px;
 }
 
@@ -440,7 +441,7 @@ button:hover{
     from{transform: translate(0,50px);opacity: 0;}
     to{transform: translate(0,0);opacity: 1;}
 }
-.percentage-ja,.percentage-nee{
+.percentage-1,.percentage-2{
     font-family: 'Special Elite', cursive;
     font-size: 36px;
     color: red;

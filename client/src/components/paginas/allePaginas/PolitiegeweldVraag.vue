@@ -1,8 +1,10 @@
 <template>
 <div class="flexCenter">
-    <p>Heb je wel eens te maken gehad met politie geweld?</p>
-    <div class="buttons">
-        <button @click='handleClick'>Ja</button><button @click='handleClick'>Nee</button>
+    <div class="intro">
+        <p>Heb je wel eens te maken gehad met politie geweld?</p>
+        <div class="buttons">
+            <button @click='handleClick'>Ja</button><button @click='handleClick'>Nee</button>
+        </div>
     </div>
     <transition
         name="result-anim"
@@ -11,7 +13,7 @@
             <p>Andere mensen hebben dit op deze vraag beantwoord</p>
             <div class="results">
                 <div class="results-ja flexCenter">
-                    <p class="percentage-ja">
+                    <p class="percentage-1">
                         1%
                     </p>
                     <p>
@@ -19,10 +21,10 @@
                     </p>
                 </div>
                 <div class="results-nee flexCenter">
-                    <p class="percentage-nee">
+                    <p class="percentage-2">
                         1%
                     </p>
-                    <p @click="test">
+                    <p>
                         Nee
                     </p>
                 </div>
@@ -46,9 +48,10 @@ export default {
     methods:{
         handleClick(){
             this.antwoord = event.target.textContent;
-            setTimeout( () => this.$router.push({ path: '/meerofminder'}), 5000);
-            setTimeout(()=>{this.animateValue('.percentage-ja', 1, 25, 2000);},2000)
-            setTimeout(()=>{this.animateValue('.percentage-nee', 1, 75, 2000);},2000)
+            this.$el.querySelector('.intro').classList.add('anim')
+            setTimeout(() => this.$router.push({ path: '/meerofminder'}), 7000);
+            setTimeout(()=>{this.animateValue('.percentage-1', 1, 25, 2000);},2000)
+            setTimeout(()=>{this.animateValue('.percentage-2', 1, 75, 2000);},2000)
         },
         animateValue(el, start, end, duration) {
             var range = end - start;
@@ -68,5 +71,13 @@ export default {
 }
 </script>
 <style scoped>
+.anim{
+    opacity: 0;
+    animation: fading 1s forwards;
+}
+@keyframes fading {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
 </style>
 
