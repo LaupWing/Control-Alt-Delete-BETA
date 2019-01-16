@@ -22,9 +22,9 @@
             </option>
         </select>
     </div>
-    <svg @click="test">
+    <svg @click="test2">
         <g>
-            <rect :height='height'></rect>
+            <rect  :y="y" :height="height"></rect>
         </g>
     </svg>
 </div>
@@ -42,7 +42,10 @@ export default {
             eenheidVergelijking: '',
             jouwEenheid: this.userInfo.Eenheid,
             alleCijfers:[],
-            height: ''
+            height: 0,
+            y: '',
+            json1:[],
+            json2:[]
         }
     },
     methods:{
@@ -55,21 +58,25 @@ export default {
            }else{
                this.eenheidVergelijking = event.target.value
                this.setResult()
+               this.height = this.barHeight(this.results[0])
            }
        },
        setResult(){
            this.results = []
            this.eigenResults = []
+           this.json1=[]
+           this.json2=[]
            this.dataset.forEach(i => {
                if(i.eenheid === this.eenheidVergelijking || i.eenheid === this.jouwEenheid){
                    i.jaar2017.forEach((x)=>{
                        if(x.soort === this.soortGeweld){
                            if(i.eenheid === this.eenheidVergelijking){
                                x['Eenheid'] = this.eenheidVergelijking
+                               this.json1.push({jaar: 2017, aantal: x.aantal})
                                this.results.push(x.aantal)
-                                // this.results = x.aantal
                            }else{
                                x['Eenheid'] = this.jouwEenheid
+                               this.json2.push({jaar: 2017, aantal: x.aantal})
                                this.eigenResults.push(x.aantal)
                            }
                            }                    
@@ -87,18 +94,23 @@ export default {
            })
        },
        test(){
-           
-           console.log(d3.select('svg'), 'test')
+           return 10
+        //    console.log(d3.select('svg'), 'test')
            //    console.log(this.eigenResults, this.results)
         //    console.log(this.$el.querySelector('svg').clientHeight)
             // console.log(this.dataMax)
             // console.log(this.results)
             // console.log(this.$el.querySelector('svg').clientHeight)
-            console.log(this.barHeight())
+            // console.log(this.barHeight(), this.height)
        },
-        barHeight(){
-            return this.$el.querySelector('svg').clientHeight / this.dataMax * this.results;
-            this.height = this.$el.querySelector('svg').clientHeight / this.dataMax * this.results;
+       test2(){
+        //    console.log(this.barHeight(this.results[0]))
+        //    console.log(this.height)
+            console.log(this.json1, this.json2)
+       },
+        barHeight(x){    
+            return this.$el.querySelector('svg').clientHeight / this.dataMax * x;
+            // return 300 / this.dataMax * x;
         },
     },
     computed:{
@@ -115,7 +127,8 @@ export default {
             this.eenheidVergelijking = this.$el.querySelector('.eenheid').value
             this.setResult()
             this.pushingAllData()
-            this.barHeight()
+            this.height = this.barHeight(this.results[0])
+            this.y = this.$el.querySelector('svg').clientHeight -this.height
         },10)
     }
 }
@@ -134,7 +147,6 @@ svg{
 }
 rect{
     width: 50px;
-    height: 10px;
     fill: red;
 }
 </style>
