@@ -119,6 +119,7 @@ export default {
            this.json2=[]
            this.alleCijfers = []
            this.pushingAllData()
+           this.opacityText()
            this.dataset.forEach(i => {
                if(i.eenheid === this.eenheidVergelijking || i.eenheid === this.jouwEenheid){
                     this.makeJson(i, i.jaar2015, '2015')
@@ -129,6 +130,13 @@ export default {
            setTimeout(()=>{
                this.correctTextpos()
            },50)
+       },
+       opacityText(){
+           this.$el.querySelectorAll("text").forEach((t)=>{     
+                console.log(t)     
+                t.classList.add("opacityAnim")
+                setTimeout(()=>{t.classList.remove("opacityAnim")},2000)       
+           })
        },
        makeJson(obj, i, j){
            i.forEach((x)=>{
@@ -164,9 +172,6 @@ export default {
                })
 
            })
-       },
-       makeChart(){
-           d3.select('svg')
        },
        correctTextpos(){
            this.$el.querySelectorAll("text").forEach((t)=>{
@@ -293,5 +298,12 @@ rect.vergelijkResults{
 text{
     fill: white;
     transition: 2s;
+}
+.opacityAnim{
+    animation: animOpacity 1s forwards;
+}
+@keyframes animOpacity {
+    from{opacity: 0}
+    to{opacity: 1;}
 }
 </style>
