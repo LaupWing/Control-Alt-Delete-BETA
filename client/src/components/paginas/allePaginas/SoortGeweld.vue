@@ -22,7 +22,7 @@
             </option>
         </select>
     </div>
-    <div class="content-20vh flexCenter">
+    <div class="content-20vh flexCenter" @click='test2'>
         <p>Jouw eenheid: {{jouwEenheid}} {{eigenResults[0]}} in 2017</p>
         <p>Vergelijking: {{eenheidVergelijking}} {{results[0]}} in 2017</p>
     </div>
@@ -135,6 +135,7 @@ export default {
        test2(){
         //    console.log(this.barHeight(this.results[0]))
         //    console.log(this.height)
+        console.log(this.dataset)
         console.log(this.alleCijfers)
             // console.log(this.json1, this.json2)
        },
