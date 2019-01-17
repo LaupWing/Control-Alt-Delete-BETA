@@ -83,6 +83,16 @@
         <p>2016</p>
         <p>2017</p>
     </div>
+    <div class="legenda">
+        <div class="eenheid">
+            <div class="jouwEenheid"></div>
+            <p>{{jouwEenheid}}</p>            
+        </div>
+        <div class="eenheid">
+            <div class="andereEenheid"></div>
+            <p>{{eenheidVergelijking}}</p>
+        </div>
+    </div>
 </div>
 </template>
 <script>
@@ -99,7 +109,6 @@ export default {
             // jouwEenheid: this.userInfo.Eenheid,
             jouwEenheid: 'Noord-Holland',
             alleCijfers:[],
-            y: '',
             json1:[],
             json2:[],
             barWidth: '',
@@ -129,12 +138,14 @@ export default {
            this.pushingAllData()
            this.dataset.forEach(i => {
                if(i.eenheid === this.eenheidVergelijking || i.eenheid === this.jouwEenheid){
-                   this.makeJson(i, i.jaar2015, '2015')
-                this.makeJson(i, i.jaar2016, '2016')
-                this.makeJson(i, i.jaar2017, '2017')
+                    this.makeJson(i, i.jaar2015, '2015')
+                    this.makeJson(i, i.jaar2016, '2016')
+                    this.makeJson(i, i.jaar2017, '2017')
                }
            });
-           this.correctTextpos()
+           setTimeout(()=>{
+               this.correctTextpos()
+           },500)
        },
        makeJson(obj, i, j){
            i.forEach((x)=>{
@@ -219,7 +230,7 @@ export default {
         })
     },
     mounted(){
-        this.barWidth = this.$el.querySelector('svg').clientHeight * 0.175
+        this.barWidth = this.$el.querySelector('svg').clientHeight * 0.172
         this.svgHeight = this.$el.querySelector('svg').clientHeight
         this.soortGeweld = this.$el.querySelector('.soort-geweld').value
         this.eenheidVergelijking = this.$el.querySelector('.eenheid').value
@@ -238,6 +249,19 @@ export default {
 .jaartallen p{
     margin:0;
     width: auto;
+}
+.legenda{
+    display: flex;
+    justify-content: space-around;
+}
+.eenheid{
+    display: flex;
+    align-items: center;
+}
+.eenheid > div{
+    background: orange;
+    width: 20px;
+    height: 20px;
 }
 .spaceAround{
     display: flex;

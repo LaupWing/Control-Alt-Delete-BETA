@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container flexCenter">
         <div class="label">
             <p>Heel Nederland</p>
         </div>
