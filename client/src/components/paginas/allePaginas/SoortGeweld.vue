@@ -75,6 +75,7 @@
             <p class="andereEenheid">{{eenheidVergelijking}}</p>
         </div>
     </div>
+    <button>Volgende</button>
 </div>
 </template>
 <script>
@@ -221,11 +222,15 @@ export default {
 }
 </script>
 <style scoped>
+button{
+    margin-top: 20px;
+}
 .jaartallen{
     display: flex;
     justify-content: space-between;
     width: 75%;
     margin: auto;
+    max-width: 500px;
 }
 .jaartallen p{
     margin:0;
@@ -234,6 +239,8 @@ export default {
 .legenda{
     display: flex;
     justify-content: space-around;
+    max-width: 500px;
+    margin: auto;
 }
 .eenheid{
     display: flex;
@@ -271,6 +278,8 @@ export default {
 svg{
     width: 90%;
     height: 40vh;
+    max-width: 500px;
+    max-height: 500px;
 }
 rect{
     transition: 1s;
@@ -283,5 +292,6 @@ rect.vergelijkResults{
 }
 text{
     fill: white;
+    transition: 2s;
 }
 </style>
