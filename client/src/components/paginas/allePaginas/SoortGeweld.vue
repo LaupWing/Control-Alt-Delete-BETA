@@ -241,9 +241,8 @@ rect.eigenResults{
 rect.vergelijkResults{
     fill: blue;
 }
-/* .placeholder1{
-    fill: red;
-    height: 120px;
-} */
+text{
+    color: white;
+}
 </style>
 
