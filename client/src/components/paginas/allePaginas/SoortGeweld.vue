@@ -49,9 +49,15 @@
             <rect
                 :width="barWidth"
                 :height="barHeight(x)"
-                :y="svgHeight-barHeight(y)"
+                :y="svgHeight-barHeight(x)"
                 class="eigenResults"
             ></rect>
+            <text
+                :y="svgHeight-barHeight(x)+15"
+                :x="barWidth/3.5"    
+            >
+                {{x}}
+            </text>
         </g>
         <g 
             v-for="(y, p) in results"
@@ -62,8 +68,14 @@
                 :width="barWidth"
                 :height="barHeight(y)"
                 :y="svgHeight-barHeight(y)"
-                class="vergeljkResults"
+                class="vergelijkResults"
             ></rect>
+            <text
+                :y="svgHeight-barHeight(y)+15"
+                :x="barWidth/3.5"    
+            >
+                {{y}}
+            </text>
         </g>
     </svg>
 </div>
@@ -108,6 +120,8 @@ export default {
            this.eigenResults = []
            this.json1=[]
            this.json2=[]
+           this.alleCijfers = []
+           this.pushingAllData()
            this.dataset.forEach(i => {
                if(i.eenheid === this.eenheidVergelijking || i.eenheid === this.jouwEenheid){
                 this.makeJson(i, i.jaar2015, '2015')
@@ -133,11 +147,22 @@ export default {
        },
        pushingAllData(){
            this.dataset.forEach(i=>{
-               i.jaar2017.forEach(i=>{
+               i.jaar2015.forEach(i=>{
                    if(i.soort === this.soortGeweld){
                        this.alleCijfers.push(i.aantal)
                    }
                })
+                  i.jaar2016.forEach(i=>{
+                   if(i.soort === this.soortGeweld){
+                       this.alleCijfers.push(i.aantal)
+                   }
+               })
+                  i.jaar2017.forEach(i=>{
+                   if(i.soort === this.soortGeweld){
+                       this.alleCijfers.push(i.aantal)
+                   }
+               })
+
            })
        },
        makeChart(){
@@ -156,10 +181,10 @@ export default {
        test2(){
         //    console.log(this.barHeight(this.results[0]))
         //    console.log(this.height)
-            console.log('results',this.results)
+            // console.log('results',this.results)
             // console.log('eigenResults',this.eigenResults)
             // console.log('json1 en 2',this.json1, this.json2)
-            console.log(this.svgHeight)
+            console.log(this.alleCijfers)
        },
         barHeight(x){    
             return this.$el.querySelector('svg').clientHeight / this.dataMax * x;
@@ -204,9 +229,11 @@ export default {
     margin: auto;
 }
 svg{
-    background: orange;
     width: 90%;
-    height: 45vh;
+    height: 40vh;
+}
+rect{
+    transition: 1s;
 }
 rect.eigenResults{
     fill: red;
