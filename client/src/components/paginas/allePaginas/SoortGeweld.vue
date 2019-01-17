@@ -22,10 +22,10 @@
             </option>
         </select>
     </div>
-    <div class="content-20vh flexCenter" @click='test2'>
+    <!-- <div class="content-20vh flexCenter" @click='test2'>
         <p>Jouw eenheid: {{jouwEenheid}} {{eigenResults[0]}} in 2017</p>
         <p>Vergelijking: {{eenheidVergelijking}} {{results[0]}} in 2017</p>
-    </div>
+    </div> -->
     <!-- <div class="dataVis" @click="test2">
         <svg class="jaar2015">
             <rect class="x1"></rect>
@@ -40,15 +40,32 @@
             <rect class="y3"></rect>
         </svg>
     </div> -->
-    <!-- <svg @click="test2">
-        <text>2016</text>
-        <g class="g1">
-            <rect class="placeholder1"></rect>
+    <svg @click="test2">
+        <g 
+            v-for="(x, i) in eigenResults"
+            v-bind:key="i"
+            :transform="`translate(${(i*2.5) * (barWidth+3.5)}, 0)`"
+        >
+            <rect
+                :width="barWidth"
+                :height="barHeight(x)"
+                :y="svgHeight-barHeight(y)"
+                class="eigenResults"
+            ></rect>
         </g>
-        <g class="g2">
-            <rect class="placeholder2"></rect>
+        <g 
+            v-for="(y, p) in results"
+            v-bind:key="'A'+p"
+            :transform="`translate(${((p*2.5) * (barWidth+3.5))+barWidth}, 0)`"
+        >
+            <rect
+                :width="barWidth"
+                :height="barHeight(y)"
+                :y="svgHeight-barHeight(y)"
+                class="vergeljkResults"
+            ></rect>
         </g>
-    </svg> -->
+    </svg>
 </div>
 </template>
 <script>
@@ -65,10 +82,11 @@ export default {
             // jouwEenheid: this.userInfo.Eenheid,
             jouwEenheid: 'Noord-Holland',
             alleCijfers:[],
-            height: 0,
             y: '',
             json1:[],
-            json2:[]
+            json2:[],
+            barWidth: '',
+            svgHeight: '',
         }
     },
     methods:{
@@ -92,23 +110,26 @@ export default {
            this.json2=[]
            this.dataset.forEach(i => {
                if(i.eenheid === this.eenheidVergelijking || i.eenheid === this.jouwEenheid){
-                   i.jaar2017.forEach((x)=>{
-                       if(x.soort === this.soortGeweld){
-                           if(i.eenheid === this.eenheidVergelijking){
-                               x['Eenheid'] = this.eenheidVergelijking
-                               this.json1.push({jaar: 2017, aantal: x.aantal})
-                               this.results.push(x.aantal)
-                               console.log(this.results)
-                           }else{
-                               x['Eenheid'] = this.jouwEenheid
-                               this.json2.push({jaar: 2017, aantal: x.aantal})
-                               this.eigenResults.push(x.aantal)
-                               console.log(this.results)
-                           }
-                           }                    
-                       })
+                this.makeJson(i, i.jaar2015, '2015')
+                this.makeJson(i, i.jaar2016, '2016')
+                this.makeJson(i, i.jaar2017, '2017')
                }
            });
+       },
+       makeJson(obj, i, j){
+           i.forEach((x)=>{
+                if(x.soort === this.soortGeweld){
+                    if(obj.eenheid === this.eenheidVergelijking){
+                        x['Eenheid'] = this.eenheidVergelijking
+                        this.json1.push({jaar: j, aantal: x.aantal})
+                        this.results.push(x.aantal)
+                    }else{
+                        x['Eenheid'] = this.jouwEenheid
+                        this.json2.push({jaar: j, aantal: x.aantal})
+                        this.eigenResults.push(x.aantal)
+                    }
+                    }                    
+            })
        },
        pushingAllData(){
            this.dataset.forEach(i=>{
@@ -135,12 +156,13 @@ export default {
        test2(){
         //    console.log(this.barHeight(this.results[0]))
         //    console.log(this.height)
-        console.log(this.dataset)
-        console.log(this.alleCijfers)
-            // console.log(this.json1, this.json2)
+            console.log('results',this.results)
+            // console.log('eigenResults',this.eigenResults)
+            // console.log('json1 en 2',this.json1, this.json2)
+            console.log(this.svgHeight)
        },
         barHeight(x){    
-            // return this.$el.querySelector('svg').clientHeight / this.dataMax * x;
+            return this.$el.querySelector('svg').clientHeight / this.dataMax * x;
             // return 300 / this.dataMax * x;
         },
     },
@@ -155,14 +177,14 @@ export default {
                 this.alleEenheden.push(i.eenheid)
             }           
         })
-        setTimeout(()=>{
-            this.soortGeweld = this.$el.querySelector('.soort-geweld').value
-            this.eenheidVergelijking = this.$el.querySelector('.eenheid').value
-            this.setResult()
-            this.pushingAllData()
-            // this.height = this.barHeight(this.results[0])
-            // this.y = this.$el.querySelector('svg').clientHeight -this.height
-        },10)
+    },
+    mounted(){
+        this.barWidth = this.$el.querySelector('svg').clientHeight * 0.15
+        this.svgHeight = this.$el.querySelector('svg').clientHeight
+        this.soortGeweld = this.$el.querySelector('.soort-geweld').value
+        this.eenheidVergelijking = this.$el.querySelector('.eenheid').value
+        this.setResult()
+        this.pushingAllData()
     }
 }
 </script>
@@ -183,17 +205,18 @@ export default {
 }
 svg{
     background: orange;
-    width: 32%;
-    height: 100%;
+    width: 90%;
+    height: 45vh;
 }
-rect{
-    width: 40%;
-    height: 30px;
+rect.eigenResults{
     fill: red;
 }
-.placeholder1{
+rect.vergelijkResults{
+    fill: blue;
+}
+/* .placeholder1{
     fill: red;
     height: 120px;
-}
+} */
 </style>
 

@@ -184,7 +184,7 @@ export default {
                         aantal: 16
                     },
                 ],
-                jaar2017:[
+                jaar2016:[
                     {
                         soort: 'pepperspray',
                         aantal: 80
