@@ -86,11 +86,11 @@
     <div class="legenda">
         <div class="eenheid">
             <div class="jouwEenheid"></div>
-            <p>{{jouwEenheid}}</p>            
+            <p class="jouwEenheid">{{jouwEenheid}}</p>            
         </div>
         <div class="eenheid">
             <div class="andereEenheid"></div>
-            <p>{{eenheidVergelijking}}</p>
+            <p class="andereEenheid">{{eenheidVergelijking}}</p>
         </div>
     </div>
 </div>
@@ -145,7 +145,7 @@ export default {
            });
            setTimeout(()=>{
                this.correctTextpos()
-           },500)
+           },50)
        },
        makeJson(obj, i, j){
            i.forEach((x)=>{
@@ -189,13 +189,12 @@ export default {
            this.$el.querySelectorAll("text").forEach((t)=>{
                console.log(t.y.animVal[0].value)
                if(t.y.animVal[0].value>=267){
-                   t.style.y = 266
+                   t.setAttribute('y', 266)
                }
                
            })
        },
        test(){
-           return 10
         //    console.log(d3.select('svg'), 'test')
            //    console.log(this.eigenResults, this.results)
         //    console.log(this.$el.querySelector('svg').clientHeight)
@@ -259,9 +258,19 @@ export default {
     align-items: center;
 }
 .eenheid > div{
-    background: orange;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
+}
+.jouwEenheid{
+    background: red;
+    color: red;
+}
+.andereEenheid{
+    background: blue;
+    color: blue;
+}
+.eenheid > p{
+    background: none;
 }
 .spaceAround{
     display: flex;
