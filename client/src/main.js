@@ -10,7 +10,7 @@ import MeerOfMinder from './components/paginas/allePaginas/MeerOfMinder.vue'
 import SoortGeweld from './components/paginas/allePaginas/SoortGeweld.vue'
 import Welkom from './components/paginas/allePaginas/Welkom.vue'
 import Tevredenheid from './components/paginas/allePaginas/Tevredenheid.vue'
-// import Vraag3 from './components/paginas/allePaginas/Vraag3.vue'
+import TevredenResultaat from './components/paginas/allePaginas/TevredenResultaat.vue'
 // import Vraag4 from './components/paginas/allePaginas/Vraag4.vue'
 // import Vraag5 from './components/paginas/allePaginas/Vraag5.vue'
 // import Vraag6 from './components/paginas/allePaginas/Vraag6.vue'
@@ -28,7 +28,7 @@ const routes = [
     {path: '/soortgeweld', component: SoortGeweld},
     {path: '/welkom', component: Welkom},
     {path: '/tevredenheid', component: Tevredenheid},
-    // {path: '/vraag3', component: Vraag3},
+    {path: '/tevredenheidResultaat', component: TevredenResultaat},
     // {path: '/vraag4', component: Vraag4},
     // {path: '/vraag5', component: Vraag5},
     // {path: '/vraag6', component: Vraag6},

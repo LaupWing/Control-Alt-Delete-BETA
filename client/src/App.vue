@@ -311,6 +311,21 @@ body{
   color: #2c3e50;
 }
 
+h1{
+    margin: 10px;
+    font-size: 40px;
+}
+h2{
+    margin: 0;
+}
+p{
+    margin: 10px;
+    width: 90%;
+}
+li{
+	list-style: none;
+}
+
 /* Verschillende viewheights voor de content */
 .content-15vh{
     height: 15vh;
@@ -330,13 +345,6 @@ body{
 .content-50vh{
     height: 50vh;
 }
-h1{
-    margin: 10px;
-    font-size: 40px;
-}
-h2{
-    margin: 0;
-}
 
 
 .content{
@@ -345,15 +353,14 @@ h2{
     justify-content: space-around;
     flex-direction: column;
 }
-p{
-    margin: 10px;
-    width: 90%;
-}
-li{
-	list-style: none;
-}
 
-
+/* Element styling */
+.label{
+    background: white;
+    color: black;
+    max-width: 180px;
+    width: 50vw;
+}
 
 /* Globale input styling 
 ################################*/

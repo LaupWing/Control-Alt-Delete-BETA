@@ -49,12 +49,6 @@ export default {
     max-width: 350px;
     width: 90%;
 }
-.label{
-    background: white;
-    color: black;
-    max-width: 180px;
-    width: 50vw;
-}
 .content-anim-enter-active{
     animation: opacityAnim 2s forwards;
 }

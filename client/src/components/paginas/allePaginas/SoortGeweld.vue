@@ -22,15 +22,24 @@
             </option>
         </select>
     </div>
-    <!-- <div class="content-20vh flexCenter">
+    <div class="content-20vh flexCenter">
         <p>Jouw eenheid: {{jouwEenheid}} {{eigenResults[0]}} in 2017</p>
         <p>Vergelijking: {{eenheidVergelijking}} {{results[0]}} in 2017</p>
-    </div> -->
-    <div class="dataVis" @click="test2">
-        <svg class="jaar2015"></svg>
-        <svg class="jaar2016"></svg>
-        <svg class="jaar2017"></svg>
     </div>
+    <!-- <div class="dataVis" @click="test2">
+        <svg class="jaar2015">
+            <rect class="x1"></rect>
+            <rect class="y1"></rect>
+        </svg>
+        <svg class="jaar2016">
+            <rect class="x2"></rect>
+            <rect class="y2"></rect>
+        </svg>
+        <svg class="jaar2017">
+            <rect class="x3"></rect>
+            <rect class="y3"></rect>
+        </svg>
+    </div> -->
     <!-- <svg @click="test2">
         <text>2016</text>
         <g class="g1">
@@ -177,7 +186,8 @@ svg{
     height: 100%;
 }
 rect{
-    width: 50px;
+    width: 40%;
+    height: 30px;
     fill: red;
 }
 .placeholder1{
