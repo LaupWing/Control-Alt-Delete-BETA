@@ -46,28 +46,50 @@ export default {
                         aantal: 14
                     },
                 ],
-                // jaar2017:[
-                //     {
-                //         soort: 'pepperspray',
-                //         aantal: 70
-                //     },
-                //     {
-                //         soort: 'lange stok',
-                //         aantal: 15
-                //     },
-                //     {
-                //         soort: 'korte stok',
-                //         aantal: 17
-                //     },
-                //     {
-                //         soort: 'elektrische wapenstok',
-                //         aantal: 0
-                //     },
-                //     {
-                //         soort: 'inzet hond',
-                //         aantal: 14
-                //     },
-                // ],
+                jaar2016:[
+                    {
+                        soort: 'pepperspray',
+                        aantal: 102
+                    },
+                    {
+                        soort: 'lange stok',
+                        aantal: 3
+                    },
+                    {
+                        soort: 'korte stok',
+                        aantal: 28
+                    },
+                    {
+                        soort: 'elektrische wapenstok',
+                        aantal: 0
+                    },
+                    {
+                        soort: 'inzet hond',
+                        aantal: 8
+                    },
+                ],
+                jaar2015:[
+                    {
+                        soort: 'pepperspray',
+                        aantal: 109
+                    },
+                    {
+                        soort: 'lange stok',
+                        aantal: 4
+                    },
+                    {
+                        soort: 'korte stok',
+                        aantal: 50
+                    },
+                    {
+                        soort: 'elektrische wapenstok',
+                        aantal: 0
+                    },
+                    {
+                        soort: 'inzet hond',
+                        aantal: 18
+                    },
+                ],
             },
             {
                 eenheid: 'Noord-Nederland',
@@ -92,7 +114,51 @@ export default {
                         soort: 'inzet hond',
                         aantal: 14
                     },
-                ]
+                ],
+                jaar2016:[
+                    {
+                        soort: 'pepperspray',
+                        aantal: 69
+                    },
+                    {
+                        soort: 'lange stok',
+                        aantal: 0
+                    },
+                    {
+                        soort: 'korte stok',
+                        aantal: 1
+                    },
+                    {
+                        soort: 'elektrische wapenstok',
+                        aantal: 0
+                    },
+                    {
+                        soort: 'inzet hond',
+                        aantal: 14
+                    },
+                ],
+                jaar2015:[
+                    {
+                        soort: 'pepperspray',
+                        aantal: 102
+                    },
+                    {
+                        soort: 'lange stok',
+                        aantal: 5
+                    },
+                    {
+                        soort: 'korte stok',
+                        aantal: 15
+                    },
+                    {
+                        soort: 'elektrische wapenstok',
+                        aantal: 0
+                    },
+                    {
+                        soort: 'inzet hond',
+                        aantal: 9
+                    },
+                ],
             },
             {
                 eenheid: 'Midden-Nederland',
@@ -117,7 +183,51 @@ export default {
                         soort: 'inzet hond',
                         aantal: 16
                     },
-                ]
+                ],
+                jaar2017:[
+                    {
+                        soort: 'pepperspray',
+                        aantal: 80
+                    },
+                    {
+                        soort: 'lange stok',
+                        aantal: 2
+                    },
+                    {
+                        soort: 'korte stok',
+                        aantal: 20
+                    },
+                    {
+                        soort: 'elektrische wapenstok',
+                        aantal: 1
+                    },
+                    {
+                        soort: 'inzet hond',
+                        aantal: 17
+                    },
+                ],
+                jaar2015:[
+                    {
+                        soort: 'pepperspray',
+                        aantal: 72
+                    },
+                    {
+                        soort: 'lange stok',
+                        aantal: 20
+                    },
+                    {
+                        soort: 'korte stok',
+                        aantal: 21
+                    },
+                    {
+                        soort: 'elektrische wapenstok',
+                        aantal: 1
+                    },
+                    {
+                        soort: 'inzet hond',
+                        aantal: 15
+                    },
+                ],
             },
             {
                 eenheid: 'Oost-Nederland',
@@ -142,7 +252,51 @@ export default {
                         soort: 'inzet hond',
                         aantal: 17
                     },
-                ]
+                ],
+                jaar2016:[
+                    {
+                        soort: 'pepperspray',
+                        aantal: 104
+                    },
+                    {
+                        soort: 'lange stok',
+                        aantal: 2
+                    },
+                    {
+                        soort: 'korte stok',
+                        aantal: 2
+                    },
+                    {
+                        soort: 'elektrische wapenstok',
+                        aantal: 0
+                    },
+                    {
+                        soort: 'inzet hond',
+                        aantal: 24
+                    },
+                ],
+                jaar2015:[
+                    {
+                        soort: 'pepperspray',
+                        aantal: 126
+                    },
+                    {
+                        soort: 'lange stok',
+                        aantal: 20
+                    },
+                    {
+                        soort: 'korte stok',
+                        aantal: 21
+                    },
+                    {
+                        soort: 'elektrische wapenstok',
+                        aantal: 0
+                    },
+                    {
+                        soort: 'inzet hond',
+                        aantal: 15
+                    },
+                ],
             },
             {
                 eenheid: 'Den-Haag',
@@ -166,6 +320,50 @@ export default {
                     {
                         soort: 'inzet hond',
                         aantal: 27
+                    },
+                ],
+                jaar2016:[
+                    {
+                        soort: 'pepperspray',
+                        aantal: 174
+                    },
+                    {
+                        soort: 'lange stok',
+                        aantal: 35
+                    },
+                    {
+                        soort: 'korte stok',
+                        aantal: 35
+                    },
+                    {
+                        soort: 'elektrische wapenstok',
+                        aantal: 0
+                    },
+                    {
+                        soort: 'inzet hond',
+                        aantal: 33
+                    },
+                ],
+                jaar2015:[
+                    {
+                        soort: 'pepperspray',
+                        aantal: 233
+                    },
+                    {
+                        soort: 'lange stok',
+                        aantal: 25
+                    },
+                    {
+                        soort: 'korte stok',
+                        aantal: 29
+                    },
+                    {
+                        soort: 'elektrische wapenstok',
+                        aantal: 0
+                    },
+                    {
+                        soort: 'inzet hond',
+                        aantal: 51
                     },
                 ]
             },
@@ -192,6 +390,50 @@ export default {
                         soort: 'inzet hond',
                         aantal: 50
                     },
+                ],
+                jaar2016:[
+                    {
+                        soort: 'pepperspray',
+                        aantal: 180
+                    },
+                    {
+                        soort: 'lange stok',
+                        aantal: 58
+                    },
+                    {
+                        soort: 'korte stok',
+                        aantal: 29
+                    },
+                    {
+                        soort: 'elektrische wapenstok',
+                        aantal: 0
+                    },
+                    {
+                        soort: 'inzet hond',
+                        aantal: 45
+                    },
+                ],
+                jaar2015:[
+                    {
+                        soort: 'pepperspray',
+                        aantal: 222
+                    },
+                    {
+                        soort: 'lange stok',
+                        aantal: 47
+                    },
+                    {
+                        soort: 'korte stok',
+                        aantal: 9
+                    },
+                    {
+                        soort: 'elektrische wapenstok',
+                        aantal: 1
+                    },
+                    {
+                        soort: 'inzet hond',
+                        aantal: 47
+                    },
                 ]
             },
             {
@@ -217,7 +459,51 @@ export default {
                         soort: 'inzet hond',
                         aantal: 16
                     },
-                ]
+                ],
+                jaar2016:[
+                    {
+                        soort: 'pepperspray',
+                        aantal: 92
+                    },
+                    {
+                        soort: 'lange stok',
+                        aantal: 7
+                    },
+                    {
+                        soort: 'korte stok',
+                        aantal: 16
+                    },
+                    {
+                        soort: 'elektrische wapenstok',
+                        aantal: 0
+                    },
+                    {
+                        soort: 'inzet hond',
+                        aantal: 23
+                    },
+                ],
+                jaar2015:[
+                    {
+                        soort: 'pepperspray',
+                        aantal: 88
+                    },
+                    {
+                        soort: 'lange stok',
+                        aantal: 6
+                    },
+                    {
+                        soort: 'korte stok',
+                        aantal: 8
+                    },
+                    {
+                        soort: 'elektrische wapenstok',
+                        aantal: 0
+                    },
+                    {
+                        soort: 'inzet hond',
+                        aantal: 29
+                    },
+                ],
             },
             {
                 eenheid: 'Oost-Brabant',
@@ -242,7 +528,51 @@ export default {
                         soort: 'inzet hond',
                         aantal: 10
                     },
-                ]
+                ],
+                jaar2016:[
+                    {
+                        soort: 'pepperspray',
+                        aantal: 56
+                    },
+                    {
+                        soort: 'lange stok',
+                        aantal: 8
+                    },
+                    {
+                        soort: 'korte stok',
+                        aantal: 14
+                    },
+                    {
+                        soort: 'elektrische wapenstok',
+                        aantal: 0
+                    },
+                    {
+                        soort: 'inzet hond',
+                        aantal: 14
+                    },
+                ],
+                jaar2015:[
+                    {
+                        soort: 'pepperspray',
+                        aantal: 61
+                    },
+                    {
+                        soort: 'lange stok',
+                        aantal: 6
+                    },
+                    {
+                        soort: 'korte stok',
+                        aantal: 12
+                    },
+                    {
+                        soort: 'elektrische wapenstok',
+                        aantal: 0
+                    },
+                    {
+                        soort: 'inzet hond',
+                        aantal: 19
+                    },
+                ],
             },
             {
                 eenheid: 'Limburg',
@@ -266,6 +596,50 @@ export default {
                     {
                         soort: 'inzet hond',
                         aantal: 9
+                    },
+                ],
+                jaar2016:[
+                    {
+                        soort: 'pepperspray',
+                        aantal: 57
+                    },
+                    {
+                        soort: 'lange stok',
+                        aantal: 12
+                    },
+                    {
+                        soort: 'korte stok',
+                        aantal: 4
+                    },
+                    {
+                        soort: 'elektrische wapenstok',
+                        aantal: 0
+                    },
+                    {
+                        soort: 'inzet hond',
+                        aantal: 10
+                    },
+                ],
+                jaar2015:[
+                    {
+                        soort: 'pepperspray',
+                        aantal: 53
+                    },
+                    {
+                        soort: 'lange stok',
+                        aantal: 12
+                    },
+                    {
+                        soort: 'korte stok',
+                        aantal: 1
+                    },
+                    {
+                        soort: 'elektrische wapenstok',
+                        aantal: 0
+                    },
+                    {
+                        soort: 'inzet hond',
+                        aantal: 8
                     },
                 ]
             },
