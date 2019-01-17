@@ -22,24 +22,6 @@
             </option>
         </select>
     </div>
-    <!-- <div class="content-20vh flexCenter" @click='test2'>
-        <p>Jouw eenheid: {{jouwEenheid}} {{eigenResults[0]}} in 2017</p>
-        <p>Vergelijking: {{eenheidVergelijking}} {{results[0]}} in 2017</p>
-    </div> -->
-    <!-- <div class="dataVis" @click="test2">
-        <svg class="jaar2015">
-            <rect class="x1"></rect>
-            <rect class="y1"></rect>
-        </svg>
-        <svg class="jaar2016">
-            <rect class="x2"></rect>
-            <rect class="y2"></rect>
-        </svg>
-        <svg class="jaar2017">
-            <rect class="x3"></rect>
-            <rect class="y3"></rect>
-        </svg>
-    </div> -->
     <svg @click="test2">
         <g 
             v-for="(x, i) in eigenResults"
@@ -229,7 +211,7 @@ export default {
         })
     },
     mounted(){
-        this.barWidth = this.$el.querySelector('svg').clientHeight * 0.172
+        this.barWidth = this.$el.querySelector('svg').clientWidth * 0.135
         this.svgHeight = this.$el.querySelector('svg').clientHeight
         this.soortGeweld = this.$el.querySelector('.soort-geweld').value
         this.eenheidVergelijking = this.$el.querySelector('.eenheid').value
@@ -303,4 +285,3 @@ text{
     fill: white;
 }
 </style>
-
