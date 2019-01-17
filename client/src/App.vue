@@ -384,7 +384,7 @@ export default {
                     },
                     {
                         soort: 'elektrische wapenstok',
-                        aantal: 19
+                        aantal: 4
                     },
                     {
                         soort: 'inzet hond',

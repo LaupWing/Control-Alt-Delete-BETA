@@ -78,6 +78,11 @@
             </text>
         </g>
     </svg>
+    <div class="jaartallen">
+        <p>2015</p>
+        <p>2016</p>
+        <p>2017</p>
+    </div>
 </div>
 </template>
 <script>
@@ -124,11 +129,12 @@ export default {
            this.pushingAllData()
            this.dataset.forEach(i => {
                if(i.eenheid === this.eenheidVergelijking || i.eenheid === this.jouwEenheid){
-                this.makeJson(i, i.jaar2015, '2015')
+                   this.makeJson(i, i.jaar2015, '2015')
                 this.makeJson(i, i.jaar2016, '2016')
                 this.makeJson(i, i.jaar2017, '2017')
                }
            });
+           this.correctTextpos()
        },
        makeJson(obj, i, j){
            i.forEach((x)=>{
@@ -168,6 +174,15 @@ export default {
        makeChart(){
            d3.select('svg')
        },
+       correctTextpos(){
+           this.$el.querySelectorAll("text").forEach((t)=>{
+               console.log(t.y.animVal[0].value)
+               if(t.y.animVal[0].value>=267){
+                   t.style.y = 266
+               }
+               
+           })
+       },
        test(){
            return 10
         //    console.log(d3.select('svg'), 'test')
@@ -204,7 +219,7 @@ export default {
         })
     },
     mounted(){
-        this.barWidth = this.$el.querySelector('svg').clientHeight * 0.15
+        this.barWidth = this.$el.querySelector('svg').clientHeight * 0.175
         this.svgHeight = this.$el.querySelector('svg').clientHeight
         this.soortGeweld = this.$el.querySelector('.soort-geweld').value
         this.eenheidVergelijking = this.$el.querySelector('.eenheid').value
@@ -214,6 +229,16 @@ export default {
 }
 </script>
 <style scoped>
+.jaartallen{
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    margin: auto;
+}
+.jaartallen p{
+    margin:0;
+    width: auto;
+}
 .spaceAround{
     display: flex;
     justify-content: space-around;
@@ -242,7 +267,7 @@ rect.vergelijkResults{
     fill: blue;
 }
 text{
-    color: white;
+    fill: white;
 }
 </style>
 
