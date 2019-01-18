@@ -75,7 +75,9 @@
             <p class="andereEenheid">{{eenheidVergelijking}}</p>
         </div>
     </div>
-    <button>Volgende</button>
+    <router-link to='/wapenintro'>
+        <button>Volgende</button>
+    </router-link>
 </div>
 </template>
 <script>
@@ -89,8 +91,8 @@ export default {
             results:[],
             soortGeweld:'',
             eenheidVergelijking: '',
-            // jouwEenheid: this.userInfo.Eenheid,
-            jouwEenheid: 'Noord-Holland',
+            jouwEenheid: this.userInfo.Eenheid,
+            // jouwEenheid: 'Noord-Holland',
             alleCijfers:[],
             json1:[],
             json2:[],
@@ -132,10 +134,9 @@ export default {
            },50)
        },
        opacityText(){
-           this.$el.querySelectorAll("text").forEach((t)=>{     
-                console.log(t)     
+           this.$el.querySelectorAll("text").forEach((t)=>{  
                 t.classList.add("opacityAnim")
-                setTimeout(()=>{t.classList.remove("opacityAnim")},2000)       
+                setTimeout(()=>{t.classList.remove("opacityAnim")},1000)       
            })
        },
        makeJson(obj, i, j){
@@ -256,12 +257,12 @@ button{
     height: 15px;
 }
 .jouwEenheid{
-    background: red;
-    color: red;
+    background: #BF1F29;
+    color: #BF1F29;
 }
 .andereEenheid{
-    background: blue;
-    color: blue;
+    background: #3E66AE;
+    color: #3E66AE;
 }
 .eenheid > p{
     background: none;
@@ -285,22 +286,23 @@ svg{
     height: 40vh;
     max-width: 500px;
     max-height: 500px;
+    /* border-top: #BF1F29 1px dotted; */
 }
 rect{
     transition: 1s;
 }
 rect.eigenResults{
-    fill: red;
+    fill: #BF1F29;
 }
 rect.vergelijkResults{
-    fill: blue;
+    fill: #3E66AE;
 }
 text{
     fill: white;
     transition: 2s;
 }
 .opacityAnim{
-    animation: animOpacity 1s forwards;
+    animation: animOpacity 3s forwards;
 }
 @keyframes animOpacity {
     from{opacity: 0}

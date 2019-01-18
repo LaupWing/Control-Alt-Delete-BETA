@@ -39,23 +39,23 @@ export default {
 }
 .intro2{
     opacity: 0;
-    animation: intro2tm4 4s forwards;
+    animation: intro2tm4 2s forwards;
     animation-delay: 2s;
 }
 .intro3{
     opacity: 0;
-    animation: intro2tm4 4s forwards;
-    animation-delay: 6s;
+    animation: intro2tm4 2s forwards;
+    animation-delay: 4s;
 }
 .intro4{
     opacity: 0;
-    animation: intro2tm4 4s forwards;
-    animation-delay: 10s;
+    animation: intro2tm4 2s forwards;
+    animation-delay: 6s;
 }
 .intro5{
     opacity: 0;
     animation: intro5 2s forwards;
-    animation-delay: 14s;
+    animation-delay: 8s;
 }
 @keyframes intro2tm4{
     from{transform: translate(0,5vh);opacity: 0;}

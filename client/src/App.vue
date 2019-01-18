@@ -693,8 +693,8 @@ h2{
     margin: 0;
 }
 p{
-    margin: 10px;
-    width: 90%;
+    margin: 10px auto;
+    width: 80%;
 }
 li{
 	list-style: none;
@@ -992,5 +992,12 @@ input[type="range"] {
   from {opacity: 0;}
   to {opacity: 1;}
 }
-
+@keyframes intro2tm4{
+    from{transform: translate(0,5vh);opacity: 0;}
+    to{transform: translate(0,0);opacity: 1;}
+}
+@keyframes intro5{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
 </style>
