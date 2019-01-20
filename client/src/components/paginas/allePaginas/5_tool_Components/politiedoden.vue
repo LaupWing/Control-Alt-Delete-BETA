@@ -1,10 +1,16 @@
 <template>
-    <div class="vraag1">
+<div>
+    <div class="content-20vh flexCenter">
+        <div class="totaal flexCenter">
+            <p>PolitieDoden</p>
+            <p class="aantal">10</p>
+        </div>
     </div>
+</div>
 </template>
 <script>
 export default { 
-    name: 'vraag1',
+    name: 'PolitieDoden',
     components:{
 
     },
@@ -17,5 +23,7 @@ export default {
 }
 </script>
 <style>
-
+p{
+    margin:2px 0;
+}
 </style>

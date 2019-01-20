@@ -45,6 +45,7 @@ h2{
 section p{
     text-align: left;
     opacity: 0;
+    margin: 10px auto;
 }
 .one{
     animation: slideIn 2s forwards;

@@ -5,7 +5,7 @@
             <div class="flexCenter">
                 <router-link to="/tool">
                     <li 
-                        @click="setRoute"
+                        @click="setRoute(), handleClick()"
                     >
                         Geweld
                     </li>
@@ -23,7 +23,7 @@
             <div class="flexCenter">
                 <router-link  to="/tool/politiedoden">
                     <li 
-                        @click="setRoute"
+                        @click="setRoute(), handleClick()"
                     >
                         Politiedoden
                     </li>
@@ -39,7 +39,7 @@
             <div class="flexCenter">
                 <router-link to="/tool/informatie">
                     <li 
-                        @click="setRoute"
+                        @click="setRoute(), handleClick()"
                     >
                         Informatie
                     </li>
@@ -53,9 +53,11 @@
                 </transition>
             </div>
         </nav>
-        <router-view
-            v-bind:dataset='dataset'
-        ></router-view>
+        <transition :name="transitionName" mode="out-in">
+            <router-view
+                v-bind:dataset='dataset'
+            ></router-view>
+        </transition>
     </section>
 </template>
 <script>
@@ -67,14 +69,29 @@ export default {
     props:['dataset'],
     data(){
         return{
-            currentRoute: ''
+            currentRoute: '',
+            transitionName: '',
+            previousTransition: '',
+            currentTransition: ''
         }
     },
     methods:{
         setRoute(){
+            
             setTimeout(()=>{
                 this.currentRoute = this.$route.path
                 },100)
+        },
+        handleClick(){
+            this.previousTransition = this.transitionName;
+            this.currentTransition = event.target.textContent.trim()
+            if(this.previousTransition === "Informatie" && this.currentTransition === "Politiedoden"){
+                console.log("transition geweld")
+                this.transitionName = "Geweld"
+            }else{
+                this.transitionName = this.currentTransition
+                // console.log(this.previousTransition, this.transitionName)
+            }
         }
     },
     mounted(){
@@ -88,7 +105,7 @@ section{
     margin-top: 5vh;
 }
 nav{
-    width: 100vw;
+    width: 100%;
     padding-top: 20px;
     display: flex;
     justify-content: space-around;
@@ -105,6 +122,49 @@ a{
 
 .border_anim-enter-active{
     animation: opacityAnim 1s forwards;
+}
+
+
+.Politiedoden-enter-active{
+    animation: slideIn forwards 1s;
+}
+.Politiedoden-leave-active{
+    animation: slideOut forwards 1s;
+}
+
+.Geweld-enter-active{
+    animation: slideIn2 forwards 1s;
+}
+.Geweld-leave-active{
+    animation: slideOut2 forwards 1s;
+}
+
+.Informatie-enter-active{
+    animation: slideIn forwards 1s;
+}
+.Informatie-leave-active{
+    animation: slideOut forwards 1s;
+}
+
+
+@keyframes slideOut{
+  from {transform: translate(0, 0);opacity: 1;}
+  to {transform: translate(-10vw, 0);opacity: 0;}
+}
+
+@keyframes slideIn{
+  from {transform: translate(10vw,0); opacity: 0;}
+  to {transform: translate(0, 0); opacity: 1;}
+}
+
+@keyframes slideOut2{
+  from {transform: translate(0, 0);opacity: 1;}
+  to {transform: translate(10vw, 0);opacity: 0;}
+}
+
+@keyframes slideIn2{
+  from {transform: translate(-10vw,0); opacity: 0;}
+  to {transform: translate(0, 0); opacity: 1;}
 }
 </style>
 

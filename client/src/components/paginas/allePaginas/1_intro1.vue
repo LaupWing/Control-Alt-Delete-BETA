@@ -44,5 +44,7 @@ img{
     animation: opacityAnim 3s forwards;
     animation-delay: 2s;
 }
-
+p {
+    margin: 10px auto;
+}
 </style>

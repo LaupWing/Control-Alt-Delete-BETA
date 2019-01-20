@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <transition 
         name="router-anim"
     >
@@ -1684,6 +1685,9 @@ li{
 }
 
 /* Verschillende viewheights voor de content */
+.content-10vh{
+    height: 15vh;
+}
 .content-15vh{
     height: 15vh;
 }
@@ -1795,6 +1799,12 @@ button:hover{
 
 /* Pages styling
 ################################*/
+.totaal{
+    background: #A03029;
+    width: 30%;
+    /* height: 60%; */
+    padding: 5px 15px;
+}
 .results-container{
     margin-top: 50px;
 }

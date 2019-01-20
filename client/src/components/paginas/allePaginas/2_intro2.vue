@@ -28,6 +28,7 @@ export default {
 <style scoped>
 p{
     text-align: left;
+    margin: 10px auto;
 }
 span{
     color:red;
