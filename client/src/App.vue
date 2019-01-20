@@ -23,627 +23,1614 @@ export default {
         userInfo:{},
         dataset:[
             {
-                eenheid: 'Noord-Holland',
-                jaar2017:[
+                jaartal: 2014,
+                totaal: 2588,
+                pepperspray:[
                     {
-                        soort: 'pepperspray',
-                        aantal: 70
+                        maand:1,
+                        aantal:89
                     },
                     {
-                        soort: 'lange stok',
-                        aantal: 15
+                        maand:2,
+                        aantal:72
                     },
                     {
-                        soort: 'korte stok',
-                        aantal: 17
+                        maand:3,
+                        aantal:89
                     },
                     {
-                        soort: 'elektrische wapenstok',
-                        aantal: 0
+                        maand:4,
+                        aantal:87
                     },
                     {
-                        soort: 'inzet hond',
-                        aantal: 14
-                    },
-                ],
-                jaar2016:[
-                    {
-                        soort: 'pepperspray',
-                        aantal: 102
+                        maand:5,
+                        aantal:74
                     },
                     {
-                        soort: 'lange stok',
-                        aantal: 3
+                        maand:6,
+                        aantal:75
                     },
                     {
-                        soort: 'korte stok',
-                        aantal: 28
+                        maand:7,
+                        aantal:85
                     },
                     {
-                        soort: 'elektrische wapenstok',
-                        aantal: 0
+                        maand:8,
+                        aantal:92
                     },
                     {
-                        soort: 'inzet hond',
-                        aantal: 8
-                    },
-                ],
-                jaar2015:[
-                    {
-                        soort: 'pepperspray',
-                        aantal: 109
+                        maand:9,
+                        aantal:69
                     },
                     {
-                        soort: 'lange stok',
-                        aantal: 4
+                        maand:10,
+                        aantal:65
                     },
                     {
-                        soort: 'korte stok',
-                        aantal: 50
+                        maand:11,
+                        aantal:59
                     },
                     {
-                        soort: 'elektrische wapenstok',
-                        aantal: 0
-                    },
-                    {
-                        soort: 'inzet hond',
-                        aantal: 18
+                        maand:12,
+                        aantal:62
                     },
                 ],
-            },
-            {
-                eenheid: 'Noord-Nederland',
-                jaar2017:[
+                richten:[
                     {
-                        soort: 'pepperspray',
-                        aantal: 81
+                        maand:1,
+                        aantal:64
                     },
                     {
-                        soort: 'lange stok',
-                        aantal: 1
+                        maand:2,
+                        aantal:64
                     },
                     {
-                        soort: 'korte stok',
-                        aantal: 11
+                        maand:3,
+                        aantal:72
                     },
                     {
-                        soort: 'elektrische wapenstok',
-                        aantal: 0
+                        maand:4,
+                        aantal:81
                     },
                     {
-                        soort: 'inzet hond',
-                        aantal: 14
-                    },
-                ],
-                jaar2016:[
-                    {
-                        soort: 'pepperspray',
-                        aantal: 69
+                        maand:5,
+                        aantal:75
                     },
                     {
-                        soort: 'lange stok',
-                        aantal: 0
+                        maand:6,
+                        aantal:62
                     },
                     {
-                        soort: 'korte stok',
-                        aantal: 1
+                        maand:7,
+                        aantal:48
                     },
                     {
-                        soort: 'elektrische wapenstok',
-                        aantal: 0
+                        maand:8,
+                        aantal:35
                     },
                     {
-                        soort: 'inzet hond',
-                        aantal: 14
-                    },
-                ],
-                jaar2015:[
-                    {
-                        soort: 'pepperspray',
-                        aantal: 102
+                        maand:9,
+                        aantal:48
                     },
                     {
-                        soort: 'lange stok',
-                        aantal: 5
+                        maand:10,
+                        aantal:61
                     },
                     {
-                        soort: 'korte stok',
-                        aantal: 15
+                        maand:11,
+                        aantal:78
                     },
                     {
-                        soort: 'elektrische wapenstok',
-                        aantal: 0
-                    },
-                    {
-                        soort: 'inzet hond',
-                        aantal: 9
+                        maand:12,
+                        aantal:53
                     },
                 ],
-            },
-            {
-                eenheid: 'Midden-Nederland',
-                jaar2017:[
+                hond:[
                     {
-                        soort: 'pepperspray',
-                        aantal: 66
+                        maand:1,
+                        aantal:23
                     },
                     {
-                        soort: 'lange stok',
-                        aantal: 23
+                        maand:2,
+                        aantal:12
                     },
                     {
-                        soort: 'korte stok',
-                        aantal: 10
+                        maand:3,
+                        aantal:27
                     },
                     {
-                        soort: 'elektrische wapenstok',
-                        aantal: 1
+                        maand:4,
+                        aantal:22
                     },
                     {
-                        soort: 'inzet hond',
-                        aantal: 16
-                    },
-                ],
-                jaar2016:[
-                    {
-                        soort: 'pepperspray',
-                        aantal: 80
+                        maand:5,
+                        aantal:27
                     },
                     {
-                        soort: 'lange stok',
-                        aantal: 2
+                        maand:6,
+                        aantal:29
                     },
                     {
-                        soort: 'korte stok',
-                        aantal: 20
+                        maand:7,
+                        aantal:17
                     },
                     {
-                        soort: 'elektrische wapenstok',
-                        aantal: 1
+                        maand:8,
+                        aantal:24
                     },
                     {
-                        soort: 'inzet hond',
-                        aantal: 17
-                    },
-                ],
-                jaar2015:[
-                    {
-                        soort: 'pepperspray',
-                        aantal: 72
+                        maand:9,
+                        aantal:19
                     },
                     {
-                        soort: 'lange stok',
-                        aantal: 20
+                        maand:10,
+                        aantal:19
                     },
                     {
-                        soort: 'korte stok',
-                        aantal: 21
+                        maand:11,
+                        aantal:27
                     },
                     {
-                        soort: 'elektrische wapenstok',
-                        aantal: 1
-                    },
-                    {
-                        soort: 'inzet hond',
-                        aantal: 15
+                        maand:12,
+                        aantal:13
                     },
                 ],
-            },
-            {
-                eenheid: 'Oost-Nederland',
-                jaar2017:[
+                korteWapenstok:[
                     {
-                        soort: 'pepperspray',
-                        aantal: 53
+                        maand:1,
+                        aantal:9
                     },
                     {
-                        soort: 'lange stok',
-                        aantal: 3
+                        maand:2,
+                        aantal:9
                     },
                     {
-                        soort: 'korte stok',
-                        aantal: 12
+                        maand:3,
+                        aantal:15
                     },
                     {
-                        soort: 'elektrische wapenstok',
-                        aantal: 0
+                        maand:4,
+                        aantal:17
                     },
                     {
-                        soort: 'inzet hond',
-                        aantal: 17
-                    },
-                ],
-                jaar2016:[
-                    {
-                        soort: 'pepperspray',
-                        aantal: 104
+                        maand:5,
+                        aantal:10
                     },
                     {
-                        soort: 'lange stok',
-                        aantal: 2
+                        maand:6,
+                        aantal:25
                     },
                     {
-                        soort: 'korte stok',
-                        aantal: 2
+                        maand:7,
+                        aantal:10
                     },
                     {
-                        soort: 'elektrische wapenstok',
-                        aantal: 0
+                        maand:8,
+                        aantal:16
                     },
                     {
-                        soort: 'inzet hond',
-                        aantal: 24
-                    },
-                ],
-                jaar2015:[
-                    {
-                        soort: 'pepperspray',
-                        aantal: 126
+                        maand:9,
+                        aantal:27
                     },
                     {
-                        soort: 'lange stok',
-                        aantal: 20
+                        maand:10,
+                        aantal:19
                     },
                     {
-                        soort: 'korte stok',
-                        aantal: 21
+                        maand:11,
+                        aantal:14
                     },
                     {
-                        soort: 'elektrische wapenstok',
-                        aantal: 0
-                    },
-                    {
-                        soort: 'inzet hond',
-                        aantal: 15
+                        maand:12,
+                        aantal:8
                     },
                 ],
-            },
-            {
-                eenheid: 'Den-Haag',
-                jaar2017:[
+                langeWapenstok:[
                     {
-                        soort: 'pepperspray',
-                        aantal: 141
+                        maand:1,
+                        aantal:16
                     },
                     {
-                        soort: 'lange stok',
-                        aantal: 12
+                        maand:2,
+                        aantal:9
                     },
                     {
-                        soort: 'korte stok',
-                        aantal: 24
+                        maand:3,
+                        aantal:9
                     },
                     {
-                        soort: 'elektrische wapenstok',
-                        aantal: 0
+                        maand:4,
+                        aantal:12
                     },
                     {
-                        soort: 'inzet hond',
-                        aantal: 27
+                        maand:5,
+                        aantal:8
+                    },
+                    {
+                        maand:6,
+                        aantal:8
+                    },
+                    {
+                        maand:7,
+                        aantal:6
+                    },
+                    {
+                        maand:8,
+                        aantal:21
+                    },
+                    {
+                        maand:9,
+                        aantal:8
+                    },
+                    {
+                        maand:10,
+                        aantal:17
+                    },
+                    {
+                        maand:11,
+                        aantal:14
+                    },
+                    {
+                        maand:12,
+                        aantal:14
                     },
                 ],
-                jaar2016:[
+                terHandNemen:[
                     {
-                        soort: 'pepperspray',
-                        aantal: 174
+                        maand:1,
+                        aantal:19
                     },
                     {
-                        soort: 'lange stok',
-                        aantal: 35
+                        maand:2,
+                        aantal:27
                     },
                     {
-                        soort: 'korte stok',
-                        aantal: 35
+                        maand:3,
+                        aantal:30
                     },
                     {
-                        soort: 'elektrische wapenstok',
-                        aantal: 0
+                        maand:4,
+                        aantal:23
                     },
                     {
-                        soort: 'inzet hond',
-                        aantal: 33
+                        maand:5,
+                        aantal:23
+                    },
+                    {
+                        maand:6,
+                        aantal:20
+                    },
+                    {
+                        maand:7,
+                        aantal:36
+                    },
+                    {
+                        maand:8,
+                        aantal:26
+                    },
+                    {
+                        maand:9,
+                        aantal:23
+                    },
+                    {
+                        maand:10,
+                        aantal:26
+                    },
+                    {
+                        maand:11,
+                        aantal:20
+                    },
+                    {
+                        maand:12,
+                        aantal:15
                     },
                 ],
-                jaar2015:[
+                waarschuwingsSchot:[
                     {
-                        soort: 'pepperspray',
-                        aantal: 233
+                        maand:1,
+                        aantal:5
                     },
                     {
-                        soort: 'lange stok',
-                        aantal: 25
+                        maand:2,
+                        aantal:1
                     },
                     {
-                        soort: 'korte stok',
-                        aantal: 29
+                        maand:3,
+                        aantal:5
                     },
                     {
-                        soort: 'elektrische wapenstok',
-                        aantal: 0
+                        maand:4,
+                        aantal:11
                     },
                     {
-                        soort: 'inzet hond',
-                        aantal: 51
+                        maand:5,
+                        aantal:5
+                    },
+                    {
+                        maand:6,
+                        aantal:2
+                    },
+                    {
+                        maand:7,
+                        aantal:6
+                    },
+                    {
+                        maand:8,
+                        aantal:10
+                    },
+                    {
+                        maand:9,
+                        aantal:4
+                    },
+                    {
+                        maand:10,
+                        aantal:6
+                    },
+                    {
+                        maand:11,
+                        aantal:5
+                    },
+                    {
+                        maand:12,
+                        aantal:1
                     },
                 ]
+                
             },
             {
-                eenheid: 'Rotterdam',
-                jaar2017:[
+                jaartal: 2015,
+                totaal: 2696,
+                pepperspray:[
                     {
-                        soort: 'pepperspray',
-                        aantal: 173
+                        maand:1,
+                        aantal:69
                     },
                     {
-                        soort: 'lange stok',
-                        aantal: 44
+                        maand:2,
+                        aantal:82
                     },
                     {
-                        soort: 'korte stok',
-                        aantal: 10
+                        maand:3,
+                        aantal:74
                     },
                     {
-                        soort: 'elektrische wapenstok',
-                        aantal: 4
+                        maand:4,
+                        aantal:72
                     },
                     {
-                        soort: 'inzet hond',
-                        aantal: 50
+                        maand:5,
+                        aantal:98
+                    },
+                    {
+                        maand:6,
+                        aantal:66
+                    },
+                    {
+                        maand:7,
+                        aantal:90
+                    },
+                    {
+                        maand:8,
+                        aantal:113
+                    },
+                    {
+                        maand:9,
+                        aantal:81
+                    },
+                    {
+                        maand:10,
+                        aantal:79
+                    },
+                    {
+                        maand:11,
+                        aantal:63
+                    },
+                    {
+                        maand:12,
+                        aantal:94
                     },
                 ],
-                jaar2016:[
+                richten:[
                     {
-                        soort: 'pepperspray',
-                        aantal: 180
+                        maand:1,
+                        aantal:59
                     },
                     {
-                        soort: 'lange stok',
-                        aantal: 58
+                        maand:2,
+                        aantal:105
                     },
                     {
-                        soort: 'korte stok',
-                        aantal: 29
+                        maand:3,
+                        aantal:62
                     },
                     {
-                        soort: 'elektrische wapenstok',
-                        aantal: 0
+                        maand:4,
+                        aantal:85
                     },
                     {
-                        soort: 'inzet hond',
-                        aantal: 45
+                        maand:5,
+                        aantal:72
+                    },
+                    {
+                        maand:6,
+                        aantal:57
+                    },
+                    {
+                        maand:7,
+                        aantal:86
+                    },
+                    {
+                        maand:8,
+                        aantal:68
+                    },
+                    {
+                        maand:9,
+                        aantal:55
+                    },
+                    {
+                        maand:10,
+                        aantal:74
+                    },
+                    {
+                        maand:11,
+                        aantal:68
+                    },
+                    {
+                        maand:12,
+                        aantal:75
                     },
                 ],
-                jaar2015:[
+                hond:[
                     {
-                        soort: 'pepperspray',
-                        aantal: 222
+                        maand:1,
+                        aantal:19
                     },
                     {
-                        soort: 'lange stok',
-                        aantal: 47
+                        maand:2,
+                        aantal:17
                     },
                     {
-                        soort: 'korte stok',
-                        aantal: 9
+                        maand:3,
+                        aantal:11
                     },
                     {
-                        soort: 'elektrische wapenstok',
-                        aantal: 1
+                        maand:4,
+                        aantal:23
                     },
                     {
-                        soort: 'inzet hond',
-                        aantal: 47
+                        maand:5,
+                        aantal:22
+                    },
+                    {
+                        maand:6,
+                        aantal:20
+                    },
+                    {
+                        maand:7,
+                        aantal:18
+                    },
+                    {
+                        maand:8,
+                        aantal:32
+                    },
+                    {
+                        maand:9,
+                        aantal:18
+                    },
+                    {
+                        maand:10,
+                        aantal:16
+                    },
+                    {
+                        maand:11,
+                        aantal:18
+                    },
+                    {
+                        maand:12,
+                        aantal:11
+                    },
+                ],
+                korteWapenstok:[
+                    {
+                        maand:1,
+                        aantal:13
+                    },
+                    {
+                        maand:2,
+                        aantal:16
+                    },
+                    {
+                        maand:3,
+                        aantal:12
+                    },
+                    {
+                        maand:4,
+                        aantal:4
+                    },
+                    {
+                        maand:5,
+                        aantal:13
+                    },
+                    {
+                        maand:6,
+                        aantal:13
+                    },
+                    {
+                        maand:7,
+                        aantal:12
+                    },
+                    {
+                        maand:8,
+                        aantal:48
+                    },
+                    {
+                        maand:9,
+                        aantal:28
+                    },
+                    {
+                        maand:10,
+                        aantal:13
+                    },
+                    {
+                        maand:11,
+                        aantal:7
+                    },
+                    {
+                        maand:12,
+                        aantal:17
+                    },
+                ],
+                langeWapenstok:[
+                    {
+                        maand:1,
+                        aantal:22
+                    },
+                    {
+                        maand:2,
+                        aantal:7
+                    },
+                    {
+                        maand:3,
+                        aantal:7
+                    },
+                    {
+                        maand:4,
+                        aantal:12
+                    },
+                    {
+                        maand:5,
+                        aantal:8
+                    },
+                    {
+                        maand:6,
+                        aantal:17
+                    },
+                    {
+                        maand:7,
+                        aantal:13
+                    },
+                    {
+                        maand:8,
+                        aantal:18
+                    },
+                    {
+                        maand:9,
+                        aantal:11
+                    },
+                    {
+                        maand:10,
+                        aantal:2
+                    },
+                    {
+                        maand:11,
+                        aantal:6
+                    },
+                    {
+                        maand:12,
+                        aantal:11
+                    },
+                ],
+                terHandNemen:[
+                    {
+                        maand:1,
+                        aantal:21
+                    },
+                    {
+                        maand:2,
+                        aantal:32
+                    },
+                    {
+                        maand:3,
+                        aantal:26
+                    },
+                    {
+                        maand:4,
+                        aantal:10
+                    },
+                    {
+                        maand:5,
+                        aantal:13
+                    },
+                    {
+                        maand:6,
+                        aantal:13
+                    },
+                    {
+                        maand:7,
+                        aantal:15
+                    },
+                    {
+                        maand:8,
+                        aantal:25
+                    },
+                    {
+                        maand:9,
+                        aantal:23
+                    },
+                    {
+                        maand:10,
+                        aantal:17
+                    },
+                    {
+                        maand:11,
+                        aantal:15
+                    },
+                    {
+                        maand:12,
+                        aantal:27
+                    },
+                ],
+                waarschuwingsSchot:[
+                    {
+                        maand:1,
+                        aantal:5
+                    },
+                    {
+                        maand:2,
+                        aantal:6
+                    },
+                    {
+                        maand:3,
+                        aantal:6
+                    },
+                    {
+                        maand:4,
+                        aantal:5
+                    },
+                    {
+                        maand:5,
+                        aantal:3
+                    },
+                    {
+                        maand:6,
+                        aantal:7
+                    },
+                    {
+                        maand:7,
+                        aantal:4
+                    },
+                    {
+                        maand:8,
+                        aantal:6
+                    },
+                    {
+                        maand:9,
+                        aantal:4
+                    },
+                    {
+                        maand:10,
+                        aantal:1
+                    },
+                    {
+                        maand:11,
+                        aantal:5
+                    },
+                    {
+                        maand:12,
+                        aantal:5
                     },
                 ]
+                
             },
             {
-                eenheid: 'Zeeland-West-Brabant',
-                jaar2017:[
+                jaartal: 2016,
+                totaal: 2643,
+                pepperspray:[
                     {
-                        soort: 'pepperspray',
-                        aantal: 80
+                        maand:1,
+                        aantal:80
                     },
                     {
-                        soort: 'lange stok',
-                        aantal: 22
+                        maand:2,
+                        aantal:80
                     },
                     {
-                        soort: 'korte stok',
-                        aantal: 13
+                        maand:3,
+                        aantal:58
                     },
                     {
-                        soort: 'elektrische wapenstok',
-                        aantal: 0
+                        maand:4,
+                        aantal:73
                     },
                     {
-                        soort: 'inzet hond',
-                        aantal: 16
-                    },
-                ],
-                jaar2016:[
-                    {
-                        soort: 'pepperspray',
-                        aantal: 92
+                        maand:5,
+                        aantal:80
                     },
                     {
-                        soort: 'lange stok',
-                        aantal: 7
+                        maand:6,
+                        aantal:82
                     },
                     {
-                        soort: 'korte stok',
-                        aantal: 16
+                        maand:7,
+                        aantal:87
                     },
                     {
-                        soort: 'elektrische wapenstok',
-                        aantal: 0
+                        maand:8,
+                        aantal:87
                     },
                     {
-                        soort: 'inzet hond',
-                        aantal: 23
-                    },
-                ],
-                jaar2015:[
-                    {
-                        soort: 'pepperspray',
-                        aantal: 88
+                        maand:9,
+                        aantal:105
                     },
                     {
-                        soort: 'lange stok',
-                        aantal: 6
+                        maand:10,
+                        aantal:70
                     },
                     {
-                        soort: 'korte stok',
-                        aantal: 8
+                        maand:11,
+                        aantal:57
                     },
                     {
-                        soort: 'elektrische wapenstok',
-                        aantal: 0
-                    },
-                    {
-                        soort: 'inzet hond',
-                        aantal: 29
+                        maand:12,
+                        aantal:59
                     },
                 ],
-            },
-            {
-                eenheid: 'Oost-Brabant',
-                jaar2017:[
+                richten:[
                     {
-                        soort: 'pepperspray',
-                        aantal: 44
+                        maand:1,
+                        aantal:70
                     },
                     {
-                        soort: 'lange stok',
-                        aantal: 7
+                        maand:2,
+                        aantal:86
                     },
                     {
-                        soort: 'korte stok',
-                        aantal: 8
+                        maand:3,
+                        aantal:94
                     },
                     {
-                        soort: 'elektrische wapenstok',
-                        aantal: 0
+                        maand:4,
+                        aantal:91
                     },
                     {
-                        soort: 'inzet hond',
-                        aantal: 10
-                    },
-                ],
-                jaar2016:[
-                    {
-                        soort: 'pepperspray',
-                        aantal: 56
+                        maand:5,
+                        aantal:106
                     },
                     {
-                        soort: 'lange stok',
-                        aantal: 8
+                        maand:6,
+                        aantal:112
                     },
                     {
-                        soort: 'korte stok',
-                        aantal: 14
+                        maand:7,
+                        aantal:90
                     },
                     {
-                        soort: 'elektrische wapenstok',
-                        aantal: 0
+                        maand:8,
+                        aantal:110
                     },
                     {
-                        soort: 'inzet hond',
-                        aantal: 14
-                    },
-                ],
-                jaar2015:[
-                    {
-                        soort: 'pepperspray',
-                        aantal: 61
+                        maand:9,
+                        aantal:95
                     },
                     {
-                        soort: 'lange stok',
-                        aantal: 6
+                        maand:10,
+                        aantal:69
                     },
                     {
-                        soort: 'korte stok',
-                        aantal: 12
+                        maand:11,
+                        aantal:57
                     },
                     {
-                        soort: 'elektrische wapenstok',
-                        aantal: 0
-                    },
-                    {
-                        soort: 'inzet hond',
-                        aantal: 19
+                        maand:12,
+                        aantal:66
                     },
                 ],
-            },
-            {
-                eenheid: 'Limburg',
-                jaar2017:[
+                hond:[
                     {
-                        soort: 'pepperspray',
-                        aantal: 63
+                        maand:1,
+                        aantal:14
                     },
                     {
-                        soort: 'lange stok',
-                        aantal: 3
+                        maand:2,
+                        aantal:17
                     },
                     {
-                        soort: 'korte stok',
-                        aantal: 12
+                        maand:3,
+                        aantal:9
                     },
                     {
-                        soort: 'elektrische wapenstok',
-                        aantal: 0
+                        maand:4,
+                        aantal:24
                     },
                     {
-                        soort: 'inzet hond',
-                        aantal: 9
+                        maand:5,
+                        aantal:23
+                    },
+                    {
+                        maand:6,
+                        aantal:19
+                    },
+                    {
+                        maand:7,
+                        aantal:15
+                    },
+                    {
+                        maand:8,
+                        aantal:14
+                    },
+                    {
+                        maand:9,
+                        aantal:21
+                    },
+                    {
+                        maand:10,
+                        aantal:15
+                    },
+                    {
+                        maand:11,
+                        aantal:6
+                    },
+                    {
+                        maand:12,
+                        aantal:11
                     },
                 ],
-                jaar2016:[
+                korteWapenstok:[
                     {
-                        soort: 'pepperspray',
-                        aantal: 57
+                        maand:1,
+                        aantal:17
                     },
                     {
-                        soort: 'lange stok',
-                        aantal: 12
+                        maand:2,
+                        aantal:18
                     },
                     {
-                        soort: 'korte stok',
-                        aantal: 4
+                        maand:3,
+                        aantal:5
                     },
                     {
-                        soort: 'elektrische wapenstok',
-                        aantal: 0
+                        maand:4,
+                        aantal:10
                     },
                     {
-                        soort: 'inzet hond',
-                        aantal: 10
+                        maand:5,
+                        aantal:19
+                    },
+                    {
+                        maand:6,
+                        aantal:13
+                    },
+                    {
+                        maand:7,
+                        aantal:10
+                    },
+                    {
+                        maand:8,
+                        aantal:14
+                    },
+                    {
+                        maand:9,
+                        aantal:7
+                    },
+                    {
+                        maand:10,
+                        aantal:5
+                    },
+                    {
+                        maand:11,
+                        aantal:6
+                    },
+                    {
+                        maand:12,
+                        aantal:8
                     },
                 ],
-                jaar2015:[
+                langeWapenstok:[
                     {
-                        soort: 'pepperspray',
-                        aantal: 53
+                        maand:1,
+                        aantal:42
                     },
                     {
-                        soort: 'lange stok',
-                        aantal: 12
+                        maand:2,
+                        aantal:9
                     },
                     {
-                        soort: 'korte stok',
-                        aantal: 1
+                        maand:3,
+                        aantal:6
                     },
                     {
-                        soort: 'elektrische wapenstok',
-                        aantal: 0
+                        maand:4,
+                        aantal:15
                     },
                     {
-                        soort: 'inzet hond',
-                        aantal: 8
+                        maand:5,
+                        aantal:8
+                    },
+                    {
+                        maand:6,
+                        aantal:13
+                    },
+                    {
+                        maand:7,
+                        aantal:7
+                    },
+                    {
+                        maand:8,
+                        aantal:6
+                    },
+                    {
+                        maand:9,
+                        aantal:8
+                    },
+                    {
+                        maand:10,
+                        aantal:14
+                    },
+                    {
+                        maand:11,
+                        aantal:6
+                    },
+                    {
+                        maand:12,
+                        aantal:11
+                    },
+                ],
+                terHandNemen:[
+                    {
+                        maand:1,
+                        aantal:16
+                    },
+                    {
+                        maand:2,
+                        aantal:7
+                    },
+                    {
+                        maand:3,
+                        aantal:15
+                    },
+                    {
+                        maand:4,
+                        aantal:15
+                    },
+                    {
+                        maand:5,
+                        aantal:19
+                    },
+                    {
+                        maand:6,
+                        aantal:9
+                    },
+                    {
+                        maand:7,
+                        aantal:25
+                    },
+                    {
+                        maand:8,
+                        aantal:9
+                    },
+                    {
+                        maand:9,
+                        aantal:10
+                    },
+                    {
+                        maand:10,
+                        aantal:8
+                    },
+                    {
+                        maand:11,
+                        aantal:8
+                    },
+                    {
+                        maand:12,
+                        aantal:14
+                    },
+                ],
+                waarschuwingsSchot:[
+                    {
+                        maand:1,
+                        aantal:3
+                    },
+                    {
+                        maand:2,
+                        aantal:7
+                    },
+                    {
+                        maand:3,
+                        aantal:10
+                    },
+                    {
+                        maand:4,
+                        aantal:5
+                    },
+                    {
+                        maand:5,
+                        aantal:7
+                    },
+                    {
+                        maand:6,
+                        aantal:6
+                    },
+                    {
+                        maand:7,
+                        aantal:3
+                    },
+                    {
+                        maand:8,
+                        aantal:3
+                    },
+                    {
+                        maand:9,
+                        aantal:2
+                    },
+                    {
+                        maand:10,
+                        aantal:1
+                    },
+                    {
+                        maand:11,
+                        aantal:5
+                    },
+                    {
+                        maand:12,
+                        aantal:7
                     },
                 ]
+                
             },
-        ],
+            {
+                jaartal: 2017,
+                totaal: 2318,
+                pepperspray:[
+                    {
+                        maand:1,
+                        aantal:55
+                    },
+                    {
+                        maand:2,
+                        aantal:57
+                    },
+                    {
+                        maand:3,
+                        aantal:60
+                    },
+                    {
+                        maand:4,
+                        aantal:60
+                    },
+                    {
+                        maand:5,
+                        aantal:86
+                    },
+                    {
+                        maand:6,
+                        aantal:66
+                    },
+                    {
+                        maand:7,
+                        aantal:72
+                    },
+                    {
+                        maand:8,
+                        aantal:86
+                    },
+                    {
+                        maand:9,
+                        aantal:53
+                    },
+                    {
+                        maand:10,
+                        aantal:62
+                    },
+                    {
+                        maand:11,
+                        aantal:64
+                    },
+                    {
+                        maand:12,
+                        aantal:55
+                    },
+                ],
+                richten:[
+                    {
+                        maand:1,
+                        aantal:71
+                    },
+                    {
+                        maand:2,
+                        aantal:51
+                    },
+                    {
+                        maand:3,
+                        aantal:68
+                    },
+                    {
+                        maand:4,
+                        aantal:52
+                    },
+                    {
+                        maand:5,
+                        aantal:70
+                    },
+                    {
+                        maand:6,
+                        aantal:73
+                    },
+                    {
+                        maand:7,
+                        aantal:59
+                    },
+                    {
+                        maand:8,
+                        aantal:51
+                    },
+                    {
+                        maand:9,
+                        aantal:48
+                    },
+                    {
+                        maand:10,
+                        aantal:68
+                    },
+                    {
+                        maand:11,
+                        aantal:65
+                    },
+                    {
+                        maand:12,
+                        aantal:81
+                    },
+                ],
+                hond:[
+                    {
+                        maand:1,
+                        aantal:16
+                    },
+                    {
+                        maand:2,
+                        aantal:10
+                    },
+                    {
+                        maand:3,
+                        aantal:7
+                    },
+                    {
+                        maand:4,
+                        aantal:13
+                    },
+                    {
+                        maand:5,
+                        aantal:18
+                    },
+                    {
+                        maand:6,
+                        aantal:9
+                    },
+                    {
+                        maand:7,
+                        aantal:23
+                    },
+                    {
+                        maand:8,
+                        aantal:19
+                    },
+                    {
+                        maand:9,
+                        aantal:16
+                    },
+                    {
+                        maand:10,
+                        aantal:16
+                    },
+                    {
+                        maand:11,
+                        aantal:19
+                    },
+                    {
+                        maand:12,
+                        aantal:10
+                    },
+                ],
+                korteWapenstok:[
+                    {
+                        maand:1,
+                        aantal:15
+                    },
+                    {
+                        maand:2,
+                        aantal:8
+                    },
+                    {
+                        maand:3,
+                        aantal:7
+                    },
+                    {
+                        maand:4,
+                        aantal:6
+                    },
+                    {
+                        maand:5,
+                        aantal:7
+                    },
+                    {
+                        maand:6,
+                        aantal:11
+                    },
+                    {
+                        maand:7,
+                        aantal:15
+                    },
+                    {
+                        maand:8,
+                        aantal:13
+                    },
+                    {
+                        maand:9,
+                        aantal:4
+                    },
+                    {
+                        maand:10,
+                        aantal:7
+                    },
+                    {
+                        maand:11,
+                        aantal:11
+                    },
+                    {
+                        maand:12,
+                        aantal:18
+                    },
+                ],
+                langeWapenstok:[
+                    {
+                        maand:1,
+                        aantal:8
+                    },
+                    {
+                        maand:2,
+                        aantal:5
+                    },
+                    {
+                        maand:3,
+                        aantal:13
+                    },
+                    {
+                        maand:4,
+                        aantal:6
+                    },
+                    {
+                        maand:5,
+                        aantal:26
+                    },
+                    {
+                        maand:6,
+                        aantal:8
+                    },
+                    {
+                        maand:7,
+                        aantal:17
+                    },
+                    {
+                        maand:8,
+                        aantal:7
+                    },
+                    {
+                        maand:9,
+                        aantal:10
+                    },
+                    {
+                        maand:10,
+                        aantal:5
+                    },
+                    {
+                        maand:11,
+                        aantal:5
+                    },
+                    {
+                        maand:12,
+                        aantal:21
+                    },
+                ],
+                terHandNemen:[
+                    {
+                        maand:1,
+                        aantal:10
+                    },
+                    {
+                        maand:2,
+                        aantal:8
+                    },
+                    {
+                        maand:3,
+                        aantal:8
+                    },
+                    {
+                        maand:4,
+                        aantal:13
+                    },
+                    {
+                        maand:5,
+                        aantal:20
+                    },
+                    {
+                        maand:6,
+                        aantal:11
+                    },
+                    {
+                        maand:7,
+                        aantal:12
+                    },
+                    {
+                        maand:8,
+                        aantal:19
+                    },
+                    {
+                        maand:9,
+                        aantal:7
+                    },
+                    {
+                        maand:10,
+                        aantal:15
+                    },
+                    {
+                        maand:11,
+                        aantal:25
+                    },
+                    {
+                        maand:12,
+                        aantal:23
+                    },
+                ],
+                waarschuwingsSchot:[
+                    {
+                        maand:1,
+                        aantal:4
+                    },
+                    {
+                        maand:2,
+                        aantal:1
+                    },
+                    {
+                        maand:3,
+                        aantal:11
+                    },
+                    {
+                        maand:4,
+                        aantal:6
+                    },
+                    {
+                        maand:5,
+                        aantal:0
+                    },
+                    {
+                        maand:6,
+                        aantal:7
+                    },
+                    {
+                        maand:7,
+                        aantal:4
+                    },
+                    {
+                        maand:8,
+                        aantal:7
+                    },
+                    {
+                        maand:9,
+                        aantal:4
+                    },
+                    {
+                        maand:10,
+                        aantal:2
+                    },
+                    {
+                        maand:11,
+                        aantal:12
+                    },
+                    {
+                        maand:12,
+                        aantal:2
+                    },
+                ]
+                
+            },
+            {
+                jaartal: 2018,
+                totaal: 1094,
+                pepperspray:[
+                    {
+                        maand:1,
+                        aantal:33
+                    },
+                    {
+                        maand:2,
+                        aantal:40
+                    },
+                    {
+                        maand:3,
+                        aantal:46
+                    },
+                    {
+                        maand:4,
+                        aantal:70
+                    },
+                    {
+                        maand:5,
+                        aantal:80
+                    },
+                    {
+                        maand:6,
+                        aantal:65
+                    }
+                ],
+                richten:[
+                    {
+                        maand:1,
+                        aantal:49
+                    },
+                    {
+                        maand:2,
+                        aantal:61
+                    },
+                    {
+                        maand:3,
+                        aantal:72
+                    },
+                    {
+                        maand:4,
+                        aantal:90
+                    },
+                    {
+                        maand:5,
+                        aantal:74
+                    },
+                    {
+                        maand:6,
+                        aantal:81
+                    },
+                ],
+                hond:[
+                    {
+                        maand:1,
+                        aantal:15
+                    },
+                    {
+                        maand:2,
+                        aantal:13
+                    },
+                    {
+                        maand:3,
+                        aantal:11
+                    },
+                    {
+                        maand:4,
+                        aantal:7
+                    },
+                    {
+                        maand:5,
+                        aantal:11
+                    },
+                    {
+                        maand:6,
+                        aantal:19
+                    },
+                ],
+                korteWapenstok:[
+                    {
+                        maand:1,
+                        aantal:12
+                    },
+                    {
+                        maand:2,
+                        aantal:14
+                    },
+                    {
+                        maand:3,
+                        aantal:11
+                    },
+                    {
+                        maand:4,
+                        aantal:9
+                    },
+                    {
+                        maand:5,
+                        aantal:12
+                    },
+                    {
+                        maand:6,
+                        aantal:9
+                    }
+                ],
+                langeWapenstok:[
+                    {
+                        maand:1,
+                        aantal:20
+                    },
+                    {
+                        maand:2,
+                        aantal:2
+                    },
+                    {
+                        maand:3,
+                        aantal:4
+                    },
+                    {
+                        maand:4,
+                        aantal:10
+                    },
+                    {
+                        maand:5,
+                        aantal:7
+                    },
+                    {
+                        maand:6,
+                        aantal:8
+                    }
+                ],
+                terHandNemen:[
+                    {
+                        maand:1,
+                        aantal:20
+                    },
+                    {
+                        maand:2,
+                        aantal:9
+                    },
+                    {
+                        maand:3,
+                        aantal:17
+                    },
+                    {
+                        maand:4,
+                        aantal:36
+                    },
+                    {
+                        maand:5,
+                        aantal:25
+                    },
+                    {
+                        maand:6,
+                        aantal:10
+                    }
+                ],
+                waarschuwingsSchot:[
+                    {
+                        maand:1,
+                        aantal:5
+                    },
+                    {
+                        maand:2,
+                        aantal:5
+                    },
+                    {
+                        maand:3,
+                        aantal:4
+                    },
+                    {
+                        maand:4,
+                        aantal:3
+                    },
+                    {
+                        maand:5,
+                        aantal:3
+                    },
+                    {
+                        maand:6,
+                        aantal:2
+                    }
+                ]
+                
+            },
+        ]
+
 	  }
   },
   components: {
@@ -665,10 +1652,6 @@ body{
     background: black;
     height: 100vh;
     margin: 0;
-    background: url('./assets/logoCAD.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 .view{
     width: 100vw;
@@ -711,6 +1694,7 @@ li{
     height: 25vh;
 }
 .content-30vh{
+    margin-top: 30vh;
     height: 30vh;
 }
 .content-40vh{
@@ -728,13 +1712,6 @@ li{
     flex-direction: column;
 }
 
-/* Element styling */
-.label{
-    background: white;
-    color: black;
-    max-width: 180px;
-    width: 50vw;
-}
 
 /* Globale input styling 
 ################################*/
@@ -743,8 +1720,9 @@ label{
 	font-size: 25px;
 }
 select{
-	padding: 5px;
-	width: 250px;
+    margin-top: 10px;
+	padding: 3px;
+	width: 200px;
 	outline: none;
     text-align: center;
 }
@@ -773,9 +1751,6 @@ svg > path{
 	justify-content: space-between;
 	align-items: center;
 	flex-direction: column;
-}
-.offsetTop{
-	margin-top: 30px;
 }
 
 
@@ -844,91 +1819,6 @@ button:hover{
     color: red;
 }
 
-
-
-/* Range Slider 
-################################*/
-input[type="range"] { 
-    margin: auto;
-    -webkit-appearance: none;
-    position: relative;
-    overflow: hidden;
-    height: 30px;
-    width: 80%;
-    cursor: pointer;
-    border-radius: 0; /* iOS */
-}
-
-::-webkit-slider-runnable-track {
-    background: #ddd;
-}
-
-/*
- * 1. Set to 0 width and remove border for a slider without a thumb
- */
-::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 30px; /* 1 */
-    height: 30px;
-    background: #fff;
-    box-shadow: -100vw 0 0 100vw red;
-    border: 2px solid #999; 
-    /* border-radius: 50%; */
-}
-
-::-moz-range-track {
-    height: 40px;
-    background: red;
-}
-
-::-moz-range-thumb {
-    background: #fff;
-    height: 40px;
-    width: 20px;
-    border: 3px solid #999;
-    border-radius: 0 !important;
-    box-shadow: -100vw 0 0 100vw red;
-    box-sizing: border-box;
-}
-
-::-ms-fill-lower { 
-    background: red;
-}
-
-::-ms-thumb { 
-    background: #fff;
-    border: 2px solid #999;
-    height: 40px;
-    width: 20px;
-    box-sizing: border-box;
-}
-
-::-ms-ticks-after { 
-    display: none; 
-}
-
-::-ms-ticks-before { 
-    display: none; 
-}
-
-::-ms-track { 
-    background: #ddd;
-    color: transparent;
-    height: 40px;
-    border: none;
-}
-
-::-ms-tooltip { 
-    display: none;
-}
-
-
-
-
-
-
-
-
 /* Scrollbar 
 ################################*/
 
@@ -955,21 +1845,6 @@ input[type="range"] {
 /* Globale keyframes 
 ################################*/
 
-
-@keyframes slideIn {
-  from {transform: translate(0, 100vh);}
-  to {transform: translate(0, 0)}
-}
-
-/* Default keyframe for tekst div */
-@keyframes slideInTekst{
-  from {transform: translate(0, -50px);}
-  to {transform: translate(0, 0)}
-}
-
-/* Dissapear elements through the bottom */
-
-
 /* Dissapear elements through the top */
 .router-anim-leave-active{
     animation: slideOutTop 2s forwards;
@@ -992,12 +1867,5 @@ input[type="range"] {
   from {opacity: 0;}
   to {opacity: 1;}
 }
-@keyframes intro2tm4{
-    from{transform: translate(0,5vh);opacity: 0;}
-    to{transform: translate(0,0);opacity: 1;}
-}
-@keyframes intro5{
-    from{opacity: 0;}
-    to{opacity: 1;}
-}
+
 </style>

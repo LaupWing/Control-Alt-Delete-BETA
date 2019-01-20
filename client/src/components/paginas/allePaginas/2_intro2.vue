@@ -1,0 +1,37 @@
+<template>
+<div class="">
+    <div class="content-30vh">
+        <p>In 2017 is er in totaal <span>1000</span> keer een vuurwapen gebruikt door de politie</p>
+        <p>Terecht maar ook onterecht</p>
+    </div>
+    
+</div>
+</template>
+<script>
+
+export default {
+    name: 'Intro2',
+    components:{
+    },
+    data(){
+        return{
+        }
+    },
+    methods:{
+        
+    },
+    mounted(){
+        setTimeout(() => this.$router.push({ path: '/intro3'}), 6000);
+    }
+}
+</script>
+<style scoped>
+p{
+    text-align: left;
+}
+span{
+    color:red;
+}
+</style>
+
+
