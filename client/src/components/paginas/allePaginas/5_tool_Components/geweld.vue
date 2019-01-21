@@ -1,10 +1,28 @@
 <template>
     <div>
         <div class="content-20vh flexCenter" @click="removeInfo">
-            <div class="totaal flexCenter">
+            <!-- <div class="totaal flexCenter">
                 <p>Totaal gemeld</p>
                 <p class="aantal">{{active.totaal}}</p>
-            </div>
+            </div> -->
+            <transition
+                name="message-anim"
+                mode="out-in"
+            >
+                <div v-if="message === 1" class="message1 flexCenter">
+                    <p class="titel"><span class="red">Inzet politiehond niet gereguleerd</span></p>
+                    <p class="subtitel"><span class="white">De politiehond is een geweldsmiddel dat vaak leidt tot ernstig letsel</span></p>
+                </div>
+                <div v-if="message===2" class="message1 flexCenter">
+                    <p class="titel"><span class="red">Vuurwapengebruik in strijd met richtlijnen</span></p>
+                    <p class="subtitel"><span class="white">De regels voor het vuurwapengebruik zijn niet in overeenstemming met internationale richtlijnen.</span></p>
+                </div>
+                <div v-if="message===3" class="message1 flexCenter">
+                    <p class="titel"><span class="red">Invoering taser in basispolitiezorg ondanks kritiek</span></p>
+                    <p class="subtitel"><span class="white">De politie wil de taser invoeren in de basispolitiezorg.</span></p>
+                </div>
+            </transition>
+
         </div>
         <div class="keuzes" @click="removeInfo">
             <nav>
@@ -26,7 +44,7 @@
                 <option value="terHandNemen">Ter Hand Nemen van Vuurwapen</option>
                 <option value="waarschuwingsSchot">Waarschuwingsschot</option>
             </select>
-            <p class="jaartal">{{active.jaartal}}</p>
+            <p class="jaartal">In {{active.jaartal}} totaal <span class="red">{{active.totaal}}</span> geweldsmeldingen</p>
         </div>
         <div class="resultaten">
             <div class="maandGeweld"
@@ -38,13 +56,13 @@
                 <div class="aantal"
                     @click="details(m)"
                 >
-                    <transition-group name="fade">
+                    <!-- <transition-group name="fade"> -->
                         <div
                             class="vakje"
                             v-for="(i, index) in m.aantal"
                             v-bind:key="'c'+index"
                         ></div>
-                    </transition-group>
+                    <!-- </transition-group> -->
                 </div>
             </div>
         </div>
@@ -69,7 +87,8 @@ export default {
             geweldSoort: '',
             geweldSoortArray:[],
             showInfo: false,
-            geweldDetails: ''  
+            geweldDetails: '',
+            message: 1  
         }
     },
     methods:{
@@ -82,14 +101,14 @@ export default {
             this.geweldSoort = event.target.value
             this.geweldSoortArray = this.active[this.geweldSoort]
             this.removeSpacingClass()
-            this.$nextTick(() => {
+            this.$nextTick(()=>{
                 this.checkSpacing()
             })
         },
         setValues(){
             this.geweldSoortArray = this.active[this.geweldSoort]
             this.removeSpacingClass()
-            this.$nextTick(() => {
+            this.$nextTick(()=>{
                 this.checkSpacing()
             })
         },
@@ -97,6 +116,7 @@ export default {
             // setTimeout(() => {
                 const x = this.$el.querySelector('.maandGeweld')
                 const space = window.innerHeight - (x.offsetTop + x.offsetHeight)
+                console.log(space)
                 if(space <=0){
                     this.$el.querySelectorAll(".vakje").forEach((i)=>{
                         i.classList.add("fitted")
@@ -109,21 +129,19 @@ export default {
         removeSpacingClass(){
             this.$el.querySelectorAll(".vakje").forEach((i)=>{
                                     i.classList.remove("fitted")
-                            })
+            })
         },
         details(d){
-            // console.log(event.target.parentElement.parentElement)
             const monthNames = ["Januari", "Februari", "Maart", "April", "Mei", "Juni",
             "Juli", "Augustus", "September", "Oktober", "November", "December"
             ];
             this.geweldDetails = `Maand: ${monthNames[d.maand-1]} Aantal:${d.aantal}`
-            if(event.target.parentElement.parentElement.className === "aantal"){
+            if(event.target.parentElement.className === "aantal"){
                 this.$el.querySelectorAll(".aantal").forEach((i)=>{
                     i.classList.remove("details")
                 })
                 this.showInfo = true
-                console.log(event.target.parentElement.parentElement)
-                event.target.parentElement.parentElement.classList.add("details")
+                event.target.parentElement.classList.add("details")
             }else{
                 return
             }
@@ -136,12 +154,21 @@ export default {
                 })
                 this.showInfo = false
             }
-            
+        },
+        messagesLoop(){
+            setInterval(()=>{
+                if(this.message<3){
+                    this.message+=1
+                }else{
+                    this.message = 1 
+                }
+            },10000)
         }
     },
     mounted(){
         this.geweldSoort=this.$el.querySelector("option").value
         this.setValues()
+        this.messagesLoop()
     },
     
 }
@@ -155,6 +182,13 @@ export default {
 }
 p{
     margin: 2px 0;
+}
+span{
+    color: red;
+}
+.subtitel span{
+    color: white;
+    font-size: 12px;
 }
 .aantal{
     font-size: 1.6em;
@@ -202,7 +236,7 @@ nav{
                                   supported by Chrome and Opera */
 }
 .activeLink{
-    border-bottom: 2px solid 
+    border-bottom: 2px solid;
 }
 .resultaten{
     width: 100%;
@@ -258,6 +292,14 @@ nav{
 }
 .fade-enter, .fade-leave-active {
   opacity: 0
+}
+
+.message-anim-leave-active{
+    animation: messageAnim 2s forwards;
+}
+@keyframes messageAnim {
+    from{transform: translate(0,0);opacity: 1;}
+    to{transform: translate(50vw,0); opacity: 0;}
 }
 </style>
 

@@ -1682,8 +1682,17 @@ p{
 }
 li{
 	list-style: none;
+     -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }
-
+span{
+    font-family: 'Special Elite', cursive;
+}
 /* Verschillende viewheights voor de content */
 .content-10vh{
     height: 15vh;
@@ -1707,15 +1716,18 @@ li{
 .content-50vh{
     height: 50vh;
 }
-
-
 .content{
     height: 50vh;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
 }
-
+.red{
+    color: red;
+}
+.white{
+    color: white;
+}
 
 /* Globale input styling 
 ################################*/
