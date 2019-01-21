@@ -77,10 +77,12 @@ export default {
     },
     methods:{
         setRoute(){
-            
-            setTimeout(()=>{
+            this.$nextTick(()=>{
                 this.currentRoute = this.$route.path
-                },100)
+            })
+            // setTimeout(()=>{
+                // this.currentRoute = this.$route.path
+                // },100)
         },
         handleClick(){
             this.previousTransition = this.transitionName;
@@ -126,24 +128,24 @@ a{
 
 
 .Politiedoden-enter-active{
-    animation: slideIn forwards 1s;
+    animation: slideIn forwards 0.5s;
 }
 .Politiedoden-leave-active{
-    animation: slideOut forwards 1s;
+    animation: slideOut forwards 0.5s;
 }
 
 .Geweld-enter-active{
-    animation: slideIn2 forwards 1s;
+    animation: slideIn2 forwards 0.5s;
 }
 .Geweld-leave-active{
-    animation: slideOut2 forwards 1s;
+    animation: slideOut2 forwards 0.5s;
 }
 
 .Informatie-enter-active{
-    animation: slideIn forwards 1s;
+    animation: slideIn forwards 0.5s;
 }
 .Informatie-leave-active{
-    animation: slideOut forwards 1s;
+    animation: slideOut forwards 0.5s;
 }
 
 

@@ -38,13 +38,13 @@
                 <div class="aantal"
                     @click="details(m)"
                 >
-                    <!-- <transition-group name="fade"> -->
+                    <transition-group name="fade">
                         <div
                             class="vakje"
                             v-for="(i, index) in m.aantal"
                             v-bind:key="'c'+index"
                         ></div>
-                    <!-- </transition-group> -->
+                    </transition-group>
                 </div>
             </div>
         </div>
@@ -81,6 +81,7 @@ export default {
         handleChange(event){
             this.geweldSoort = event.target.value
             this.geweldSoortArray = this.active[this.geweldSoort]
+            this.removeSpacingClass()
             this.$nextTick(() => {
                 this.checkSpacing()
             })
@@ -111,16 +112,18 @@ export default {
                             })
         },
         details(d){
+            // console.log(event.target.parentElement.parentElement)
             const monthNames = ["Januari", "Februari", "Maart", "April", "Mei", "Juni",
             "Juli", "Augustus", "September", "Oktober", "November", "December"
             ];
             this.geweldDetails = `Maand: ${monthNames[d.maand-1]} Aantal:${d.aantal}`
-            if(event.target.parentElement.className === "aantal"){
+            if(event.target.parentElement.parentElement.className === "aantal"){
                 this.$el.querySelectorAll(".aantal").forEach((i)=>{
                     i.classList.remove("details")
                 })
                 this.showInfo = true
-                event.target.parentElement.classList.add("details")
+                console.log(event.target.parentElement.parentElement)
+                event.target.parentElement.parentElement.classList.add("details")
             }else{
                 return
             }
