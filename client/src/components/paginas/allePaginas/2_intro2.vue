@@ -1,8 +1,8 @@
 <template>
 <div class="">
     <div class="content-30vh">
-        <p>In 2017 is er in totaal <span>1000</span> keer een vuurwapen gebruikt door de politie</p>
-        <p>Terecht maar ook onterecht</p>
+        <p>In 2016 is er in totaal <span>2642</span> geweld geregistreerd door de politie</p>
+        <p>Terecht maar ook onterechte geweldsgebruik</p>
     </div>
     
 </div>
@@ -21,7 +21,7 @@ export default {
         
     },
     mounted(){
-        setTimeout(() => this.$router.push({ path: '/intro3'}), 6000);
+        // setTimeout(() => this.$router.push({ path: '/intro3'}), 6000);
     }
 }
 </script>

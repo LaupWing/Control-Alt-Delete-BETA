@@ -28,7 +28,7 @@ export default {
         
     },
     mounted(){
-        setTimeout(() => this.$router.push({ path: '/intro4'}), 15500);
+        // setTimeout(() => this.$router.push({ path: '/intro4'}), 15500);
     }
 }
 </script>
@@ -41,6 +41,7 @@ h2{
     width: 80%;
     margin: 20px auto;
     font-size: 20px;
+    text-align: left;
 }
 section p{
     text-align: left;
@@ -78,7 +79,10 @@ section p{
     from{transform: translate(-15%,0); opacity: 0;}
     to{transform: translate(0,0); opacity: 1;}
 }
-
-
+@media only screen and (min-width: 500px) {
+  section {
+    margin: auto;
+  }
+}
 </style>
 

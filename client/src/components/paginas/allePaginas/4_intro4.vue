@@ -17,7 +17,7 @@ export default {
     methods:{
     },
     mounted(){
-        setTimeout(() => this.$router.push({ path: '/tool'}), 7000);
+        // setTimeout(() => this.$router.push({ path: '/tool'}), 7000);
     }
 }
 </script>
@@ -25,6 +25,7 @@ export default {
 p{
     text-align: left;
     margin: 10px auto;
+    max-width: 600px;
 }
 </style>
 

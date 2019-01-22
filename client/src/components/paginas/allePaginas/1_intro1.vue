@@ -3,7 +3,8 @@
        <div class="intro">
         <img src="../../../assets/logoCAD.png" alt="">
         <div class="content-30vh">
-            <p><i>'Het gesprek is ons sterkste wapen'</i></p>
+            <h2>Politiegeweld</h2>
+            <p><i>'Wat weet jij ervan'</i></p>
         </div>
        </div>
 
@@ -23,7 +24,7 @@ export default {
         
     },
     mounted(){
-        setTimeout(() => this.$router.push({ path: '/intro2'}), 7000);
+        // setTimeout(() => this.$router.push({ path: '/intro2'}), 7000);
     }
 }
 </script>
@@ -39,7 +40,7 @@ img{
 .intro{
     height: 100vh;
 }
-.content-30vh > p{
+.content-30vh{
     opacity: 0;
     animation: opacityAnim 3s forwards;
     animation-delay: 2s;

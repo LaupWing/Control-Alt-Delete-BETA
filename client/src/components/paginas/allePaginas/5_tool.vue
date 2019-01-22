@@ -94,24 +94,18 @@ export default {
             this.$nextTick(()=>{
                 this.currentRoute = this.$route.path
             })
-            // setTimeout(()=>{
-                // this.currentRoute = this.$route.path
-                // },100)
         },
         handleClick(){
             this.previousTransition = this.transitionName;
             this.currentTransition = event.target.textContent.trim()
             if(this.previousTransition === "Informatie" && this.currentTransition === "Politiedoden"){
-                console.log("transition geweld")
                 this.transitionName = "Geweld"
             }else{
                 this.transitionName = this.currentTransition
-                // console.log(this.previousTransition, this.transitionName)
             }
         },
         popUpCounter(){
             this.popUp++
-            console.log(this.popUp)
         }
 
     },
@@ -124,6 +118,7 @@ export default {
 <style scoped>
 section{
     margin-top: 5vh;
+    max-width: 800px;
 }
 nav{
     width: 100%;

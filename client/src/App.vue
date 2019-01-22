@@ -1667,6 +1667,8 @@ body{
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+      display: flex;
+    justify-content: center;
 }
 
 h1{
@@ -1679,6 +1681,7 @@ h2{
 p{
     margin: 10px auto;
     width: 80%;
+    max-width: 600px;
 }
 p,li,h2,h1,span{
      -webkit-touch-callout: none; /* iOS Safari */
