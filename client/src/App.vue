@@ -1680,8 +1680,7 @@ p{
     margin: 10px auto;
     width: 80%;
 }
-li{
-	list-style: none;
+p,li,h2,h1,span{
      -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
      -khtml-user-select: none; /* Konqueror HTML */
@@ -1689,6 +1688,10 @@ li{
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
+}
+li{
+	list-style: none;
+    
 }
 span{
     font-family: 'Special Elite', cursive;
@@ -1783,11 +1786,10 @@ svg > path{
 ################################*/
 button{
     background: transparent;
-    border: white solid 2px;
+    border: black solid 1px;
     outline: none;
-    color: white;
     padding: 10px 20px;
-    width: 100px;
+    width: 150px;
     font-weight: 600;
     transition: .25s;
     cursor: pointer;

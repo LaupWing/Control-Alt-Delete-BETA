@@ -77,9 +77,8 @@
 export default { 
     name: 'Geweld',
     components:{
-
     },
-    props:['dataset'],
+    props:['dataset','currentRoute'],
     data(){
         return{
             active: this.dataset[0],
@@ -93,11 +92,13 @@ export default {
     },
     methods:{
         setBorder(d){
+            this.$emit("pop")
             this.active = d
             this.geweldSoortArray = this.active[this.geweldSoort]
             this.setValues()
         },
         handleChange(event){
+            this.$emit("pop")
             this.geweldSoort = event.target.value
             this.geweldSoortArray = this.active[this.geweldSoort]
             this.removeSpacingClass()
@@ -116,7 +117,6 @@ export default {
             // setTimeout(() => {
                 const x = this.$el.querySelector('.maandGeweld')
                 const space = window.innerHeight - (x.offsetTop + x.offsetHeight)
-                console.log(space)
                 if(space <=0){
                     this.$el.querySelectorAll(".vakje").forEach((i)=>{
                         i.classList.add("fitted")
@@ -156,14 +156,14 @@ export default {
             }
         },
         messagesLoop(){
-            setInterval(()=>{
-                if(this.message<3){
-                    this.message+=1
-                }else{
-                    this.message = 1 
-                }
+            const loop = setInterval(()=>{
+                                        if(this.message<3){
+                                            this.message+=1
+                                        }else{
+                                            this.message = 1 
+                                        }
             },10000)
-        }
+        },
     },
     mounted(){
         this.geweldSoort=this.$el.querySelector("option").value

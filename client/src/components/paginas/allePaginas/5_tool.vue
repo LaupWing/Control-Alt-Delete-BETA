@@ -56,7 +56,20 @@
         <transition :name="transitionName" mode="out-in">
             <router-view
                 v-bind:dataset='dataset'
+                v-bind:currentRoute='currentRoute'
+                ref="childComponent"
+                v-on:pop="popUpCounter"
             ></router-view>
+        </transition>
+        <transition name="pop-anim">
+            <div v-if="popUp === 10" class="pop-up flexCenter">
+                <h3>Dark Numbers</h3>
+                <p>Is het je opgevallen dat de cijfers van Politiegeweld in 2014 wel heel zijn, vergelijken met de bevolking van 16,83 miljoen Nederlanders.</p>
+                <p>Dat klopt</p>
+                <p>De politie en het Openbaar Ministerie publiceren geen cijfers over hoe vaak burgers aangifte doen van politiegeweld.</p>
+                <p>Dat zijn alleen de meldingen van de politie.</p>
+                <button @click="popUpCounter">Ik begrijp het</button>
+            </div>
         </transition>
     </section>
 </template>
@@ -72,7 +85,8 @@ export default {
             currentRoute: '',
             transitionName: '',
             previousTransition: '',
-            currentTransition: ''
+            currentTransition: '',
+            popUp: 0
         }
     },
     methods:{
@@ -94,7 +108,12 @@ export default {
                 this.transitionName = this.currentTransition
                 // console.log(this.previousTransition, this.transitionName)
             }
+        },
+        popUpCounter(){
+            this.popUp++
+            console.log(this.popUp)
         }
+
     },
     mounted(){
         this.setRoute()
@@ -125,7 +144,20 @@ a{
 .border_anim-enter-active{
     animation: opacityAnim 1s forwards;
 }
-
+.pop-up{
+    position: fixed;
+    width: 70vw;
+    height: 70vh;
+    background: white;
+    margin: auto;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    bottom: 15vh;
+    border-radius: 5px;
+    color: black;
+    transform-origin: center;
+}
 
 .Politiedoden-enter-active{
     animation: slideIn forwards 0.5s;
@@ -148,6 +180,13 @@ a{
     animation: slideOut forwards 0.5s;
 }
 
+.pop-anim-enter-active{
+    animation: popping forwards 0.5s;
+}
+.pop-anim-leave-active{
+    animation: popping forwards 0.5s reverse;
+}
+
 
 @keyframes slideOut{
   from {transform: translate(0, 0);opacity: 1;}
@@ -167,6 +206,11 @@ a{
 @keyframes slideIn2{
   from {transform: translate(-10vw,0); opacity: 0;}
   to {transform: translate(0, 0); opacity: 1;}
+}
+
+@keyframes popping{
+  from {transform: scale(0); opacity: 0;}
+  to {transform: scale(1); opacity: 1;}
 }
 </style>
 

@@ -52,7 +52,7 @@ export default {
     methods:{
         test(){
             console.log(event.target)
-        }
+        },
     },
     created(){
         
