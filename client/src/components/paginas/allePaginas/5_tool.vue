@@ -52,13 +52,32 @@
                     </div>
                 </transition>
             </div>
+            <div class="flexCenter">
+                <router-link to="/tool/delen">
+                    <li 
+                        @click="setRoute(), handleClick()"
+                    >
+                        Delen
+                    </li>
+                </router-link>
+                <transition name='border_anim'>
+                    <div 
+                        v-if="currentRoute === '/tool/delen'" 
+                        class="border"
+                    >
+                    </div>
+                </transition>
+            </div>
         </nav>
         <transition :name="transitionName" mode="out-in">
             <router-view
                 v-bind:dataset='dataset'
                 v-bind:currentRoute='currentRoute'
+                v-bind:sharing='sharing'
                 ref="childComponent"
                 v-on:pop="popUpCounter"
+                v-on:shareData="shareData"
+                class="subView"
             ></router-view>
         </transition>
         <transition name="pop-anim">
@@ -86,7 +105,8 @@ export default {
             transitionName: '',
             previousTransition: '',
             currentTransition: '',
-            popUp: 0
+            popUp: 0,
+            sharing: ''
         }
     },
     methods:{
@@ -106,6 +126,10 @@ export default {
         },
         popUpCounter(){
             this.popUp++
+        },
+        shareData(data){
+            this.sharing = data
+            console.log('parent', data)
         }
 
     },
@@ -117,8 +141,11 @@ export default {
 </script>
 <style scoped>
 section{
-    margin-top: 5vh;
+    margin-top: 2vh;
     max-width: 800px;
+}
+.subView{
+    margin-top: 20px;
 }
 nav{
     width: 100%;

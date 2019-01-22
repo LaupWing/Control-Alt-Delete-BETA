@@ -1,5 +1,52 @@
 <template>
     <div>
+        <div class="keuzes" @click="removeInfo">
+            <nav>
+                <li
+                    v-for="(d,index) in dataset"
+                    v-bind:key = "index"
+                    @click="setBorder(d)"
+                    :class="{activeLink: active === d}"
+                >
+                    {{d.jaartal}}
+                </li>
+            </nav>
+            <select @change="handleChange">
+                <option value="hond">Hond</option>
+                <option value="korteWapenstok">Korte Wapenstok</option>
+                <option value="langeWapenstok">Lange Wapenstok</option>
+                <option value="pepperspray">Pepperspray</option>
+                <option value="richten">Richten van Vuurwapen</option>
+                <option value="terHandNemen">Ter Hand Nemen van Vuurwapen</option>
+                <option value="waarschuwingsSchot">Waarschuwingsschot</option>
+            </select>
+            <p @click="shareData(active.jaartal, active.totaal)" class="jaartal">In {{active.jaartal}} totaal <span class="red">{{active.totaal}}</span> geweldsmeldingen</p>
+        </div>
+        <div class="resultaten">
+            <div class="maandGeweld"
+                v-for="(m, index) in geweldSoortArray"
+                v-bind:key="'B'+index"
+            >
+            <!-- V-for in de m hier en dan m.aantal -->
+                <li class="maand">{{m.maand}}</li>
+                <div class="aantal"
+                    @click="details(m), shareData(m)"
+                >
+                    <!-- <transition-group name="fade"> -->
+                        <div
+                            class="vakje"
+                            v-for="(i, index) in m.aantal"
+                            v-bind:key="'c'+index"
+                        ></div>
+                    <!-- </transition-group> -->
+                </div>
+            </div>
+            <transition name="info-anim">
+                <div v-if="showInfo" class="info">
+                    {{geweldDetails}}
+                </div>
+            </transition>
+        </div>
         <div class="content-20vh flexCenter" @click="removeInfo">
             <!-- <div class="totaal flexCenter">
                 <p>Totaal gemeld</p>
@@ -24,53 +71,6 @@
             </transition>
 
         </div>
-        <div class="keuzes" @click="removeInfo">
-            <nav>
-                <li
-                    v-for="(d,index) in dataset"
-                    v-bind:key = "index"
-                    @click="setBorder(d)"
-                    :class="{activeLink: active === d}"
-                >
-                    {{d.jaartal}}
-                </li>
-            </nav>
-            <select @change="handleChange">
-                <option value="hond">Hond</option>
-                <option value="korteWapenstok">Korte Wapenstok</option>
-                <option value="langeWapenstok">Lange Wapenstok</option>
-                <option value="pepperspray">Pepperspray</option>
-                <option value="richten">Richten van Vuurwapen</option>
-                <option value="terHandNemen">Ter Hand Nemen van Vuurwapen</option>
-                <option value="waarschuwingsSchot">Waarschuwingsschot</option>
-            </select>
-            <p class="jaartal">In {{active.jaartal}} totaal <span class="red">{{active.totaal}}</span> geweldsmeldingen</p>
-        </div>
-        <div class="resultaten">
-            <div class="maandGeweld"
-                v-for="(m, index) in geweldSoortArray"
-                v-bind:key="'B'+index"
-            >
-            <!-- V-for in de m hier en dan m.aantal -->
-                <li class="maand">{{m.maand}}</li>
-                <div class="aantal"
-                    @click="details(m)"
-                >
-                    <!-- <transition-group name="fade"> -->
-                        <div
-                            class="vakje"
-                            v-for="(i, index) in m.aantal"
-                            v-bind:key="'c'+index"
-                        ></div>
-                    <!-- </transition-group> -->
-                </div>
-            </div>
-        </div>
-        <transition name="info-anim">
-            <div v-if="showInfo" class="info">
-                {{geweldDetails}}
-            </div>
-        </transition>
     </div>
 </template>
 <script>
@@ -87,7 +87,8 @@ export default {
             geweldSoortArray:[],
             showInfo: false,
             geweldDetails: '',
-            message: 1  
+            message: 1,
+            sharing: ''  
         }
     },
     methods:{
@@ -115,9 +116,18 @@ export default {
         },
         checkSpacing(){
             // setTimeout(() => {
-                const x = this.$el.querySelector('.maandGeweld')
-                const space = window.innerHeight - (x.offsetTop + x.offsetHeight)
-                if(space <=0){
+                const all = this.$el.querySelectorAll('.aantal')
+                let numbers =[]
+                all.forEach((a)=>{
+                    numbers.push(a.clientHeight)
+                })
+                var largest = Math.max.apply(Math, numbers);
+                var height = this.$el.querySelector('.resultaten').clientHeight
+                
+                const space = height - largest
+                console.log(space)
+                
+                if(space <=10){
                     this.$el.querySelectorAll(".vakje").forEach((i)=>{
                         i.classList.add("fitted")
                     })
@@ -164,12 +174,33 @@ export default {
                                         }
             },10000)
         },
+        shareData(x,y){
+            const data = {
+                tab: 'geweldsoort',
+                soort : this.$el.querySelector('select').value,
+                aantal : '',
+                datum : '',
+                perMaand: ''
+            }
+            console.log(x,y)
+            if(y === undefined){
+                data.aantal = x.aantal
+                data.datum = x.maand
+                data.perMaand = true
+            }else{
+                data.datum = x
+                data.aantal = y
+                data.perMaand = false
+            }
+            this.$emit('shareData', data)
+        }
     },
     mounted(){
         this.geweldSoort=this.$el.querySelector("option").value
         this.setValues()
         this.messagesLoop()
     },
+
     
 }
 </script>
@@ -194,6 +225,7 @@ span{
     font-size: 1.6em;
 }
 .keuzes{
+    margin-top: 10px;
     background: #202020;
     width: 100%;
     height: 23vh;
@@ -242,6 +274,8 @@ nav{
     width: 100%;
     display: flex;
     justify-content: space-around;
+    position: relative;
+    height: 40vh;
 }
 .maandGeweld{
     width: 4%;
@@ -270,8 +304,8 @@ nav{
 }
 .info{
     opacity: 1;
-    position: fixed;
-    bottom: 10px;
+    position: absolute;
+    bottom: 0;
     margin: auto;
     left: 0;
     right: 0;

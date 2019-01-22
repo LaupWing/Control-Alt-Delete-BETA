@@ -12,6 +12,7 @@ import Tool from './components/paginas/allePaginas/5_tool.vue'
 import Geweld from './components/paginas/allePaginas/5_tool_Components/geweld.vue'
 import PoltieDoden from './components/paginas/allePaginas/5_tool_Components/politiedoden.vue'
 import Informatie from './components/paginas/allePaginas/5_tool_Components/informatie.vue'
+import Delen from './components/paginas/allePaginas/5_tool_Components/delen.vue'
 
 Vue.config.productionTip = false
 
@@ -49,6 +50,10 @@ const routes = [
             {
                 path: 'informatie',
                 component: Informatie             
+            },
+            {
+                path: 'delen',
+                component: Delen             
             }
         ]
     },
