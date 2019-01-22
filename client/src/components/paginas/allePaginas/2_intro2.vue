@@ -21,7 +21,7 @@ export default {
         
     },
     mounted(){
-        // setTimeout(() => this.$router.push({ path: '/intro3'}), 6000);
+        setTimeout(() => this.$router.push({ path: '/intro3'}), 6000);
     }
 }
 </script>
