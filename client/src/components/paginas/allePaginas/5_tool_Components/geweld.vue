@@ -184,7 +184,7 @@ p{
     margin: 2px 0;
 }
 span{
-    color: red;
+    color: #A03029;
 }
 .subtitel span{
     color: white;

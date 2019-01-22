@@ -118,7 +118,7 @@ export default {
                     })
                 }else if(index>=this.active.gewonden && index<(this.active.dodelijke + this.active.gewonden)){
                     i.querySelectorAll("path").forEach((x)=>{
-                        x.style.fill = "red"
+                        x.style.fill = "#A03029"
                     })
                 }else{
                     i.querySelectorAll("path").forEach((x)=>{
@@ -205,6 +205,6 @@ svg{
     fill: white;
 }
 .red{
-    fill: red;
+    fill: #A03029;
 }
 </style>
