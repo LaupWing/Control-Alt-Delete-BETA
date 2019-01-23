@@ -18,3 +18,19 @@ npm install
 
 ```
 
+## Starten van de appicatie(pre-production)
+In de client folder kan je applicatie starten.
+```bash
+#in de client folder
+npm run serve
+
+#ctrl + click op de localhost:8080 om de applicatie op een lokale server te starten
+```
+
+## Applicatie voor productie preppen
+Deze stap is volkomen nutteloos, omdat er geen gebruik gemaakt word van een database door onze nieuwe applicatie. Maar zoals ik al in het begin heb aangegeven, had ik te weinig tijd om vanaf een scratch te beginnen heb ik het maar zo gedaan. 
+```bash
+#in de client folder
+npm run build
+```
+Na het uitvoeren van de build command worden de client files in gebundeld en vervolgens komen de files in de public folder terecht en is de applicatie klaar voor productie! 
