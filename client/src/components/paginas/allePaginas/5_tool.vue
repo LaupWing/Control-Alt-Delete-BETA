@@ -118,7 +118,10 @@ export default {
         handleClick(){
             this.previousTransition = this.transitionName;
             this.currentTransition = event.target.textContent.trim()
-            if(this.previousTransition === "Geweldsmiddelen" && this.currentTransition === "Politiedoden"){
+            if(this.previousTransition === "Geweldsmiddelen" && this.currentTransition === "Politiedoden"
+                || this.previousTransition === "Delen" && this.currentTransition === "Geweldsmiddelen"||
+                this.previousTransition === "Delen" && this.currentTransition === "Politiedoden"
+            ){
                 this.transitionName = "Geweld"
             }else{
                 this.transitionName = this.currentTransition
@@ -200,6 +203,14 @@ a{
 .Geweldsmiddelen-leave-active{
     animation: slideOut forwards 0.5s;
 }
+
+.Delen-enter-active{
+    animation: slideIn forwards 0.5s;
+}
+.Delen-leave-active{
+    animation: slideOut forwards 0.5s;
+}
+
 
 .pop-anim-enter-active{
     animation: popping forwards 0.5s;

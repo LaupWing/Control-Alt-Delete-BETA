@@ -12,7 +12,7 @@
                 </li>
             </nav>
             <select @change="handleChange">
-                <option value="hond">Hond</option>
+                <option value="hond">Inzet van Hond</option>
                 <option value="korteWapenstok">Korte Wapenstok</option>
                 <option value="langeWapenstok">Lange Wapenstok</option>
                 <option value="pepperspray">Pepperspray</option>
@@ -93,6 +93,20 @@ export default {
             geweldDetails: '',
             titel: '',
             subtitel: '',
+            maanden:[
+                "Januari",
+                "Februari", 
+                "Maart", 
+                "April", 
+                "Mei", 
+                "Juni",
+                "Juli",
+                "Augustus",
+                "September",
+                "Oktober",
+                "November",
+                "December"
+            ],
             messages:[
                 {
                     titel: 'Inzet politiehond niet gereguleerd',
@@ -132,7 +146,6 @@ export default {
             })
         },
         checkSpacing(){
-            // setTimeout(() => {
                 const all = this.$el.querySelectorAll('.aantal')
                 let numbers =[]
                 all.forEach((a)=>{
@@ -151,7 +164,6 @@ export default {
                 }else{
                     this.removeSpacingClass()
                 }
-            // }, 50);
         },
         removeSpacingClass(){
             this.$el.querySelectorAll(".vakje").forEach((i)=>{
@@ -197,7 +209,7 @@ export default {
             if(this.geweldSoort === 'hond'){
                 this.titel = this.messages[0].titel
                 this.subtitel = this.messages[0].subtitel
-            }else if(this.geweldSoort === 'langeWapenstok' || this.geweldSoort === 'korteWapenstok'){
+            }else if(this.geweldSoort === 'langeWapenstok' || this.geweldSoort === 'korteWapenstok'|| this.geweldSoort === 'pepperspray'){
                 this.titel = this.messages[2].titel
                 this.subtitel = this.messages[2].subtitel
             }else{
@@ -209,7 +221,7 @@ export default {
         shareData(x,y){
             const data = {
                 tab: 'geweldsoort',
-                soort : this.$el.querySelector('select').value,
+                soort : '',
                 aantal : '',
                 datum : '',
                 perMaand: ''
@@ -217,11 +229,13 @@ export default {
             console.log(x,y)
             if(y === undefined){
                 data.aantal = x.aantal
-                data.datum = x.maand
+                data.datum = `${this.maanden[x.maand-1]}, ${this.active.jaartal}`
                 data.perMaand = true
+                data.soort = this.$el.querySelector('select').value
             }else{
                 data.datum = x
                 data.aantal = y
+                data.soort = 'Alle Geweldsmiddelen'
                 data.perMaand = false
             }
             this.$emit('shareData', data)
