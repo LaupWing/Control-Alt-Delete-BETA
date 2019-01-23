@@ -41,7 +41,7 @@
                     <li 
                         @click="setRoute(), handleClick()"
                     >
-                        Informatie
+                        Geweldsmiddelen
                     </li>
                 </router-link>
                 <transition name='border_anim'>
@@ -125,7 +125,6 @@ export default {
             }
         },
         pop(){
-            console.log("check")
             this.popUp = !this.popUp
         },
         shareData(data){
