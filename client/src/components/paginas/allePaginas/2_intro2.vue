@@ -1,10 +1,10 @@
 <template>
 <div class="">
     <div class="content-30vh">
-        <p>In 2016 is er in totaal <span>2642</span> geweld geregistreerd door de politie</p>
-        <p>Terecht maar ook onterechte geweldsgebruik</p>
+        <p>Tussen 2013 en 2017 zijn er 11 dodelijke slachtoffers door een politiewapen. Maar er is niks bekend over slachtoffers door een andere vorm van geweld. </p>
+        <p>Hoe kan dit? </p>
     </div>
-    
+    <i @click="next" class="arrow fas fa-caret-down"></i>
 </div>
 </template>
 <script>
@@ -18,11 +18,10 @@ export default {
         }
     },
     methods:{
-        
+        next(){
+            this.$router.push({ path: '/intro3'})
+        }  
     },
-    mounted(){
-        setTimeout(() => this.$router.push({ path: '/intro3'}), 6000);
-    }
 }
 </script>
 <style scoped>

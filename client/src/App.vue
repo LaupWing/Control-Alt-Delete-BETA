@@ -12,6 +12,7 @@
         >
         </router-view>
      </transition>
+        <!-- <i class="arrow fas fa-caret-down"></i> -->
   </div>
 </template>
 
@@ -23,6 +24,361 @@ export default {
 	  return{
         userInfo:{},
         dataset:[
+            {
+                jaartal: 2013,
+                totaal: '???',
+                pepperspray:[
+                    {
+                        maand:1,
+                        aantal:'?'
+                    },
+                    {
+                        maand:2,
+                        aantal:'?'
+                    },
+                    {
+                        maand:3,
+                        aantal:'?'
+                    },
+                    {
+                        maand:4,
+                        aantal:'?'
+                    },
+                    {
+                        maand:5,
+                        aantal:'?'
+                    },
+                    {
+                        maand:6,
+                        aantal:'?'
+                    },
+                    {
+                        maand:7,
+                        aantal:'?'
+                    },
+                    {
+                        maand:8,
+                        aantal:'?'
+                    },
+                    {
+                        maand:9,
+                        aantal:'?'
+                    },
+                    {
+                        maand:10,
+                        aantal:'?'
+                    },
+                    {
+                        maand:11,
+                        aantal:'?'
+                    },
+                    {
+                        maand:12,
+                        aantal:'?'
+                    },
+                ],
+                richten:[
+                    {
+                        maand:1,
+                        aantal:'?'
+                    },
+                    {
+                        maand:2,
+                        aantal:'?'
+                    },
+                    {
+                        maand:3,
+                        aantal:'?'
+                    },
+                    {
+                        maand:4,
+                        aantal:'?'
+                    },
+                    {
+                        maand:5,
+                        aantal:'?'
+                    },
+                    {
+                        maand:6,
+                        aantal:'?'
+                    },
+                    {
+                        maand:7,
+                        aantal:'?'
+                    },
+                    {
+                        maand:8,
+                        aantal:'?'
+                    },
+                    {
+                        maand:9,
+                        aantal:'?'
+                    },
+                    {
+                        maand:10,
+                        aantal:'?'
+                    },
+                    {
+                        maand:11,
+                        aantal:'?'
+                    },
+                    {
+                        maand:12,
+                        aantal:'?'
+                    },
+                ],
+                hond:[
+                    {
+                        maand:1,
+                        aantal:'?'
+                    },
+                    {
+                        maand:2,
+                        aantal:'?'
+                    },
+                    {
+                        maand:3,
+                        aantal:'?'
+                    },
+                    {
+                        maand:4,
+                        aantal:'?'
+                    },
+                    {
+                        maand:5,
+                        aantal:'?'
+                    },
+                    {
+                        maand:6,
+                        aantal:'?'
+                    },
+                    {
+                        maand:7,
+                        aantal:'?'
+                    },
+                    {
+                        maand:8,
+                        aantal:'?'
+                    },
+                    {
+                        maand:9,
+                        aantal:'?'
+                    },
+                    {
+                        maand:10,
+                        aantal:'?'
+                    },
+                    {
+                        maand:11,
+                        aantal:'?'
+                    },
+                    {
+                        maand:12,
+                        aantal:'?'
+                    },
+                ],
+                korteWapenstok:[
+                    {
+                        maand:1,
+                        aantal:'?'
+                    },
+                    {
+                        maand:2,
+                        aantal:'?'
+                    },
+                    {
+                        maand:3,
+                        aantal:'?'
+                    },
+                    {
+                        maand:4,
+                        aantal:'?'
+                    },
+                    {
+                        maand:5,
+                        aantal:'?'
+                    },
+                    {
+                        maand:6,
+                        aantal:'?'
+                    },
+                    {
+                        maand:7,
+                        aantal:'?'
+                    },
+                    {
+                        maand:8,
+                        aantal:'?'
+                    },
+                    {
+                        maand:9,
+                        aantal:'?'
+                    },
+                    {
+                        maand:10,
+                        aantal:'?'
+                    },
+                    {
+                        maand:11,
+                        aantal:'?'
+                    },
+                    {
+                        maand:12,
+                        aantal:'?'
+                    },
+                ],
+                langeWapenstok:[
+                    {
+                        maand:1,
+                        aantal:'?'
+                    },
+                    {
+                        maand:2,
+                        aantal:'?'
+                    },
+                    {
+                        maand:3,
+                        aantal:'?'
+                    },
+                    {
+                        maand:4,
+                        aantal:'?'
+                    },
+                    {
+                        maand:5,
+                        aantal:'?'
+                    },
+                    {
+                        maand:6,
+                        aantal:'?'
+                    },
+                    {
+                        maand:7,
+                        aantal:'?'
+                    },
+                    {
+                        maand:8,
+                        aantal:'?'
+                    },
+                    {
+                        maand:9,
+                        aantal:'?'
+                    },
+                    {
+                        maand:10,
+                        aantal:'?'
+                    },
+                    {
+                        maand:11,
+                        aantal:'?'
+                    },
+                    {
+                        maand:12,
+                        aantal:'?'
+                    },
+                ],
+                terHandNemen:[
+                    {
+                        maand:1,
+                        aantal:'?'
+                    },
+                    {
+                        maand:2,
+                        aantal:'?'
+                    },
+                    {
+                        maand:3,
+                        aantal:'?'
+                    },
+                    {
+                        maand:4,
+                        aantal:'?'
+                    },
+                    {
+                        maand:5,
+                        aantal:'?'
+                    },
+                    {
+                        maand:6,
+                        aantal:'?'
+                    },
+                    {
+                        maand:7,
+                        aantal:'?'
+                    },
+                    {
+                        maand:8,
+                        aantal:'?'
+                    },
+                    {
+                        maand:9,
+                        aantal:'?'
+                    },
+                    {
+                        maand:10,
+                        aantal:'?'
+                    },
+                    {
+                        maand:11,
+                        aantal:'?'
+                    },
+                    {
+                        maand:12,
+                        aantal:'?'
+                    },
+                ],
+                waarschuwingsSchot:[
+                    {
+                        maand:1,
+                        aantal:'?'
+                    },
+                    {
+                        maand:2,
+                        aantal:'?'
+                    },
+                    {
+                        maand:3,
+                        aantal:'?'
+                    },
+                    {
+                        maand:4,
+                        aantal:'?'
+                    },
+                    {
+                        maand:5,
+                        aantal:'?'
+                    },
+                    {
+                        maand:6,
+                        aantal:'?'
+                    },
+                    {
+                        maand:7,
+                        aantal:'?'
+                    },
+                    {
+                        maand:8,
+                        aantal:'?'
+                    },
+                    {
+                        maand:9,
+                        aantal:'?'
+                    },
+                    {
+                        maand:10,
+                        aantal:'?'
+                    },
+                    {
+                        maand:11,
+                        aantal:'?'
+                    },
+                    {
+                        maand:12,
+                        aantal:'?'
+                    },
+                ]
+                
+            },
             {
                 jaartal: 2014,
                 totaal: 2588,
@@ -1470,7 +1826,31 @@ export default {
                     {
                         maand:6,
                         aantal:65
-                    }
+                    },
+                    {
+                        maand:7,
+                        aantal:'?'
+                    },
+                    {
+                        maand:8,
+                        aantal:'?'
+                    },
+                    {
+                        maand:9,
+                        aantal:'?'
+                    },
+                    {
+                        maand:10,
+                        aantal:'?'
+                    },
+                    {
+                        maand:11,
+                        aantal:'?'
+                    },
+                    {
+                        maand:12,
+                        aantal:'?'
+                    },
                 ],
                 richten:[
                     {
@@ -1496,6 +1876,30 @@ export default {
                     {
                         maand:6,
                         aantal:81
+                    },
+                    {
+                        maand:7,
+                        aantal:'?'
+                    },
+                    {
+                        maand:8,
+                        aantal:'?'
+                    },
+                    {
+                        maand:9,
+                        aantal:'?'
+                    },
+                    {
+                        maand:10,
+                        aantal:'?'
+                    },
+                    {
+                        maand:11,
+                        aantal:'?'
+                    },
+                    {
+                        maand:12,
+                        aantal:'?'
                     },
                 ],
                 hond:[
@@ -1523,6 +1927,30 @@ export default {
                         maand:6,
                         aantal:19
                     },
+                    {
+                        maand:7,
+                        aantal:'?'
+                    },
+                    {
+                        maand:8,
+                        aantal:'?'
+                    },
+                    {
+                        maand:9,
+                        aantal:'?'
+                    },
+                    {
+                        maand:10,
+                        aantal:'?'
+                    },
+                    {
+                        maand:11,
+                        aantal:'?'
+                    },
+                    {
+                        maand:12,
+                        aantal:'?'
+                    },
                 ],
                 korteWapenstok:[
                     {
@@ -1548,7 +1976,31 @@ export default {
                     {
                         maand:6,
                         aantal:9
-                    }
+                    },
+                    {
+                        maand:7,
+                        aantal:'?'
+                    },
+                    {
+                        maand:8,
+                        aantal:'?'
+                    },
+                    {
+                        maand:9,
+                        aantal:'?'
+                    },
+                    {
+                        maand:10,
+                        aantal:'?'
+                    },
+                    {
+                        maand:11,
+                        aantal:'?'
+                    },
+                    {
+                        maand:12,
+                        aantal:'?'
+                    },
                 ],
                 langeWapenstok:[
                     {
@@ -1574,7 +2026,31 @@ export default {
                     {
                         maand:6,
                         aantal:8
-                    }
+                    },
+                    {
+                        maand:7,
+                        aantal:'?'
+                    },
+                    {
+                        maand:8,
+                        aantal:'?'
+                    },
+                    {
+                        maand:9,
+                        aantal:'?'
+                    },
+                    {
+                        maand:10,
+                        aantal:'?'
+                    },
+                    {
+                        maand:11,
+                        aantal:'?'
+                    },
+                    {
+                        maand:12,
+                        aantal:'?'
+                    },
                 ],
                 terHandNemen:[
                     {
@@ -1600,7 +2076,31 @@ export default {
                     {
                         maand:6,
                         aantal:10
-                    }
+                    },
+                    {
+                        maand:7,
+                        aantal:'?'
+                    },
+                    {
+                        maand:8,
+                        aantal:'?'
+                    },
+                    {
+                        maand:9,
+                        aantal:'?'
+                    },
+                    {
+                        maand:10,
+                        aantal:'?'
+                    },
+                    {
+                        maand:11,
+                        aantal:'?'
+                    },
+                    {
+                        maand:12,
+                        aantal:'?'
+                    },
                 ],
                 waarschuwingsSchot:[
                     {
@@ -1626,7 +2126,31 @@ export default {
                     {
                         maand:6,
                         aantal:2
-                    }
+                    },
+                    {
+                        maand:7,
+                        aantal:'?'
+                    },
+                    {
+                        maand:8,
+                        aantal:'?'
+                    },
+                    {
+                        maand:9,
+                        aantal:'?'
+                    },
+                    {
+                        maand:10,
+                        aantal:'?'
+                    },
+                    {
+                        maand:11,
+                        aantal:'?'
+                    },
+                    {
+                        maand:12,
+                        aantal:'?'
+                    },
                 ]
                 
             },
@@ -1729,10 +2253,16 @@ span{
     flex-direction: column;
 }
 .red{
-    color: red;
+    color: #A03029;
 }
 .white{
     color: white;
+}
+.onbekend{
+    font-size: 15px;
+    margin: auto !important;
+    color: #A03029;
+
 }
 
 /* Globale input styling 
@@ -1878,6 +2408,24 @@ button:hover{
 }
 .router-anim-enter-active{
     animation: slideOutBottom 2s forwards;
+}
+
+.arrow{
+    position: fixed;
+    bottom: 2vh;
+    font-size: 3em;
+    animation: arrow-anim 2.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    transform-origin: center;
+    z-index: 10;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+@keyframes arrow-anim {
+    from{transform: scale(1);}
+    to{transform: scale(1.2)}
 }
 
 @keyframes slideOutTop{

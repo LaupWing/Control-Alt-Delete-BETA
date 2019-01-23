@@ -1,15 +1,5 @@
 <template>
 <div>
-    <div class="content-20vh flexCenter">
-        <div v-if="message ===1" class="message1 flexCenter">
-                <p class="titel"><span class="red">Cijfers dodelijke slachtoffers zijn niet compleet</span></p>
-                <p class="subtitel"><span class="white">geen publieke cijfers zijn over dodelijke slachtoffers van fysiek geweld door de politie</span></p>
-        </div>
-        <div v-if="message === 2" class="message1 flexCenter">
-                <p class="titel"><span class="red">Man van 41 neergeschoten door poltie</span></p>
-                <p class="subtitel"><span class="white">Politie agenten dachten dat hij een mes of een scherpe voorwerp had, maar bleek achteraf niet zo te zijn </span></p>
-        </div>    
-    </div>
     <div class="keuzes">
         <nav>
                 <li
@@ -28,6 +18,7 @@
                         <path d="M159,417c11.4,2.4,21.8,6.5,30.5,14.8,14.8,14.1,19.7,31.4,15.2,50.9-7.2,31.3-39,49.3-70.5,37.7-19.3-7-31.1-21.9-34.1-42.6-4.2-29.7,16.9-55.3,44.1-60a7.1,7.1,0,0,0,1.8-.8Z" transform="translate(-37.9 -417)"/>
                     </g>
                 </svg>
+                <p class="onbekend1" v-if="active.schietincidenten ===''">?????</p>
             </div>
             <div class="legenda">
                 <svg class="stickfigure2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 232.8 626"><title>politie-agent2</title>
@@ -36,7 +27,9 @@
                             <path class="white" d="M159,417c11.4,2.4,21.8,6.5,30.5,14.8,14.8,14.1,19.7,31.4,15.2,50.9-7.2,31.3-39,49.3-70.5,37.7-19.3-7-31.1-21.9-34.1-42.6-4.2-29.7,16.9-55.3,44.1-60a7.1,7.1,0,0,0,1.8-.8Z" transform="translate(-37.9 -417)"/>
                         </g>
                 </svg>
-                <p class="info"><span>Totaal aantal schietincidenten: </span><span class="red">{{active.schietincidenten}}</span></p>
+                <p class="info">Totaal aantal schietincidenten: <span class="red">{{active.schietincidenten}}</span>
+                <span class="red" v-if="active.schietincidenten ===''">???</span>
+                </p>
             </div>
             <div class="legenda">
                 <svg class="stickfigure2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 232.8 626"><title>politie-agent2</title>
@@ -45,7 +38,8 @@
                             <path class="orange" d="M159,417c11.4,2.4,21.8,6.5,30.5,14.8,14.8,14.1,19.7,31.4,15.2,50.9-7.2,31.3-39,49.3-70.5,37.7-19.3-7-31.1-21.9-34.1-42.6-4.2-29.7,16.9-55.3,44.1-60a7.1,7.1,0,0,0,1.8-.8Z" transform="translate(-37.9 -417)"/>
                         </g>
                 </svg>
-                <p class="info"><span>Totaal aantal gewonden: </span><span class="red">{{active.gewonden}}</span></p>
+                <p class="info">Totaal aantal gewonden: <span class="red">{{active.gewonden}}</span>
+                <span class="red" v-if="active.schietincidenten ===''">???</span></p>
             </div>
             <div class="legenda">
                 <svg class="stickfigure2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 232.8 626"><title>politie-agent2</title>
@@ -54,8 +48,23 @@
                             <path class="red" d="M159,417c11.4,2.4,21.8,6.5,30.5,14.8,14.8,14.1,19.7,31.4,15.2,50.9-7.2,31.3-39,49.3-70.5,37.7-19.3-7-31.1-21.9-34.1-42.6-4.2-29.7,16.9-55.3,44.1-60a7.1,7.1,0,0,0,1.8-.8Z" transform="translate(-37.9 -417)"/>
                         </g>
                 </svg>
-                <p class="info"><span>Totaal aantal dodelijke: </span><span class="red">{{active.dodelijke}}</span></p>
+                <p class="info">Totaal aantal dodelijke: <span class="red">{{active.dodelijke}}</span>
+                <span class="red" v-if="active.schietincidenten ===''">???</span></p>
             </div>
+    </div>
+    <div class="content-20vh flexCenter">
+        <!-- <div v-if="message ===1" class="message1 flexCenter">
+                <p class="titel"><span class="red">Cijfers dodelijke slachtoffers zijn niet compleet</span></p>
+                <p class="subtitel"><span class="white">geen publieke cijfers zijn over dodelijke slachtoffers van fysiek geweld door de politie</span></p>
+        </div>
+        <div v-if="message === 2" class="message1 flexCenter">
+                <p class="titel"><span class="red">Man van 41 neergeschoten door poltie</span></p>
+                <p class="subtitel"><span class="white">Politie agenten dachten dat hij een mes of een scherpe voorwerp had, maar bleek achteraf niet zo te zijn </span></p>
+        </div>     -->
+        <div class="message1 flexCenter">
+                <p class="titel"><span class="red">{{titel}}</span></p>
+                <p class="subtitel"><span class="white">{{subtitel}}</span></p>
+        </div> 
     </div>
 </div>
 </template>
@@ -97,15 +106,40 @@ export default {
                     schietincidenten: 23,
                     gewonden: 20,
                     dodelijke: 3
-                }
+                },
+                {
+                    jaartal:2018,
+                    schietincidenten: '',
+                    gewonden: '',
+                    dodelijke:  ''
+                },
             ],
-            message: 1
+            message: 1,
+            messages:[
+                {
+                    jaartal: 2015 , 
+                    titel:'In 2015 vielen er geen doden door politievuur',
+                    subtitel:'Echter er vielen wel dodelijke slachtoffers bij politieoptreden. Een van de slachtoffers haalde toen zelfs de landelijke media.'
+                },
+                {
+                    jaartal: 2016,
+                    titel: 'Man van 41 neergeschoten door poltie',
+                    subtitel: 'Politie agenten dachten dat hij een mes of een scherpe voorwerp had, maar bleek achteraf niet zo te zijn'
+                },
+                {
+                    jaartal: 2017,
+                    titel: 'Op 22 januari overleed een man van Zuid-Europese komaf in een politiecel',
+                    subtitel: ' Volgens de politie werd hij dood in zijn cel aangetroffen en was er sprake van zelfmoord. Het is onbekend of de Rijksrecherche hier onderzoek naar doet.'
+                },
+            ],
+            titel:'',
+            subtitel: ''
         }
     },
     methods:{
         handleClick(d){
-            this.$emit("pop")
             this.active = d
+            this.changeMessage()
             this.$nextTick(()=>{
                 this.coloring()
             })
@@ -136,6 +170,19 @@ export default {
                                         }
             },10000)
         },
+        changeMessage(){
+            let flag = true
+            this.messages.forEach((i)=>{
+                if(i.jaartal === this.active.jaartal){
+                    this.titel = i.titel
+                    this.subtitel = i.subtitel
+                    flag = false
+                }else if(flag === true){
+                    this.titel = ''
+                    this.subtitel = ''
+                }
+            })
+        }
     },
     created(){
         this.active = this.aantalDoden[0]
@@ -206,5 +253,10 @@ svg{
 }
 .red{
     fill: #A03029;
+}
+.onbekend1{
+    font-size: 23px;
+    width: 100%;
+    color: #A03029;
 }
 </style>

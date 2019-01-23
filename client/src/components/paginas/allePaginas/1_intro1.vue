@@ -4,10 +4,10 @@
         <img src="../../../assets/logoCAD.png" alt="">
         <div class="content-30vh">
             <h2>Politiegeweld</h2>
-            <p><i>'Wat weet jij ervan'</i></p>
+            <p><i>'Kloppen de cijfers??'</i></p>
         </div>
        </div>
-
+        <i @click="next" class="arrow fas fa-caret-down"></i>
    </div>
 </template>
 <script>
@@ -21,10 +21,11 @@ export default {
 		}
     },
     methods:{
-        
+        next(){
+            this.$router.push({ path: '/intro2'})
+        }        
     },
     mounted(){
-        setTimeout(() => this.$router.push({ path: '/intro2'}), 7000);
     }
 }
 </script>
@@ -48,4 +49,5 @@ img{
 p {
     margin: 10px auto;
 }
+
 </style>

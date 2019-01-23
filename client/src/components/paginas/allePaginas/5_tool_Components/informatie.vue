@@ -50,7 +50,7 @@ export default {
         }
     },
     methods:{
-        test(){
+        handleClick(){
             console.log(event.target)
         },
     },

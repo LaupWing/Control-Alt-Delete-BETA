@@ -1,7 +1,10 @@
 <template>
+<div>    
     <div class="content-30vh">
         <p>Hoe vaak maak de politie gebruik van deze geweldsmiddelen?</p>
     </div>
+        <i @click="next" class="arrow fas fa-caret-down"></i>
+</div>
 </template>
 <script>
 
@@ -15,10 +18,10 @@ export default {
         }
     },
     methods:{
+        next(){
+            this.$router.push({ path: '/tool'})
+        }
     },
-    mounted(){
-        setTimeout(() => this.$router.push({ path: '/tool'}), 7000);
-    }
 }
 </script>
 <style scoped>

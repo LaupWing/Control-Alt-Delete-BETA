@@ -75,19 +75,19 @@
                 v-bind:currentRoute='currentRoute'
                 v-bind:sharing='sharing'
                 ref="childComponent"
-                v-on:pop="popUpCounter"
+                v-on:pop="pop"
                 v-on:shareData="shareData"
                 class="subView"
             ></router-view>
         </transition>
         <transition name="pop-anim">
-            <div v-if="popUp === 10" class="pop-up flexCenter">
+            <div v-if="popUp === true" class="pop-up flexCenter">
                 <h3>Dark Numbers</h3>
                 <p>Is het je opgevallen dat de cijfers van Politiegeweld in 2014 wel heel zijn, vergelijken met de bevolking van 16,83 miljoen Nederlanders.</p>
                 <p>Dat klopt</p>
                 <p>De politie en het Openbaar Ministerie publiceren geen cijfers over hoe vaak burgers aangifte doen van politiegeweld.</p>
                 <p>Dat zijn alleen de meldingen van de politie.</p>
-                <button @click="popUpCounter">Ik begrijp het</button>
+                <button @click="pop">Ik begrijp het</button>
             </div>
         </transition>
     </section>
@@ -105,7 +105,7 @@ export default {
             transitionName: '',
             previousTransition: '',
             currentTransition: '',
-            popUp: 0,
+            popUp: false,
             sharing: ''
         }
     },
@@ -124,12 +124,12 @@ export default {
                 this.transitionName = this.currentTransition
             }
         },
-        popUpCounter(){
-            this.popUp++
+        pop(){
+            console.log("check")
+            this.popUp = !this.popUp
         },
         shareData(data){
             this.sharing = data
-            console.log('parent', data)
         }
 
     },

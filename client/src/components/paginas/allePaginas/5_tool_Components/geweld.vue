@@ -20,7 +20,7 @@
                 <option value="terHandNemen">Ter Hand Nemen van Vuurwapen</option>
                 <option value="waarschuwingsSchot">Waarschuwingsschot</option>
             </select>
-            <p @click="shareData(active.jaartal, active.totaal)" class="jaartal">In {{active.jaartal}} totaal <span class="red">{{active.totaal}}</span> geweldsmeldingen</p>
+            <p @click="shareData(active.jaartal, active.totaal)" class="jaartal">In {{active.jaartal}} totaal <span class="red">{{active.totaal}}</span> geweldsmeldingen <i @click="popup" class="popup fas fa-question-circle"></i></p>
         </div>
         <div class="resultaten">
             <div class="maandGeweld"
@@ -34,10 +34,20 @@
                 >
                     <!-- <transition-group name="fade"> -->
                         <div
-                            class="vakje"
                             v-for="(i, index) in m.aantal"
                             v-bind:key="'c'+index"
-                        ></div>
+                        >
+                            <div
+                                v-if="m.aantal === '?'|| m.aantal ===''"
+                            >
+                            <p class="onbekend">?</p>
+                            </div>
+                            <div
+                                v-else
+                                class="vakje"
+                            >  
+                            </div>
+                        </div>
                     <!-- </transition-group> -->
                 </div>
             </div>
@@ -56,17 +66,11 @@
                 name="message-anim"
                 mode="out-in"
             >
-                <div v-if="message === 1" class="message1 flexCenter">
-                    <p class="titel"><span class="red">Inzet politiehond niet gereguleerd</span></p>
-                    <p class="subtitel"><span class="white">De politiehond is een geweldsmiddel dat vaak leidt tot ernstig letsel</span></p>
-                </div>
-                <div v-if="message===2" class="message1 flexCenter">
-                    <p class="titel"><span class="red">Vuurwapengebruik in strijd met richtlijnen</span></p>
-                    <p class="subtitel"><span class="white">De regels voor het vuurwapengebruik zijn niet in overeenstemming met internationale richtlijnen.</span></p>
-                </div>
-                <div v-if="message===3" class="message1 flexCenter">
-                    <p class="titel"><span class="red">Invoering taser in basispolitiezorg ondanks kritiek</span></p>
-                    <p class="subtitel"><span class="white">De politie wil de taser invoeren in de basispolitiezorg.</span></p>
+                <div 
+                    class="message1 flexCenter"
+                >
+                    <p class="titel"><span class="red">{{titel}}</span></p>
+                    <p class="subtitel"><span class="white">{{subtitel}}</span></p>
                 </div>
             </transition>
 
@@ -87,25 +91,38 @@ export default {
             geweldSoortArray:[],
             showInfo: false,
             geweldDetails: '',
-            message: 1,
-            sharing: ''  
+            titel: '',
+            subtitel: '',
+            messages:[
+                {
+                    titel: 'Inzet politiehond niet gereguleerd',
+                    subtitel: 'De politiehond is een geweldsmiddel dat vaak leidt tot ernstig letsel'
+                },
+                {
+                    titel: 'Vuurwapengebruik in strijd met richtlijnen',
+                    subtitel: 'De regels voor het vuurwapengebruik zijn niet in overeenstemming met internationale richtlijnen.'
+                },
+                {
+                    titel: 'Invoering taser in basispolitiezorg ondanks kritiek',
+                    subtitel: 'De politie wil de taser invoeren in de basispolitiezorg.'
+                },
+            ]  
         }
     },
     methods:{
         setBorder(d){
-            this.$emit("pop")
             this.active = d
             this.geweldSoortArray = this.active[this.geweldSoort]
             this.setValues()
         },
         handleChange(event){
-            this.$emit("pop")
             this.geweldSoort = event.target.value
             this.geweldSoortArray = this.active[this.geweldSoort]
             this.removeSpacingClass()
             this.$nextTick(()=>{
                 this.checkSpacing()
             })
+            this.changeMessage()
         },
         setValues(){
             this.geweldSoortArray = this.active[this.geweldSoort]
@@ -142,16 +159,18 @@ export default {
             })
         },
         details(d){
+
+            console.log('showdetail')
             const monthNames = ["Januari", "Februari", "Maart", "April", "Mei", "Juni",
             "Juli", "Augustus", "September", "Oktober", "November", "December"
             ];
             this.geweldDetails = `Maand: ${monthNames[d.maand-1]} Aantal:${d.aantal}`
-            if(event.target.parentElement.className === "aantal"){
+            if(event.target.parentElement.parentElement.className === "aantal"){
                 this.$el.querySelectorAll(".aantal").forEach((i)=>{
                     i.classList.remove("details")
                 })
                 this.showInfo = true
-                event.target.parentElement.classList.add("details")
+                event.target.parentElement.parentElement.classList.add("details")
             }else{
                 return
             }
@@ -165,7 +184,7 @@ export default {
                 this.showInfo = false
             }
         },
-        messagesLoop(){
+        messageLoop(){
             const loop = setInterval(()=>{
                                         if(this.message<3){
                                             this.message+=1
@@ -173,6 +192,19 @@ export default {
                                             this.message = 1 
                                         }
             },10000)
+        },
+        changeMessage(){
+            if(this.geweldSoort === 'hond'){
+                this.titel = this.messages[0].titel
+                this.subtitel = this.messages[0].subtitel
+            }else if(this.geweldSoort === 'langeWapenstok' || this.geweldSoort === 'korteWapenstok'){
+                this.titel = this.messages[2].titel
+                this.subtitel = this.messages[2].subtitel
+            }else{
+                this.titel = this.messages[1].titel
+                this.subtitel = this.messages[1].subtitel
+            }
+
         },
         shareData(x,y){
             const data = {
@@ -193,12 +225,23 @@ export default {
                 data.perMaand = false
             }
             this.$emit('shareData', data)
+        },
+        popup(){
+            this.$emit("pop")
         }
     },
     mounted(){
         this.geweldSoort=this.$el.querySelector("option").value
         this.setValues()
-        this.messagesLoop()
+        this.changeMessage()
+        this.geweldSoortArray.forEach((i)=>{
+            if(i.aantal === "?" || i.aantal === ""){
+                console.log(i.aantal)
+            }else{
+                console.log("klopt niet")
+            }
+        })
+        console.log(this.$el.querySelector('select').value)
     },
 
     
@@ -327,9 +370,14 @@ nav{
 .fade-enter, .fade-leave-active {
   opacity: 0
 }
-
+.popup{
+    color: yellow;
+}
 .message-anim-leave-active{
     animation: messageAnim 2s forwards;
+}
+.message-enter-leave-active{
+    animation: messageAnim 2s forwards reverse;
 }
 @keyframes messageAnim {
     from{transform: translate(0,0);opacity: 1;}

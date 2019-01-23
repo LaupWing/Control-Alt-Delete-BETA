@@ -1,4 +1,5 @@
 <template>
+    <div>
     <div class="content-30vh">
         <section>
             <h2>De politie heeft 6 geweldsmiddelen</h2>
@@ -8,9 +9,11 @@
             <p class="four">Pepperspray</p>
             <p class="five">Diensthond</p>
             <p class="six">Dienstwapen</p>
+            <p class="seven">De definitie op papier vs realiteit wijken van elkaar af</p>
         </section>
+    <i @click="next" class="arrow fas fa-caret-down"></i>
     </div>
-
+    </div>
 </template>
 <script>
 
@@ -25,11 +28,10 @@ export default {
         }
     },
     methods:{
-        
+        next(){
+            this.$router.push({ path: '/intro4'})
+        } 
     },
-    mounted(){
-        setTimeout(() => this.$router.push({ path: '/intro4'}), 15500);
-    }
 }
 </script>
 <style scoped>
@@ -49,28 +51,35 @@ section p{
     margin: 10px auto;
 }
 .one{
-    animation: slideIn 2s forwards;
-    animation-delay: 3s;
+    animation: slideIn 1.5s forwards;
+    animation-delay: 2s;
 }
 .two{
-    animation: slideIn 2s forwards;
-    animation-delay: 5s;
+    animation: slideIn 1.5s forwards;
+    animation-delay: 3.5s;
 }
 .three{
-    animation: slideIn 2s forwards;
-    animation-delay: 7s;
+    animation: slideIn 1.5s forwards;
+    animation-delay: 5s;
 }
 .four{
-    animation: slideIn 2s forwards;
-    animation-delay: 9s;
+    animation: slideIn 1.5s forwards;
+    animation-delay: 6.5s;
 }
 .five{
-    animation: slideIn 2s forwards;
-    animation-delay: 11s;
+    animation: slideIn 1.5s forwards;
+    animation-delay: 8s;
 }
 .six{
-    animation: slideIn 2s forwards;
-    animation-delay: 13s;    
+    animation: slideIn 1.5s forwards;
+    animation-delay: 9.5s;    
+}
+.seven{
+    margin-top: 10px;
+    width: 100vw;
+    text-align: center;
+    animation: opacityAnim 1.5s forwards;
+    animation-delay: 11s;    
 }
 .titel{
     margin-bottom: 20px;
