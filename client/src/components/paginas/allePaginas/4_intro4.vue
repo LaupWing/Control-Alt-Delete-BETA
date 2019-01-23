@@ -1,7 +1,7 @@
 <template>
 <div>    
     <div class="content-30vh">
-        <p>Hoe vaak maak de politie gebruik van deze geweldsmiddelen?</p>
+        <p>Hoe vaak maakt de politie gebruik van deze geweldsmiddelen?</p>
     </div>
         <i @click="next" class="arrow fas fa-caret-down"></i>
 </div>
