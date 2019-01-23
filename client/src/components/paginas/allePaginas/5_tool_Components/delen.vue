@@ -1,6 +1,5 @@
 <template>
     <div>
-        <div id="fb-root"></div>
         <h2>Deel de data!</h2>
         <p>Om data te delen moet je eerst op een data te klikken</p>
         <div class="data-container">
@@ -16,23 +15,29 @@
                 <p>{{sharing.datum}}</p>    
             </div>    
         </div>
-        <div class="content-30vh flexCenter">
-            <div class="fb-share-button" 
-                data-href="http://ctrl-alt-delete.herokuapp.com/" 
-                data-layout="button">
-            </div>
+        <div class="content-30vh flexAround">
+            <a href="http://www.facebook.com/sharer.php?u=http://ctrl-alt-delete.herokuapp.com" target="_blank">
+                <i class="fab fa-facebook-square"></i>
+            </a>
+            
+            <!-- Google+ -->
+            <a href="https://plus.google.com/share?url=http://ctrl-alt-delete.herokuapp.com" target="_blank">
+                <i class="fab fa-google-plus-square"></i>
+            </a>
+            
+            <!-- LinkedIn -->
+            <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://ctrl-alt-delete.herokuapp.com" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            
+            <!-- Twitter -->
+            <a href="https://twitter.com/share?url=http://ctrl-alt-delete.herokuapp.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank">
+                <i class="fab fa-twitter-square"></i>
+            </a>
         </div>
     </div>
 </template>
 <script>
-// Facebook SDK
-(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
 
 
 export default {
@@ -74,6 +79,10 @@ p{
 }
 .content-30vh{
     margin-top: 3vh;
+}
+a{
+    color: #A03029;
+    font-size: 2em;
 }
 </style>
 
