@@ -83,7 +83,7 @@
         <transition name="pop-anim">
             <div v-if="popUp === true" class="pop-up flexCenter">
                 <h3>Dark Numbers</h3>
-                <p>Is het je opgevallen dat de cijfers van Politiegeweld in 2014 wel heel zijn, vergelijken met de bevolking van 16,83 miljoen Nederlanders.</p>
+                <p>Is het je opgevallen dat de cijfers van Politiegeweld wel heel laag zijn</p>
                 <p>Dat klopt</p>
                 <p>De politie en het Openbaar Ministerie publiceren geen cijfers over hoe vaak burgers aangifte doen van politiegeweld.</p>
                 <p>Dat zijn alleen de meldingen van de politie.</p>
@@ -118,7 +118,7 @@ export default {
         handleClick(){
             this.previousTransition = this.transitionName;
             this.currentTransition = event.target.textContent.trim()
-            if(this.previousTransition === "Informatie" && this.currentTransition === "Politiedoden"){
+            if(this.previousTransition === "Geweldsmiddelen" && this.currentTransition === "Politiedoden"){
                 this.transitionName = "Geweld"
             }else{
                 this.transitionName = this.currentTransition
@@ -194,10 +194,10 @@ a{
     animation: slideOut2 forwards 0.5s;
 }
 
-.Informatie-enter-active{
+.Geweldsmiddelen-enter-active{
     animation: slideIn forwards 0.5s;
 }
-.Informatie-leave-active{
+.Geweldsmiddelen-leave-active{
     animation: slideOut forwards 0.5s;
 }
 

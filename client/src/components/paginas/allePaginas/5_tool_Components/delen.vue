@@ -1,6 +1,7 @@
 <template>
     <div>
         <h2>Deel de data!</h2>
+        <p>Om data te delen moet je eerst op een data te klikken</p>
         <div class="data-container">
             <div class="flexCenter labels red">
                 <p>Geweldsoort:</p>

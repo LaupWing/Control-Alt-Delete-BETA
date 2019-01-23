@@ -5,6 +5,7 @@ import VueRouter from 'vue-router'
 import Intro1 from './components/paginas/allePaginas/1_intro1.vue'
 import Intro2 from './components/paginas/allePaginas/2_intro2.vue'
 import Intro3 from './components/paginas/allePaginas/3_intro3.vue'
+import Intro3_5 from './components/paginas/allePaginas/3.5_intro3.5.vue'
 import Intro4 from './components/paginas/allePaginas/4_intro4.vue'
 import Tool from './components/paginas/allePaginas/5_tool.vue'
 
@@ -30,6 +31,10 @@ const routes = [
     {
         path: '/intro3', 
         component: Intro3
+    },
+    {
+        path: '/intro3_5', 
+        component: Intro3_5
     },
     {
         path: '/intro4', 

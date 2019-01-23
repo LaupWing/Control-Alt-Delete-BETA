@@ -9,7 +9,6 @@
             <p class="four">Pepperspray</p>
             <p class="five">Diensthond</p>
             <p class="six">Dienstwapen</p>
-            <p class="seven">De definitie op papier vs realiteit wijken van elkaar af</p>
         </section>
     <i @click="next" class="arrow fas fa-caret-down"></i>
     </div>
@@ -29,7 +28,7 @@ export default {
     },
     methods:{
         next(){
-            this.$router.push({ path: '/intro4'})
+            this.$router.push({ path: '/intro3_5'})
         } 
     },
 }
@@ -73,13 +72,6 @@ section p{
 .six{
     animation: slideIn 1.5s forwards;
     animation-delay: 9.5s;    
-}
-.seven{
-    margin-top: 10px;
-    width: 100vw;
-    text-align: center;
-    animation: opacityAnim 1.5s forwards;
-    animation-delay: 11s;    
 }
 .titel{
     margin-bottom: 20px;
